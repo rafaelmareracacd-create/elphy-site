@@ -1,0 +1,46 @@
+{
+  "slug": "headset-wolverine",
+  "titulo": "Headset gamer — o que sobrou do fim de semana com o Wolverine",
+  "gancho": "O jogo acabou no sábado. O fone ficou.",
+  "categoria": "Games",
+  "videoRef": "TikTok @planetadosestudos — Wolverine (set/2026)",
+  "publicadoEm": "2026-09-17",
+  "produto": {
+    "nome": "[NOME DO HEADSET]",
+    "preco": "[R$ —]",
+    "imagem": "[a conferir]",
+    "link": "https://www.mercadolivre.com.br/[LINK-DE-AFILIADO]",
+    "cupom": "",
+    "paraQuemE": "[a conferir]",
+    "prosList": [
+      "[a conferir]"
+    ],
+    "contrasList": [
+      "[a conferir]"
+    ]
+  },
+  "alternativas": [
+    {
+      "rotulo": "Mais barata",
+      "nome": "[NOME DO HEADSET]",
+      "preco": "[R$ —]",
+      "imagem": "[a conferir]",
+      "link": "https://www.mercadolivre.com.br/[LINK-DE-AFILIADO]",
+      "cupom": "",
+      "resumo": "[a conferir]",
+      "pro": "[a conferir]",
+      "contra": "[a conferir]"
+    },
+    {
+      "rotulo": "Mais cara",
+      "nome": "[NOME DO HEADSET]",
+      "preco": "[R$ —]",
+      "imagem": "[a conferir]",
+      "link": "https://www.mercadolivre.com.br/[LINK-DE-AFILIADO]",
+      "cupom": "",
+      "resumo": "[a conferir]",
+      "pro": "[a conferir]",
+      "contra": "[a conferir]"
+    }
+  ]
+}
