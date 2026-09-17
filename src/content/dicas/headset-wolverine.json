@@ -1,46 +1,52 @@
 {
   "slug": "headset-wolverine",
   "titulo": "Headset gamer — o que sobrou do fim de semana com o Wolverine",
-  "gancho": "O jogo acabou no sábado. O fone ficou.",
+  "gancho": "O jogo eu devolvi. O fone ficou.",
   "categoria": "Games",
   "videoRef": "TikTok @planetadosestudos — Wolverine (set/2026)",
   "publicadoEm": "2026-09-17",
   "produto": {
-    "nome": "[NOME DO HEADSET]",
-    "preco": "[R$ —]",
-    "imagem": "[a conferir]",
-    "link": "https://www.mercadolivre.com.br/[LINK-DE-AFILIADO]",
+    "nome": "Havit H2002d — headset gamer com fio (P3, PS4/PS5/Xbox/PC)",
+    "preco": "R$ 197,65",
+    "imagem": "/produtos/havit-h2002d.webp",
+    "link": "https://meli.la/13186H3",
     "cupom": "",
-    "paraQuemE": "[a conferir]",
+    "paraQuemE": "Pra quem quer um headset com fio, confortável, pra ouvir passo em FPS e falar no Discord sem gastar mais de R$ 200. Serve em PS4, PS5, Xbox e PC (vem com adaptador P3→P2). Nota 4,9 no Mercado Livre, mais de 50 mil vendidos.",
     "prosList": [
-      "[a conferir]"
+      "Driver de 53 mm, som limpo nos médios e agudos — passo e direção de tiro ficam claros.",
+      "Microfone destacável e flexível; quem compra elogia a qualidade pelo preço.",
+      "Cabo de 1,7 m com malha, plug P3 e adaptador P3→P2 pra PC na caixa.",
+      "Conforto pra sessão longa é o ponto mais citado nas avaliações."
     ],
     "contrasList": [
-      "[a conferir]"
+      "É com fio. Não tem Bluetooth, não tem LED, não tem cancelamento de ruído.",
+      "Grave discreto: se você quer bumbo estourando em música, não é ele.",
+      "Pesa 515 g e aperta um pouco pendurado no pescoço.",
+      "Tem relato de desgaste do material depois de 1 ano de uso."
     ]
   },
   "alternativas": [
     {
       "rotulo": "Mais barata",
-      "nome": "[NOME DO HEADSET]",
-      "preco": "[R$ —]",
-      "imagem": "[a conferir]",
-      "link": "https://www.mercadolivre.com.br/[LINK-DE-AFILIADO]",
+      "nome": "Havit H2230D — headset gamer com fio, mic destacável",
+      "preco": "R$ 96,80",
+      "imagem": "/produtos/havit-h2230d.webp",
+      "link": "https://meli.la/1iveoby",
       "cupom": "",
-      "resumo": "[a conferir]",
-      "pro": "[a conferir]",
-      "contra": "[a conferir]"
+      "resumo": "Metade do preço, mesma marca. Nota 4,7, mais de 10 mil vendidos.",
+      "pro": "Som e isolamento bem avaliados; microfone sai pra usar como fone comum.",
+      "contra": "Aperta a cabeça nas primeiras semanas e o mic é mediano, segundo quem comprou."
     },
     {
       "rotulo": "Mais cara",
-      "nome": "[NOME DO HEADSET]",
-      "preco": "[R$ —]",
-      "imagem": "[a conferir]",
-      "link": "https://www.mercadolivre.com.br/[LINK-DE-AFILIADO]",
+      "nome": "HyperX Cloud Stinger 2 Core — headset gamer com fio",
+      "preco": "R$ 289",
+      "imagem": "/produtos/hyperx-stinger-2-core.webp",
+      "link": "https://meli.la/2AkgYcs",
       "cupom": "",
-      "resumo": "[a conferir]",
-      "pro": "[a conferir]",
-      "contra": "[a conferir]"
+      "resumo": "Marca conhecida, modelo de entrada da HyperX. Anúncio novo, ainda com poucas vendas.",
+      "pro": "Leve e com a garantia de uma marca grande.",
+      "contra": "Microfone não sai; esse anúncio ainda não tem avaliações pra confirmar o vendedor."
     }
   ]
 }
