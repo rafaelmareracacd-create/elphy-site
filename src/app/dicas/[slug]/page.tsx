@@ -7,6 +7,7 @@ import { pageMetadata } from "@/lib/site";
 import ProductBlock from "@/components/ProductBlock";
 import ReviewBlocks from "@/components/ReviewBlocks";
 import Alternativas from "@/components/Alternativas";
+import AdDisclosure from "@/components/AdDisclosure";
 
 type Props = { params: Promise<{ slug: string }> };
 export const dynamicParams = false;
@@ -20,6 +21,7 @@ export default async function DicaPage({ params }: Props) {
   const dica = getDica((await params).slug);
   if (!dica) notFound();
   return <main id="conteudo" className="container reading page-section">
+    <AdDisclosure />
     <Link className="text-link" href="/">← Todas as dicas</Link>
     <article><header className="review-header">
       <p className="eyebrow">A dica é essa.</p><h1>{textOrPending(dica.titulo)}</h1><p className="hook">{textOrPending(dica.gancho)}</p>

@@ -1,12 +1,18 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
-import type { Product } from "@/lib/content";
-import { isHttpUrl, isPending, textOrPending } from "@/lib/format";
+import type { Product, ReviewProduct } from "@/lib/content";
+import { formatDate, money, isHttpUrl, isPending, textOrPending } from "@/lib/format";
 import { assetPath } from "@/lib/site";
 import CouponPill from "./CouponPill";
 import AffiliateButton from "./AffiliateButton";
 
-export default function ProductBlock({ produto, id, compact = false, children }: { produto: Product; id: string; compact?: boolean; children?: ReactNode }) {
+export default function ProductBlock({ produto, id, compact = false, children }: { produto: Product | ReviewProduct; id: string; compact?: boolean; children?: ReactNode }) {
+  if ("precoObservado" in produto) return <section className="review-product" aria-label={produto.nome}>
+    <Image src={assetPath(produto.imagem)} alt={produto.nome} width={112} height={96} priority sizes="112px" />
+    <div><h2>{produto.nome}</h2><p className="muted">{produto.variante}</p><p><strong>{money(produto.precoObservado)}</strong> em {produto.loja}</p><p className="muted">Visto em <time dateTime={produto.precoData}>{formatDate(produto.precoData)}</time></p></div>
+    <AffiliateButton id={id} url={produto.link} label={`Ver no ${produto.loja}`} />
+    {produto.cupom && <CouponPill cupom={produto.cupom} />}
+  </section>;
   const hasImage = !isPending(produto.imagem) && (isHttpUrl(produto.imagem) || /^\/(?!\/)/.test(produto.imagem));
   return <section className={`product-block ${compact ? "product-compact" : "product-main"}`} aria-label={textOrPending(produto.nome)}>
     <div className="product-image">

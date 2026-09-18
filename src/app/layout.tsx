@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import AdDisclosure from "@/components/AdDisclosure";
 import { assetPath, siteUrl } from "@/lib/site";
 import "./globals.css";
 
@@ -18,6 +17,6 @@ export const viewport: Viewport = { themeColor: "#0b0f14" };
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return <html lang="pt-BR"><body className={`${display.variable} ${body.variable}`}>
     <a className="skip-link" href="#conteudo">Pular para o conteúdo</a>
-    <Header /><AdDisclosure />{children}<Footer />
+    <Header />{children}<Footer />
   </body></html>;
 }

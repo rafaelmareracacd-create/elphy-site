@@ -1,0 +1,77 @@
+{
+  "slug": "galaxy-a36-vale-a-pena-2026",
+  "titulo": "Galaxy A36 5G vale a pena em 2026?",
+  "categoria": "celulares",
+  "veredito": {
+    "resposta": "Sim",
+    "frase": "Pra quem quer um celular que dura 4 anos sem pagar preço de iPhone.",
+    "paraQuem": ["Estudante e uso diário", "Quem busca câmera boa pra rede social", "Quem prioriza 6 anos de atualização Android (veja a política na FAQ)"],
+    "paraQuemNao": ["Quem joga pesado", "Quem quer carregamento muito rápido", "Quem quer o melhor zoom"]
+  },
+  "autor": { "nome": "Rafael", "papel": "Editor do Elphy" },
+  "publicadoEm": "2026-09-18",
+  "atualizadoEm": "2026-09-18",
+  "metodologia": "analise-documental",
+  "metodologiaTexto": "Preços e fichas conferidos nas páginas oficiais e no Mercado Livre em 18/09/2026. Ainda não testamos a unidade.",
+  "produto": {
+    "nome": "Samsung Galaxy A36 5G",
+    "variante": "256 GB · 8 GB RAM · preto",
+    "imagem": "/produtos/galaxy-a36.png",
+    "link": "https://www.mercadolivre.com.br/p/MLB47111905",
+    "loja": "Mercado Livre",
+    "precoObservado": 2099,
+    "precoData": "2026-09-18",
+    "precoHistorico": [{ "data": "2026-09-18", "preco": 2099, "fonte": "Mercado Livre, catálogo MLB47111905" }],
+    "cupom": "",
+    "garantia": "[a conferir]"
+  },
+  "tabela": {
+    "colunas": ["O que comparar", "Galaxy A36 5G", "Edge 70 Fusion+", "Moto g17 256 GB", "Fonte"],
+    "linhas": [
+      ["Preço em 18/09/2026", "R$ 2.099 · Mercado Livre", "R$ 2.969,10 à vista · Motorola", "R$ 989,10 à vista · Motorola", "Mercado Livre e lojas Motorola; observações fornecidas no briefing editorial de 18/09/2026. Links em Fontes."],
+      ["Tela", "6,7 pol. · Super AMOLED FHD+ · 120 Hz", "6,8 pol. · Extreme AMOLED 1,5K · 144 Hz", "[a conferir]", "Samsung Brasil; Motorola Edge 70 Fusion+ (fontes 1 e 3)."],
+      ["Chip", "Snapdragon 6 Gen 3", "Snapdragon 7s Gen 4", "[a conferir]", "Samsung Brasil (resposta oficial Samsung Support na página); Motorola Edge 70 Fusion+ (fontes 1 e 3)."],
+      ["Bateria típica", "5.000 mAh", "5.200 mAh", "[a conferir]", "Samsung Brasil; Motorola Edge 70 Fusion+ (fontes 1 e 3)."],
+      ["Carregamento máximo", "45 W", "68 W", "[a conferir]", "Samsung Brasil; Motorola Edge 70 Fusion+ (fontes 1 e 3)."],
+      ["Câmeras", "Traseiras: 50 + 8 + 5 MP; frontal: 12 MP", "[a conferir]: ficha e FAQ divergem sobre a teleobjetiva", "[a conferir]", "Samsung Brasil; divergência na página Motorola Edge 70 Fusion+ (fontes 1 e 3)."],
+      ["Atualizações", "6 gerações de OS e 6 anos de segurança", "[a conferir]", "[a conferir]", "Samsung Brasil (fonte 1). Política contada desde o lançamento, não da compra."],
+      ["Proteção IP", "IP67", "IP68/IP69", "[a conferir]", "Samsung Brasil; Motorola Edge 70 Fusion+ (fontes 1 e 3). Resistência sob condições de laboratório."],
+      ["Zoom", "Digital até 10x", "[a conferir]", "[a conferir]", "Samsung Brasil (fonte 1). Sem teste comparativo de imagem."]
+    ]
+  },
+  "pros": [
+    "Tela AMOLED de 120 Hz.",
+    "Política de seis gerações de sistema e seis anos de segurança anunciada pela Samsung.",
+    "IP67 e estabilização na câmera traseira, segundo a ficha oficial.",
+    "Nota dos compradores no Mercado Livre: 4,9, com +10 mil vendidos. Registro fornecido no briefing de 18/09/2026; não é nota do Elphy."
+  ],
+  "contras": [
+    "O carregador de 45 W é vendido separadamente, segundo a Samsung. Conteúdo exato da caixa do anúncio: [a conferir].",
+    "Zoom digital; resultado em fotos de longe: [a conferir].",
+    "Desempenho em jogos pesados: [a conferir]. Ainda não medimos FPS, aquecimento ou autonomia."
+  ],
+  "oQueNaoE": [
+    "Não é um teste com unidade em mãos. A conclusão é editorial, baseada nos documentos disponíveis.",
+    "Não é promessa de quatro anos de vida útil: essa é a proposta do veredito, não uma medição de durabilidade.",
+    "Não é à prova d’água. A Samsung não recomenda uso na praia ou piscina.",
+    "Não é garantia do menor preço do mercado. Temos uma única observação no histórico."
+  ],
+  "alternativas": [
+    { "rotulo": "Mais barata", "nome": "Motorola Moto g17 256 GB", "preco": 989.1, "link": "https://www.motorola.com.br/smartphone-motorola-moto-g17-256gb/p", "porQue": "R$ 989,10 à vista na loja Motorola em 18/09/2026, conforme o registro editorial. Custa menos; ficha técnica: [a conferir]. Confira antes de trocar um pelo outro." },
+    { "rotulo": "Mais cara", "nome": "Motorola Edge 70 Fusion+", "preco": 2969.1, "link": "https://www.motorola.com.br/smartphone-motorola-edge-70-fusion-plus/p", "porQue": "R$ 2.969,10 à vista na loja Motorola em 18/09/2026, conforme o registro editorial. A ficha traz 144 Hz e carga de 68 W. Resultado em uso real: [a conferir]." }
+  ],
+  "faq": [
+    { "pergunta": "Tem carregador na caixa?", "resposta": "[a conferir] para a caixa deste anúncio. A Samsung informa que o carregador de 45 W é vendido separadamente (fonte 1)." },
+    { "pergunta": "Quantos anos de atualização?", "resposta": "A Samsung anuncia seis gerações de OS e seis anos de atualizações de segurança. Não são seis anos novos a partir da compra. A disponibilidade varia por modelo e mercado (fonte 1)." },
+    { "pergunta": "É resistente à água?", "resposta": "Tem IP67: teste em água doce a até 1 metro por até 30 minutos. Isso não torna o aparelho à prova d’água; praia e piscina não são recomendadas pela Samsung (fonte 1)." },
+    { "pergunta": "Roda jogo pesado?", "resposta": "[a conferir]. A ficha informa o processador, mas não comprova FPS nem estabilidade nos jogos que você usa. Ainda não testamos a unidade." }
+  ],
+  "fontes": [
+    { "titulo": "Samsung Brasil: Galaxy A36 5G 256 GB, especificações e política de atualizações", "url": "https://www.samsung.com/br/smartphones/galaxy-a/galaxy-a36-5g-awesome-black-256gb-sm-a366ezkgzto/", "data": "2026-09-18" },
+    { "titulo": "Mercado Livre: catálogo MLB47111905 (preço e avaliação fornecidos no briefing)", "url": "https://www.mercadolivre.com.br/p/MLB47111905", "data": "2026-09-18" },
+    { "titulo": "Motorola: Edge 70 Fusion+ (preço do briefing; ficha consultada)", "url": "https://www.motorola.com.br/smartphone-motorola-edge-70-fusion-plus/p", "data": "2026-09-18" },
+    { "titulo": "Motorola: Moto g17 256 GB (preço do briefing; ficha não recuperada)", "url": "https://www.motorola.com.br/smartphone-motorola-moto-g17-256gb/p", "data": "2026-09-18" }
+  ],
+  "changelog": [{ "data": "2026-09-18", "texto": "Primeira publicação: análise documental. Preços, avaliação do ML e veredito preservados do briefing; ficha Samsung e dados legíveis da Motorola conferidos. Lacunas sinalizadas." }],
+  "video": "https://www.tiktok.com/@planetadosestudos"
+}
