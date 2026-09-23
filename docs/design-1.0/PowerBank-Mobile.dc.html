@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Elphy — power bank no celular</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&amp;family=Schibsted+Grotesk:wght@400;500;600;700;800&amp;family=Martian+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0;background:#050607}
+a{color:#eef2ee}a:hover{color:#9dff3b}
+button{cursor:pointer}
+button:focus-visible,a:focus-visible{outline:2px solid #9dff3b;outline-offset:3px}
+.el-rolo{scrollbar-width:none}.el-rolo::-webkit-scrollbar{display:none}
+@keyframes el-imprime{from{transform:translateY(-46px);clip-path:inset(0 0 100% 0)}to{transform:none;clip-path:inset(0 0 0 0)}}
+@keyframes el-linha{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:none}}
+@keyframes el-carimba{0%{opacity:0;transform:scale(1.6) rotate(-10deg)}62%{opacity:1;transform:scale(.93) rotate(15deg)}100%{opacity:1;transform:scale(1) rotate(12deg)}}
+@keyframes el-pulso{0%,100%{opacity:.4}50%{opacity:1}}
+@keyframes el-enche{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div style="position: relative; width: 390px; height: 1780px; overflow: hidden; background: #050607; color: #eef2ee; font-family: 'Schibsted Grotesk', system-ui, sans-serif;">
+
+  <header style="display: flex; align-items: center; justify-content: space-between; height: 64px; box-sizing: border-box; padding: 0 24px; border-bottom: 1px solid rgba(255,255,255,.07);">
+    <a href="Home-Mobile.dc.html" style="font-weight: 800; font-size: 24px; letter-spacing: -.045em; text-decoration: none; color: #eef2ee;">elphy<span style="color: #9dff3b;">.</span></a>
+    <span style="display: inline-flex; align-items: center; gap: 7px; font-family: 'Martian Mono', monospace; font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: #c9d0ca;"><i style="display: block; width: 6px; height: 6px; border-radius: 50%; background: #9dff3b; box-shadow: 0 0 8px #9dff3b; animation: el-pulso 1.8s ease-in-out infinite;"></i>Celular</span>
+  </header>
+
+  <div style="padding: 28px 24px 0;">
+    <p style="margin: 0; font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #9dff3b;">Ferramenta nº 02</p>
+    <h1 style="margin: 14px 0 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 70px; line-height: .86; text-transform: uppercase;">Quantas<br>cargas<br>de verdade<span style="color: #9dff3b;">.</span></h1>
+    <p style="margin: 14px 0 0; font-size: 16px; line-height: 24px; color: #b9c1bb;">A caixa divide mAh por mAh. Parte da energia fica no caminho, e a nota mostra quanto.</p>
+  </div>
+
+  <div style="padding: 34px 24px 0; display: flex; justify-content: space-between; align-items: baseline;">
+    <span style="font-family: 'Martian Mono', monospace; font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: #9aa39c;">01 — O que a caixa diz</span>
+    <span style="font-family: 'Martian Mono', monospace; font-size: 10.5px; color: #9dff3b;">{{ pbResumo }}</span>
+  </div>
+  <div class="el-rolo" style="overflow-x: auto; margin-top: 12px;">
+    <div style="display: flex; gap: 8px; padding: 0 24px; width: max-content;">
+      <sc-for list="{{ pbChips }}" as="g" hint-placeholder-count="5">
+        <button type="button" onClick="{{ g.pick }}" aria-pressed="{{ g.on }}" style="width: 112px; height: 64px; flex-shrink: 0; box-sizing: border-box; padding: 10px 12px; border-radius: 14px; border: 1px solid {{ g.bd }}; background: {{ g.bg }}; box-shadow: {{ g.sh }}; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; text-align: left; transition: background .18s ease, box-shadow .18s ease;">
+          <span style="font-weight: 700; font-size: 15px; color: {{ g.fg }};">{{ g.curto }}</span>
+          <span style="font-family: 'Martian Mono', monospace; font-size: 11px; color: {{ g.fg2 }};">{{ g.sub }}</span>
+        </button>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding: 28px 24px 0; display: flex; justify-content: space-between; align-items: baseline;">
+    <span style="font-family: 'Martian Mono', monospace; font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: #9aa39c;">02 — Bateria do seu celular</span>
+    <span style="font-family: 'Martian Mono', monospace; font-size: 10.5px; color: #9dff3b;">{{ celResumo }}</span>
+  </div>
+  <div class="el-rolo" style="overflow-x: auto; margin-top: 12px;">
+    <div style="display: flex; gap: 8px; padding: 0 24px; width: max-content;">
+      <sc-for list="{{ celChips }}" as="c" hint-placeholder-count="5">
+        <button type="button" onClick="{{ c.pick }}" aria-pressed="{{ c.on }}" style="width: 104px; height: 64px; flex-shrink: 0; box-sizing: border-box; padding: 10px 12px; border-radius: 14px; border: 1px solid {{ c.bd }}; background: {{ c.bg }}; box-shadow: {{ c.sh }}; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; text-align: left; transition: background .18s ease, box-shadow .18s ease;">
+          <span style="font-weight: 700; font-size: 15px; color: {{ c.fg }};">{{ c.curto }}</span>
+          <span style="font-family: 'Martian Mono', monospace; font-size: 11px; color: {{ c.fg2 }};">{{ c.sub }}</span>
+        </button>
+      </sc-for>
+    </div>
+  </div>
+  <p style="margin: 10px 24px 0; font-size: 13px; line-height: 19px; color: #7f8881;">Não sabe? Está em Ajustes › Sobre, ou na ficha do fabricante.</p>
+
+  <div style="position: relative; margin-top: 36px; padding: 0 24px; display: flex; flex-direction: column; align-items: center;">
+    <div aria-hidden="true" style="position: absolute; left: -60px; top: 40px; width: 510px; height: 640px; background: radial-gradient(ellipse 46% 44% at 50% 50%, rgba(157,255,59,.5), rgba(157,255,59,0) 72%); opacity: {{ brilho }}; transition: opacity .6s ease;"></div>
+    <div style="position: relative; z-index: 3; width: 342px; height: 30px; box-sizing: border-box; padding: 0 14px; border-radius: 15px; background: linear-gradient(180deg, #1c2226, #0d1013); box-shadow: inset 0 1px 0 rgba(255,255,255,.09), 0 12px 30px rgba(0,0,0,.6); display: flex; align-items: center; justify-content: space-between; font-family: 'Martian Mono', monospace; font-size: 9px; letter-spacing: .14em; text-transform: uppercase;">
+      <span style="color: #8d958f;">Impressora de contas</span>
+      <span style="display: inline-flex; align-items: center; gap: 7px; color: #9dff3b;"><i style="display: block; width: 7px; height: 7px; border-radius: 50%; background: #9dff3b; box-shadow: 0 0 10px #9dff3b; animation: el-pulso 1.6s ease-in-out infinite;"></i>Pronta</span>
+    </div>
+    <div aria-hidden="true" style="position: relative; z-index: 3; width: 318px; height: 6px; margin-top: -4px; border-radius: 3px; background: #020303;"></div>
+
+    <sc-if value="{{ impresso }}" hint-placeholder-val="{{ true }}">
+      <div style="position: relative; z-index: 2; margin-top: -8px; transform: rotate(-1.4deg); transform-origin: 50% 0;">
+        <div style="position: relative; width: 318px; background: #f3f1ea; color: #111311; font-family: 'Martian Mono', monospace; font-size: 10.5px; line-height: 17px; box-shadow: 0 40px 70px rgba(0,0,0,.55), 0 2px 0 rgba(0,0,0,.25); animation: el-imprime .6s cubic-bezier(.2,.7,.3,1) backwards;">
+          <div aria-hidden="true" style="position: absolute; left: 0; bottom: -10px; width: 318px; height: 10px; background: linear-gradient(45deg, #f3f1ea 50%, rgba(243,241,234,0) 50%) 0 0 / 12px 10px repeat-x, linear-gradient(-45deg, #f3f1ea 50%, rgba(243,241,234,0) 50%) 0 0 / 12px 10px repeat-x; transform: scaleY(-1);"></div>
+          <div style="position: relative; padding: 22px 22px 24px;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; animation: el-linha .3s ease-out both; animation-delay: 80ms;">
+              <span style="font-family: 'Schibsted Grotesk', sans-serif; font-weight: 800; font-size: 21px; letter-spacing: -.045em;">elphy.</span>
+              <span style="font-weight: 700;">Nº {{ numero }}</span>
+            </div>
+            <div style="margin-top: 6px; letter-spacing: .08em; text-transform: uppercase;">Cupom de medição · energia</div>
+            <div style="margin: 12px 0; border-top: 1.5px dashed rgba(17,19,17,.4);"></div>
+
+            <div style="font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: #5b5f58; animation: el-linha .3s ease-out both; animation-delay: 200ms;">Na caixa</div>
+            <div style="display: flex; align-items: baseline; animation: el-linha .3s ease-out both; animation-delay: 220ms;"><span>{{ pbMah }} mAh × 3,7 V</span><span style="flex: 1; margin: 0 5px 4px; border-bottom: 1.5px dotted rgba(17,19,17,.45);"></span><b>{{ whCelula }} Wh</b></div>
+            <div style="display: flex; align-items: baseline; margin-top: 4px; animation: el-linha .3s ease-out both; animation-delay: 280ms;"><span>Perde na conversão (~35%)</span><span style="flex: 1; margin: 0 5px 4px; border-bottom: 1.5px dotted rgba(17,19,17,.45);"></span><b>−{{ whPerde }} Wh</b></div>
+            <div style="display: flex; align-items: baseline; margin-top: 4px; animation: el-linha .3s ease-out both; animation-delay: 340ms;"><span style="font-weight: 700;">Chega no celular</span><span style="flex: 1; margin: 0 5px 4px; border-bottom: 1.5px dotted rgba(17,19,17,.45);"></span><b>{{ whUtil }} Wh</b></div>
+            <div style="margin: 12px 0; border-top: 1.5px dashed rgba(17,19,17,.4);"></div>
+            <div style="display: flex; align-items: baseline; animation: el-linha .3s ease-out both; animation-delay: 400ms;"><span>Celular {{ celMah }} mAh × 3,85 V</span><span style="flex: 1; margin: 0 5px 4px; border-bottom: 1.5px dotted rgba(17,19,17,.45);"></span><b>{{ whCel }} Wh</b></div>
+
+            <div style="margin-top: 14px; animation: el-linha .3s ease-out both; animation-delay: 470ms;">
+              <div style="display: flex; justify-content: space-between; font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: #5b5f58;"><span>Caixa promete</span><span>{{ promete }} cargas</span></div>
+              <div style="height: 12px; margin-top: 4px; box-sizing: border-box; border: 1.5px solid #111311; background: repeating-linear-gradient(135deg, #111311 0 2px, rgba(17,19,17,0) 2px 5px);"></div>
+              <div style="display: flex; justify-content: space-between; margin-top: 8px; font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: #5b5f58;"><span>Chega de verdade</span><span>{{ cargasTxt }} cargas</span></div>
+              <div style="height: 12px; margin-top: 4px; box-sizing: border-box; border: 1.5px solid #111311;"><i style="display: block; height: 100%; width: {{ pctReal }}; background: #111311; transform-origin: 0 50%; animation: el-enche .7s cubic-bezier(.2,.7,.3,1) both; animation-delay: 520ms;"></i></div>
+            </div>
+
+            <div style="margin-top: 16px; border-top: 3px double #111311;"></div>
+            <div style="padding: 12px 0 8px;">
+              <div style="font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: #5b5f58;">Cargas completas, de 0 a 100%</div>
+              <div style="display: flex; align-items: baseline; gap: 6px; margin-top: 4px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; line-height: .84;"><span style="font-size: 88px;">{{ mostrado }}</span><span style="font-size: 30px;">cargas</span></div>
+              <div style="margin-top: 8px; font-size: 10px; color: #5b5f58;">Faixa: {{ faixa }} cargas, conforme a eficiência (60–70%).</div>
+            </div>
+            <div style="border-top: 3px double #111311;"></div>
+            <div style="margin-top: 12px; font-size: 10px; line-height: 15px; color: #3f433d;">Não é defeito nem golpe: a célula trabalha em 3,7 V e a USB entrega 5 V ou mais. A conversão esquenta e gasta.</div>
+            <div style="margin-top: 6px; font-size: 9.5px; line-height: 14px; color: #5b5f58;">Estimativa pela fórmula da metodologia. Não garante compatibilidade.</div>
+          </div>
+        </div>
+        <div style="position: absolute; right: -22px; bottom: 120px; width: 120px; height: 120px; border-radius: 50%; background: #9dff3b; color: #07110a; display: flex; flex-direction: column; align-items: center; justify-content: center; outline: 1.5px dashed rgba(7,17,10,.35); outline-offset: -9px; box-shadow: 0 16px 36px rgba(0,0,0,.45); transform: rotate(12deg); animation: el-carimba .44s cubic-bezier(.2,1.3,.4,1) both; animation-delay: 820ms;">
+          <span style="font-family: 'Martian Mono', monospace; font-size: 8.5px; letter-spacing: .16em; text-transform: uppercase;">De verdade</span>
+          <span style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 50px; line-height: .86;">{{ cargasTxt }}</span>
+          <span style="font-family: 'Martian Mono', monospace; font-size: 8.5px; letter-spacing: .16em; text-transform: uppercase;">cargas</span>
+        </div>
+      </div>
+    </sc-if>
+  </div>
+
+  <div style="padding: 44px 24px 0; display: flex; flex-direction: column; gap: 10px;">
+    <button type="button" onClick="{{ mandar }}" style="height: 58px; border: 0; border-radius: 29px; background: #9dff3b; color: #07110a; font-family: 'Schibsted Grotesk', sans-serif; font-weight: 700; font-size: 17px; box-shadow: 0 14px 40px rgba(157,255,59,.25);">{{ mandarTexto }}</button>
+  </div>
+
+  <div style="margin: 28px 24px 0; box-sizing: border-box; padding: 20px; border-radius: 20px; border: 1px solid rgba(255,176,32,.35); background: #0a0d0f;">
+    <span style="font-family: 'Martian Mono', monospace; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: #ffb020;">Olhe na etiqueta de trás</span>
+    <p style="margin: 10px 0 0; font-size: 15px; line-height: 23px; color: #c9d0ca;">Se ela traz "capacidade nominal" em mAh a 5 V, esse é o número honesto. Power bank que não imprime nenhum dos dois não entra na lista do Elphy.</p>
+  </div>
+
+  <div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 24px; border-top: 1px solid rgba(255,255,255,.07); display: flex; justify-content: space-between; font-family: 'Martian Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: #9aa39c;">
+    <span>Dica sem caô<span style="color: #9dff3b;">.</span></span>
+    <a href="SSD-Mobile.dc.html" style="color: #9aa39c;">Próxima: SSD</a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1780}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.PB = [5000, 10000, 20000, 30000, 40000];
+    this.CEL = [3000, 4000, 4500, 5000, 6000];
+    this.state = { pb: 20000, cel: 5000, impresso: true, mostrado: 0, enviado: false };
+  }
+  componentDidMount() { this.reimprime({}); }
+  componentWillUnmount() { cancelAnimationFrame(this._raf); clearTimeout(this._to); clearTimeout(this._to2); }
+  conta(s) {
+    s = s || this.state;
+    var whC = s.pb * 3.7 / 1000, util = whC * 0.65, cel = s.cel * 3.85 / 1000;
+    return { whC: whC, util: util, cel: cel, cargas: util / cel, min: whC * 0.6 / cel, max: whC * 0.7 / cel, promete: s.pb / s.cel };
+  }
+  reimprime(patch) {
+    var self = this; clearTimeout(this._to); cancelAnimationFrame(this._raf);
+    this.setState(Object.assign({ impresso: false, mostrado: 0 }, patch));
+    this._to = setTimeout(function () { self.setState({ impresso: true }); self.anima(); }, 60);
+  }
+  anima() {
+    var self = this, alvo = this.conta().cargas, t0 = performance.now();
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { this.setState({ mostrado: alvo }); return; }
+    var passo = function (t) {
+      var p = Math.min((t - t0) / 700, 1);
+      self.setState({ mostrado: alvo * (1 - Math.pow(1 - p, 3)) });
+      if (p < 1) self._raf = requestAnimationFrame(passo);
+    };
+    this._raf = requestAnimationFrame(passo);
+  }
+  renderVals() {
+    var self = this, s = this.state, k = this.conta();
+    var br = function (v, d) { return v.toFixed(d).replace('.', ','); };
+    var mil = function (v) { return String(v).replace(/\B(?=(\d{3})+(?!\d))/g, '.'); };
+    var chip = function (on, pick, curto, sub) {
+      return { on: on, pick: pick, curto: curto, sub: sub,
+        bg: on ? '#9dff3b' : '#0d1013', bd: on ? '#9dff3b' : 'rgba(255,255,255,.08)',
+        fg: on ? '#07110a' : '#eef2ee', fg2: on ? '#24461a' : '#9aa39c',
+        sh: on ? '0 10px 30px rgba(157,255,59,.28)' : 'none' };
+    };
+    return {
+      pbChips: this.PB.map(function (v) { return chip(v === s.pb, function () { self.reimprime({ pb: v }); }, mil(v), 'mAh'); }),
+      celChips: this.CEL.map(function (v) { return chip(v === s.cel, function () { self.reimprime({ cel: v }); }, mil(v), 'mAh'); }),
+      pbResumo: mil(s.pb) + ' mAh', celResumo: mil(s.cel) + ' mAh',
+      impresso: s.impresso, numero: String(s.pb / 100).padStart(4, '0'),
+      pbMah: mil(s.pb), celMah: mil(s.cel),
+      whCelula: br(k.whC, 1), whPerde: br(k.whC - k.util, 1), whUtil: br(k.util, 1), whCel: br(k.cel, 1),
+      promete: br(k.promete, 1), cargasTxt: br(k.cargas, 1), mostrado: br(s.mostrado, 1),
+      faixa: br(k.min, 1) + ' a ' + br(k.max, 1),
+      pctReal: (Math.min(k.cargas / k.promete, 1) * 100).toFixed(1) + '%',
+      brilho: (0.25 + 0.5 * Math.min(k.cargas / 6, 1)).toFixed(2),
+      mandarTexto: s.enviado ? 'Nota copiada' : 'Mandar a nota no WhatsApp',
+      mandar: function () { self.setState({ enviado: true }); clearTimeout(self._to2); self._to2 = setTimeout(function () { self.setState({ enviado: false }); }, 1800); }
+    };
+  }
+}
+</script>
+</body>
+</html>

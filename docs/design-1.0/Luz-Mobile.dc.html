@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Elphy — conta de luz do PC</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&amp;family=Schibsted+Grotesk:wght@400;500;600;700;800&amp;family=Martian+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0;background:#050607}
+a{color:#eef2ee}a:hover{color:#9dff3b}
+button{cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid #9dff3b;outline-offset:3px}
+.el-rolo{scrollbar-width:none}.el-rolo::-webkit-scrollbar{display:none}
+.el-col>*{flex-shrink:0}
+@keyframes el-imprime{from{transform:translateY(-46px);clip-path:inset(0 0 100% 0)}to{transform:none;clip-path:inset(0 0 0 0)}}
+@keyframes el-linha{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:none}}
+@keyframes el-carimba{0%{opacity:0;transform:scale(1.6) rotate(-10deg)}62%{opacity:1;transform:scale(.93) rotate(15deg)}100%{opacity:1;transform:scale(1) rotate(12deg)}}
+@keyframes el-pulso{0%,100%{opacity:.4}50%{opacity:1}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div class="el-col" style="position: relative; width: 390px; height: 1960px; overflow: hidden; display: flex; flex-direction: column; background: #050607; color: #eef2ee; font-family: 'Schibsted Grotesk', system-ui, sans-serif;">
+<header style="display: flex; align-items: center; justify-content: space-between; height: 64px; box-sizing: border-box; padding: 0 24px; border-bottom: 1px solid rgba(255,255,255,.07);">
+  <a href="Home-Mobile.dc.html" style="font-weight: 800; font-size: 24px; letter-spacing: -.045em; text-decoration: none; color: #eef2ee;">elphy<span style="color: #9dff3b;">.</span></a>
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <span style="font-family: 'Martian Mono', monospace; font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: #c9d0ca;">Casa</span>
+    <a href="Menu-Mobile.dc.html" aria-label="Abrir menu" style="width: 44px; height: 44px; box-sizing: border-box; border: 1px solid rgba(255,255,255,.14); border-radius: 22px; display: flex; align-items: center; justify-content: center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#eef2ee" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"></path></svg></a>
+  </div>
+</header>
+<div style="padding: 28px 24px 0;">
+  <p style="margin: 0; font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #9dff3b;">Ferramenta nº 04</p>
+  <h1 style="margin: 14px 0 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 70px; line-height: .86; text-transform: uppercase;">Quanto o PC<br>custa na<br>conta<span style="color: #9dff3b;">.</span></h1>
+  <p style="margin: 14px 0 0; font-size: 16px; line-height: 24px; color: #b9c1bb;">Watts do PC × horas ligado × a tarifa que está na sua conta. A nota sai em reais por mês.</p>
+</div>
+<sc-for list="{{ grupos }}" as="g" hint-placeholder-count="3">
+  <div>
+    <div style="padding: 30px 24px 0; display: flex; justify-content: space-between; align-items: baseline; gap: 12px;">
+      <span style="font-family: 'Martian Mono', monospace; font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: #9aa39c;">{{ g.n }} — {{ g.titulo }}</span>
+      <span style="font-family: 'Martian Mono', monospace; font-size: 10.5px; color: #9dff3b; white-space: nowrap;">{{ g.resumo }}</span>
+    </div>
+    <div class="el-rolo" style="overflow-x: auto; margin-top: 12px;">
+      <div style="display: flex; gap: 8px; padding: 0 24px; width: max-content;">
+        <sc-for list="{{ g.ops }}" as="o" hint-placeholder-count="5">
+          <button type="button" onClick="{{ o.pick }}" aria-pressed="{{ o.on }}" style="width: {{ o.larg }}; height: 64px; flex-shrink: 0; box-sizing: border-box; padding: 10px 12px; border-radius: 14px; border: 1px solid {{ o.bd }}; background: {{ o.bg }}; box-shadow: {{ o.sh }}; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; text-align: left; transition: background .18s ease, box-shadow .18s ease;">
+            <span style="font-family: 'Schibsted Grotesk', sans-serif; font-weight: 700; font-size: 15px; line-height: 17px; color: {{ o.fg }};">{{ o.curto }}</span>
+            <span style="font-family: 'Martian Mono', monospace; font-size: 10.5px; color: {{ o.fg2 }};">{{ o.sub }}</span>
+          </button>
+        </sc-for>
+      </div>
+    </div>
+    <sc-if value="{{ g.temDica }}" hint-placeholder-val="{{ false }}">
+      <p style="margin: 10px 24px 0; font-size: 13px; line-height: 19px; color: #7f8881;">{{ g.dica }}</p>
+    </sc-if>
+  </div>
+</sc-for>
+<div style="position: relative; margin-top: 40px; padding: 0 24px; display: flex; flex-direction: column; align-items: center;">
+  <div aria-hidden="true" style="position: absolute; left: -60px; top: 40px; width: 510px; height: 640px; background: radial-gradient(ellipse 46% 44% at 50% 50%, rgba(157,255,59,.5), rgba(157,255,59,0) 72%); opacity: {{ brilho }}; transition: opacity .6s ease;"></div>
+  <div style="position: relative; z-index: 3; width: 342px; height: 30px; box-sizing: border-box; padding: 0 14px; border-radius: 15px; background: linear-gradient(180deg, #1c2226, #0d1013); box-shadow: inset 0 1px 0 rgba(255,255,255,.09), 0 12px 30px rgba(0,0,0,.6); display: flex; align-items: center; justify-content: space-between; font-family: 'Martian Mono', monospace; font-size: 9px; letter-spacing: .14em; text-transform: uppercase;">
+  <span style="color: #8d958f;">Impressora de contas</span>
+  <span style="display: inline-flex; align-items: center; gap: 7px; color: {{ ledCor }};"><i style="display: block; width: 7px; height: 7px; border-radius: 50%; background: {{ ledCor }}; box-shadow: 0 0 10px {{ ledCor }}; animation: el-pulso 1.6s ease-in-out infinite;"></i>{{ ledTexto }}</span>
+</div>
+<div aria-hidden="true" style="position: relative; z-index: 3; width: 318px; height: 6px; margin-top: -4px; border-radius: 3px; background: #020303;"></div>
+  <sc-if value="{{ impresso }}" hint-placeholder-val="{{ true }}">
+  <div style="position: relative; z-index: 2; margin-top: -8px; transform: rotate(-1.4deg); transform-origin: 50% 0;">
+    <div style="position: relative; width: 318px; background: #f3f1ea; color: #111311; font-family: 'Martian Mono', monospace; font-size: 10.5px; line-height: 17px; box-shadow: 0 40px 70px rgba(0,0,0,.55), 0 2px 0 rgba(0,0,0,.25); animation: el-imprime .6s cubic-bezier(.2,.7,.3,1) backwards;">
+      <div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: -10px; height: 10px; background: linear-gradient(45deg, #f3f1ea 50%, rgba(243,241,234,0) 50%) 0 0 / 12px 10px repeat-x, linear-gradient(-45deg, #f3f1ea 50%, rgba(243,241,234,0) 50%) 0 0 / 12px 10px repeat-x; transform: scaleY(-1);"></div>
+      <div style="position: relative; padding: 22px 22px 24px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <span style="font-family: 'Schibsted Grotesk', sans-serif; font-weight: 800; font-size: 21px; letter-spacing: -.045em;">elphy.</span>
+          <span style="font-weight: 700;">Nº {{ numero }}</span>
+        </div>
+        <div style="margin-top: 6px; letter-spacing: .08em; text-transform: uppercase;">{{ cupom }}</div>
+        <div style="color: #5b5f58;">{{ data }}</div>
+        <div style="margin: 12px 0; border-top: 1.5px dashed rgba(17,19,17,.4);"></div>
+        <sc-for list="{{ linhas }}" as="l" hint-placeholder-count="5">
+          <div style="display: flex; align-items: baseline; margin-top: {{ l.mt }}; padding-top: {{ l.pad }}; border-top: {{ l.borda }}; font-weight: {{ l.peso }}; animation: el-linha .3s ease-out both; animation-delay: {{ l.atraso }};"><span>{{ l.nome }}</span><span style="flex: 1; margin: 0 5px 4px; border-bottom: 1.5px dotted rgba(17,19,17,.45);"></span><b>{{ l.v }}</b></div>
+        </sc-for>
+        <div style="margin-top: 14px;"></div>
+        <div style="border-top: 3px double #111311;"></div>
+        <div style="padding: 12px 0 8px;">
+          <div style="font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: #5b5f58;">{{ rotulo }}</div>
+          <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px; margin-top: 4px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; line-height: .84;"><span style="font-size: 36px;">{{ pre }}</span><span style="font-size: 84px;">{{ mostrado }}</span><span style="font-size: 30px;">{{ unidade }}</span></div>
+          <div style="margin-top: 8px; font-size: 10px; line-height: 15px; color: #5b5f58;">{{ sub }}</div>
+        </div>
+        <div style="border-top: 3px double #111311;"></div>
+        <div style="margin-top: 12px; font-size: 10px; line-height: 15px; color: #3f433d;">{{ nota }}</div>
+        <div style="margin-top: 6px; font-size: 9.5px; line-height: 14px; color: #5b5f58;">Estimativa pela fórmula da metodologia. Não garante compatibilidade.</div>
+        <div aria-hidden="true" style="display: flex; height: 30px; margin-top: 10px;">
+          <sc-for list="{{ barras }}" as="b" hint-placeholder-count="36"><i style="display: block; width: {{ b.w }}px; background: {{ b.c }};"></i></sc-for>
+        </div>
+        <div style="margin-top: 5px; font-size: 9px; letter-spacing: .12em; color: #5b5f58;">{{ codigo }}</div>
+      </div>
+    </div>
+    <div style="position: absolute; right: -22px; bottom: 170px; width: 120px; height: 120px; border-radius: 50%; background: {{ seloFundo }}; color: #07110a; display: flex; flex-direction: column; align-items: center; justify-content: center; outline: 1.5px dashed rgba(7,17,10,.35); outline-offset: -9px; box-shadow: 0 16px 36px rgba(0,0,0,.45); transform: rotate(12deg); animation: el-carimba .44s cubic-bezier(.2,1.3,.4,1) both; animation-delay: 820ms;">
+  <span style="font-family: 'Martian Mono', monospace; font-size: 8.5px; letter-spacing: .16em; text-transform: uppercase;">{{ seloTopo }}</span>
+  <span style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 38px; line-height: .9;">{{ seloMeio }}</span>
+  <span style="font-family: 'Martian Mono', monospace; font-size: 8.5px; letter-spacing: .14em; text-transform: uppercase;">{{ seloBase }}</span>
+</div>
+  </div>
+</sc-if>
+</div>
+<div style="padding: 44px 24px 0; display: flex; flex-direction: column; gap: 10px;">
+  <button type="button" onClick="{{ mandar }}" style="height: 58px; border: 0; border-radius: 29px; background: #9dff3b; color: #07110a; font-family: 'Schibsted Grotesk', sans-serif; font-weight: 700; font-size: 17px; box-shadow: 0 14px 40px rgba(157,255,59,.25);">{{ mandarTexto }}</button>
+  <a href="Ferramenta-Mobile.dc.html" style="display: flex; align-items: center; justify-content: center; gap: 10px; height: 56px; box-sizing: border-box; border-radius: 28px; text-decoration: none; font-family: 'Schibsted Grotesk', sans-serif; font-weight: 700; font-size: 16px; margin-top: 0px; background: transparent; color: #eef2ee; border: 1px solid rgba(255,255,255,.16);">Calcular os watts do meu PC <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+<div style="margin: 28px 24px 0; box-sizing: border-box; padding: 20px; border-radius: 20px; border: 1px solid rgba(255,176,32,.35); background: #0a0d0f;">
+  <span style="font-family: 'Martian Mono', monospace; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: #ffb020;">A fonte entra nessa conta</span>
+  <p style="margin: 10px 0 0; font-size: 15px; line-height: 23px; color: #c9d0ca;">A conta usa watts na tomada. Se você só sabe o consumo das peças, some a perda da fonte: de 10% a 15% numa fonte com selo 80 Plus.</p>
+</div>
+<div style="flex-grow: 1; min-height: 40px;"></div>
+<footer style="padding: 24px; border-top: 1px solid rgba(255,255,255,.07); display: flex; justify-content: space-between; align-items: center; font-family: 'Martian Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: #9aa39c;">
+  <span>Dica sem caô<span style="color: #9dff3b;">.</span></span>
+  <a href="Metodologia-Mobile.dc.html" style="color: #9aa39c;">Como a gente faz a conta</a>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1960}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.GR = [{"k": "w", "titulo": "Watts na tomada", "larg": 124, "dica": "Não sabe? A calculadora de fonte dá o consumo do PC em carga.", "ops": [{"id": "150", "curto": "150 W", "sub": "escritório", "val": 150}, {"id": "300", "curto": "300 W", "sub": "jogo leve", "val": 300}, {"id": "450", "curto": "450 W", "sub": "jogo pesado", "val": 450}, {"id": "650", "curto": "650 W", "sub": "topo de linha", "val": 650}]}, {"k": "h", "titulo": "Horas ligado por dia", "larg": 92, "ops": [{"id": "2", "curto": "2 h", "sub": "por dia", "val": 2}, {"id": "4", "curto": "4 h", "sub": "por dia", "val": 4}, {"id": "6", "curto": "6 h", "sub": "por dia", "val": 6}, {"id": "8", "curto": "8 h", "sub": "por dia", "val": 8}, {"id": "12", "curto": "12 h", "sub": "por dia", "val": 12}]}, {"k": "tar", "titulo": "Tarifa da sua conta", "larg": 108, "dica": "Na conta de luz: valor total ÷ kWh do mês. Já sai com imposto e bandeira.", "ops": [{"id": "0.7", "curto": "R$ 0,70", "sub": "por kWh", "val": 0.7}, {"id": "0.85", "curto": "R$ 0,85", "sub": "por kWh", "val": 0.85}, {"id": "1.0", "curto": "R$ 1,00", "sub": "por kWh", "val": 1.0}, {"id": "1.15", "curto": "R$ 1,15", "sub": "por kWh", "val": 1.15}]}];
+    this.state = Object.assign({ impresso: true, mostrado: 0, enviado: false, t: Date.now() }, {"w": "450", "h": "4", "tar": "0.85"});
+  }
+  componentDidMount() { this.reimprime({}); }
+  componentWillUnmount() { cancelAnimationFrame(this._raf); clearTimeout(this._to); clearTimeout(this._to2); }
+  f(v, d) {
+    var t = Math.abs(v).toFixed(d || 0).split('.');
+    t[0] = t[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    return (v < 0 && Number(t.join('.')) !== 0 ? '−' : '') + t.join(',');
+  }
+  conta(s) {
+    s = s || this.state;
+    var v = {}, f = this.f;
+    this.GR.forEach(function (g) { v[g.k] = g.ops.find(function (o) { return o.id === s[g.k]; }) || g.ops[0]; });
+    var w = v.w.val, h = v.h.val, t = v.tar.val, kwh = w * h * 30 / 1000, r = kwh * t;
+    return { alvo: r, dec: 2, pre: 'R$', unidade: '/mês', rotulo: 'Conta de luz do PC',
+      cupom: 'Cupom de medição · energia', numero: String(Math.round(kwh)).padStart(4, '0'), cod: w + 'W' + h + 'H',
+      linhas: [
+        { nome: 'PC na tomada', v: w + ' W' },
+        { nome: 'Ligado por dia', v: h + ' h' },
+        { nome: 'No mês (30 dias)', v: f(kwh, 1) + ' kWh', sep: true },
+        { nome: 'Tarifa da sua conta', v: 'R$ ' + f(t, 2) + '/kWh' },
+        { nome: 'No ano', v: 'R$ ' + f(r * 12, 0), forte: true, sep: true }
+      ],
+      sub: 'É o teto: o PC em carga o tempo todo. Navegando, gasta menos.',
+      nota: 'Monitor, caixa de som e roteador ficam fora. Some os watts deles para ter a conta da mesa inteira.',
+      seloTopo: 'Por mês', seloMeio: 'R$ ' + f(r, 0), seloBase: 'de luz', brilho: (0.2 + 0.6 * Math.min(r / 150, 1)).toFixed(2) };
+  }
+  reimprime(patch) {
+    var self = this;
+    clearTimeout(this._to); cancelAnimationFrame(this._raf);
+    var prox = Object.assign({}, this.state, patch);
+    this.setState(Object.assign({ impresso: false, mostrado: 0 }, patch));
+    this._to = setTimeout(function () { self.setState({ impresso: true, t: Date.now() }); self.anima(prox); }, 60);
+  }
+  anima(prox) {
+    var self = this, alvo = this.conta(prox).alvo, t0 = performance.now();
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { this.setState({ mostrado: alvo }); return; }
+    var passo = function (t) {
+      var q = Math.min((t - t0) / 700, 1);
+      self.setState({ mostrado: alvo * (1 - Math.pow(1 - q, 3)) });
+      if (q < 1) self._raf = requestAnimationFrame(passo);
+    };
+    this._raf = requestAnimationFrame(passo);
+  }
+  barras(semente) {
+    var h = 7, out = [];
+    for (var i = 0; i < semente.length; i++) h = (h * 31 + semente.charCodeAt(i)) >>> 0;
+    for (var j = 0; j < 40; j++) { h = (h * 1103515245 + 12345) >>> 0; out.push({ w: 1 + ((h >>> 8) % 3), c: j % 2 ? 'rgba(0,0,0,0)' : '#111311' }); }
+    return out;
+  }
+  renderVals() {
+    var self = this, s = this.state, k = this.conta(), f = this.f;
+    var d = new Date(s.t), p2 = function (n) { return String(n).padStart(2, '0'); };
+    return {
+      grupos: this.GR.map(function (g, i) {
+        var cur = g.ops.find(function (o) { return o.id === s[g.k]; }) || g.ops[0];
+        return {
+          n: p2(i + 1), titulo: g.titulo, resumo: cur.curto, temDica: !!g.dica, dica: g.dica || '',
+          ops: g.ops.map(function (o) {
+            var on = o.id === s[g.k];
+            return { curto: o.curto, sub: o.sub, on: on, larg: (g.larg || 112) + 'px',
+              pick: function () { var q = {}; q[g.k] = o.id; self.reimprime(q); },
+              bg: on ? '#9dff3b' : '#0d1013', bd: on ? '#9dff3b' : 'rgba(255,255,255,.08)',
+              fg: on ? '#07110a' : '#eef2ee', fg2: on ? '#24461a' : '#9aa39c',
+              sh: on ? '0 10px 30px rgba(157,255,59,.28)' : 'none' };
+          })
+        };
+      }),
+      linhas: k.linhas.map(function (l, i) {
+        return { nome: l.nome, v: l.v, peso: l.forte ? '700' : '400',
+          borda: l.sep ? '1.5px dashed rgba(17,19,17,.4)' : '0 solid transparent',
+          pad: l.sep ? '10px' : '0px', mt: l.sep ? '10px' : '4px', atraso: (200 + i * 50) + 'ms' };
+      }),
+      impresso: s.impresso, numero: k.numero, cupom: k.cupom,
+      data: p2(d.getDate()) + '/' + p2(d.getMonth() + 1) + '/' + d.getFullYear() + ' · ' + p2(d.getHours()) + ':' + p2(d.getMinutes()),
+      rotulo: k.rotulo, pre: k.pre || '', mostrado: f(s.mostrado, k.dec || 0), unidade: k.unidade,
+      sub: k.sub, nota: k.nota,
+      seloTopo: k.seloTopo, seloMeio: k.seloMeio, seloBase: k.seloBase,
+      seloFundo: k.ok === false ? '#ffb020' : '#9dff3b',
+      ledCor: k.ok === false ? '#ffb020' : '#9dff3b', ledTexto: k.ok === false ? 'Revisar' : 'Pronta',
+      brilho: String(k.brilho == null ? 0.45 : k.brilho),
+      codigo: 'ELPHY-' + k.numero + '-' + k.cod,
+      barras: this.barras(String(k.cod) + k.numero),
+      mandarTexto: s.enviado ? 'Nota copiada' : 'Mandar a nota no WhatsApp',
+      mandar: function () { self.setState({ enviado: true }); clearTimeout(self._to2); self._to2 = setTimeout(function () { self.setState({ enviado: false }); }, 1800); }
+    };
+  }
+}
+</script>
+</body>
+</html>

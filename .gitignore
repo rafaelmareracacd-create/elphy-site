@@ -40,3 +40,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# cópias de segurança locais e capturas de comparação
+*.bak
+*.bak-*
+.claude/
+docs/design-1.0/_compara/

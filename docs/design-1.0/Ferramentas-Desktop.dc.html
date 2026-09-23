@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Elphy — todas as ferramentas</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&amp;family=Schibsted+Grotesk:wght@400;500;600;700;800&amp;family=Martian+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0;background:#050607}
+a{color:#eef2ee}a:hover{color:#9dff3b}
+button{cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid #9dff3b;outline-offset:3px}
+.el-rolo{scrollbar-width:none}.el-rolo::-webkit-scrollbar{display:none}
+.el-col>*{flex-shrink:0}
+@keyframes el-imprime{from{transform:translateY(-46px);clip-path:inset(0 0 100% 0)}to{transform:none;clip-path:inset(0 0 0 0)}}
+@keyframes el-linha{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:none}}
+@keyframes el-carimba{0%{opacity:0;transform:scale(1.6) rotate(-10deg)}62%{opacity:1;transform:scale(.93) rotate(15deg)}100%{opacity:1;transform:scale(1) rotate(12deg)}}
+@keyframes el-pulso{0%,100%{opacity:.4}50%{opacity:1}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div class="el-col" style="position: relative; width: 1440px; height: 1560px; overflow: hidden; display: flex; flex-direction: column; background: #050607; color: #eef2ee; font-family: 'Schibsted Grotesk', system-ui, sans-serif;">
+<header style="display: flex; align-items: center; justify-content: space-between; height: 80px; box-sizing: border-box; padding: 0 64px; border-bottom: 1px solid rgba(255,255,255,.07);">
+  <a href="Main.dc.html" style="font-weight: 800; font-size: 28px; letter-spacing: -.045em; text-decoration: none; color: #eef2ee;">elphy<span style="color: #9dff3b;">.</span></a>
+  <nav aria-label="Principal" style="display: flex; gap: 32px; font-size: 15px; font-weight: 600;"><a href="Ferramentas-Desktop.dc.html" style="color: #9dff3b; text-decoration: none;">Ferramentas</a><a href="Montador.dc.html" style="color: #c9d0ca; text-decoration: none;">Montador</a><a href="Dicas-Lista.dc.html" style="color: #c9d0ca; text-decoration: none;">Dicas</a><a href="Metodologia-Mobile.dc.html" style="color: #c9d0ca; text-decoration: none;">Metodologia</a></nav>
+  <label style="display: flex; align-items: center; gap: 10px; width: 320px; height: 44px; box-sizing: border-box; padding: 0 16px; border-radius: 22px; background: #0d1013; border: 1px solid rgba(255,255,255,.1);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9aa39c" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg><span style="position: absolute; width: 1px; height: 1px; overflow: hidden;">Buscar</span><input type="search" placeholder="fonte para RTX 5070…" style="flex: 1; border: 0; background: transparent; color: #eef2ee; font: inherit; font-size: 15px; outline: none;"></label>
+</header>
+<div style="padding: 64px 64px 0; display: flex; justify-content: space-between; align-items: flex-end;">
+  <div>
+    <p style="margin: 0; font-family: 'Martian Mono', monospace; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: #9dff3b;">Ferramentas</p>
+    <h1 style="margin: 14px 0 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 128px; line-height: .84; text-transform: uppercase;">Nove contas<span style="color: #9dff3b;">.</span><br>Nenhuma loja faz<span style="color: #9dff3b;">.</span></h1>
+  </div>
+  <p style="margin: 0 0 8px; width: 380px; font-size: 18px; line-height: 28px; color: #b9c1bb;">Cada ferramenta termina numa nota: as linhas, a soma e o resultado carimbado. A fórmula de todas está na metodologia.</p>
+</div>
+<div style="display: flex; gap: 8px; padding: 40px 64px 0;">
+  <button type="button" aria-pressed="true" style="height: 44px; padding: 0 20px; border-radius: 22px; border: 1px solid #9dff3b; background: #9dff3b; color: #07110a; font: inherit; font-size: 14px; font-weight: 700;">Todas</button><button type="button" aria-pressed="false" style="height: 44px; padding: 0 20px; border-radius: 22px; border: 1px solid rgba(255,255,255,.1); background: #0d1013; color: #eef2ee; font: inherit; font-size: 14px; font-weight: 700;">PC</button><button type="button" aria-pressed="false" style="height: 44px; padding: 0 20px; border-radius: 22px; border: 1px solid rgba(255,255,255,.1); background: #0d1013; color: #eef2ee; font: inherit; font-size: 14px; font-weight: 700;">Celular</button><button type="button" aria-pressed="false" style="height: 44px; padding: 0 20px; border-radius: 22px; border: 1px solid rgba(255,255,255,.1); background: #0d1013; color: #eef2ee; font: inherit; font-size: 14px; font-weight: 700;">Tela e armazenamento</button><button type="button" aria-pressed="false" style="height: 44px; padding: 0 20px; border-radius: 22px; border: 1px solid rgba(255,255,255,.1); background: #0d1013; color: #eef2ee; font: inherit; font-size: 14px; font-weight: 700;">Casa</button>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 24px 64px 0;">
+<a href="Fonte-Desktop.dc.html" style="position: relative; display: flex; flex-direction: column; box-sizing: border-box; height: 270px; padding: 26px; border-radius: 24px; background: #0a0d0f; border: 1px solid rgba(255,255,255,.07); text-decoration: none; overflow: hidden;">
+  <span style="font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #9aa39c;">Nº 01 · PC</span>
+  <span style="margin-top: 12px; font-size: 28px; line-height: 32px; font-weight: 800; letter-spacing: -.02em; color: #eef2ee;">Calculadora de fonte</span>
+  <span style="margin-top: auto; display: flex; flex-direction: column; gap: 4px; font-family: 'Martian Mono', monospace; font-size: 12px; line-height: 18px;">
+    <span style="color: #9aa39c;">A caixa diz · RTX 5070: 250 W</span>
+    <span style="color: #eef2ee;">A nota mostra · Fonte de 550 W</span>
+  </span>
+  <span style="position: absolute; right: 24px; top: 22px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 58px; line-height: .9; color: #9dff3b;">550 W</span>
+</a><a href="PowerBank-Mobile.dc.html" style="position: relative; display: flex; flex-direction: column; box-sizing: border-box; height: 270px; padding: 26px; border-radius: 24px; background: #0a0d0f; border: 1px solid rgba(255,255,255,.07); text-decoration: none; overflow: hidden;">
+  <span style="font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #9aa39c;">Nº 02 · Celular</span>
+  <span style="margin-top: 12px; font-size: 28px; line-height: 32px; font-weight: 800; letter-spacing: -.02em; color: #eef2ee;">Power bank de verdade</span>
+  <span style="margin-top: auto; display: flex; flex-direction: column; gap: 4px; font-family: 'Martian Mono', monospace; font-size: 12px; line-height: 18px;">
+    <span style="color: #9aa39c;">A caixa diz · 20.000 mAh</span>
+    <span style="color: #eef2ee;">A nota mostra · 2,5 cargas, não 4</span>
+  </span>
+  <span style="position: absolute; right: 24px; top: 22px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 58px; line-height: .9; color: #9dff3b;">2,5</span>
+</a><a href="SSD-Mobile.dc.html" style="position: relative; display: flex; flex-direction: column; box-sizing: border-box; height: 270px; padding: 26px; border-radius: 24px; background: #0a0d0f; border: 1px solid rgba(255,255,255,.07); text-decoration: none; overflow: hidden;">
+  <span style="font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #9aa39c;">Nº 03 · Armazenamento</span>
+  <span style="margin-top: 12px; font-size: 28px; line-height: 32px; font-weight: 800; letter-spacing: -.02em; color: #eef2ee;">Espaço real do SSD</span>
+  <span style="margin-top: auto; display: flex; flex-direction: column; gap: 4px; font-family: 'Martian Mono', monospace; font-size: 12px; line-height: 18px;">
+    <span style="color: #9aa39c;">A caixa diz · 1 TB</span>
+    <span style="color: #eef2ee;">A nota mostra · 931 GB no Windows</span>
+  </span>
+  <span style="position: absolute; right: 24px; top: 22px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 58px; line-height: .9; color: #9dff3b;">931</span>
+</a><a href="Luz-Mobile.dc.html" style="position: relative; display: flex; flex-direction: column; box-sizing: border-box; height: 270px; padding: 26px; border-radius: 24px; background: #0a0d0f; border: 1px solid rgba(255,255,255,.07); text-decoration: none; overflow: hidden;">
+  <span style="font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #9aa39c;">Nº 04 · Casa</span>
+  <span style="margin-top: 12px; font-size: 28px; line-height: 32px; font-weight: 800; letter-spacing: -.02em; color: #eef2ee;">Conta de luz do PC</span>
+  <span style="margin-top: auto; display: flex; flex-direction: column; gap: 4px; font-family: 'Martian Mono', monospace; font-size: 12px; line-height: 18px;">
+    <span style="color: #9aa39c;">A caixa diz · 450 W, 4 h por dia</span>
+    <span style="color: #eef2ee;">A nota mostra · 54 kWh por mês</span>
+  </span>
+  <span style="position: absolute; right: 24px; top: 22px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 58px; line-height: .9; color: #9dff3b;">54 kWh</span>
+</a><a href="Monitor-Mobile.dc.html" style="position: relative; display: flex; flex-direction: column; box-sizing: border-box; height: 270px; padding: 26px; border-radius: 24px; background: #0a0d0f; border: 1px solid rgba(255,255,255,.07); text-decoration: none; overflow: hidden;">
+  <span style="font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #9aa39c;">Nº 05 · Tela</span>
+  <span style="margin-top: 12px; font-size: 28px; line-height: 32px; font-weight: 800; letter-spacing: -.02em; color: #eef2ee;">Nitidez do monitor</span>
+  <span style="margin-top: auto; display: flex; flex-direction: column; gap: 4px; font-family: 'Martian Mono', monospace; font-size: 12px; line-height: 18px;">
+    <span style="color: #9aa39c;">A caixa diz · 27" QHD</span>
+    <span style="color: #eef2ee;">A nota mostra · 109 PPI, pixel some a 80 cm</span>
+  </span>
+  <span style="position: absolute; right: 24px; top: 22px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 58px; line-height: .9; color: #9dff3b;">109</span>
+</a><a href="Gabinete-Mobile.dc.html" style="position: relative; display: flex; flex-direction: column; box-sizing: border-box; height: 270px; padding: 26px; border-radius: 24px; background: #0a0d0f; border: 1px solid rgba(255,255,255,.07); text-decoration: none; overflow: hidden;">
+  <span style="font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #9aa39c;">Nº 06 · PC</span>
+  <span style="margin-top: 12px; font-size: 28px; line-height: 32px; font-weight: 800; letter-spacing: -.02em; color: #eef2ee;">Cabe no gabinete</span>
+  <span style="margin-top: auto; display: flex; flex-direction: column; gap: 4px; font-family: 'Martian Mono', monospace; font-size: 12px; line-height: 18px;">
+    <span style="color: #9aa39c;">A caixa diz · Placa de 300 mm</span>
+    <span style="color: #eef2ee;">A nota mostra · Sobram 20 mm</span>
+  </span>
+  <span style="position: absolute; right: 24px; top: 22px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 58px; line-height: .9; color: #9dff3b;">+20</span>
+</a><a href="Memoria-Mobile.dc.html" style="position: relative; display: flex; flex-direction: column; box-sizing: border-box; height: 270px; padding: 26px; border-radius: 24px; background: #0a0d0f; border: 1px solid rgba(255,255,255,.07); text-decoration: none; overflow: hidden;">
+  <span style="font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #9aa39c;">Nº 07 · PC</span>
+  <span style="margin-top: 12px; font-size: 28px; line-height: 32px; font-weight: 800; letter-spacing: -.02em; color: #eef2ee;">Memória certa</span>
+  <span style="margin-top: auto; display: flex; flex-direction: column; gap: 4px; font-family: 'Martian Mono', monospace; font-size: 12px; line-height: 18px;">
+    <span style="color: #9aa39c;">A caixa diz · Ryzen 7000</span>
+    <span style="color: #eef2ee;">A nota mostra · DDR5 até 5.200 MT/s</span>
+  </span>
+  <span style="position: absolute; right: 24px; top: 22px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 58px; line-height: .9; color: #9dff3b;">DDR5</span>
+</a><a href="Montador.dc.html" style="position: relative; display: flex; flex-direction: column; box-sizing: border-box; height: 270px; padding: 26px; border-radius: 24px; background: #0a0d0f; border: 1px solid rgba(255,255,255,.07); text-decoration: none; overflow: hidden;">
+  <span style="font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #9aa39c;">Nº 08 · PC</span>
+  <span style="margin-top: 12px; font-size: 28px; line-height: 32px; font-weight: 800; letter-spacing: -.02em; color: #eef2ee;">Montador de PC</span>
+  <span style="margin-top: auto; display: flex; flex-direction: column; gap: 4px; font-family: 'Martian Mono', monospace; font-size: 12px; line-height: 18px;">
+    <span style="color: #9aa39c;">A caixa diz · 6 peças</span>
+    <span style="color: #eef2ee;">A nota mostra · 4 conferências na mesma nota</span>
+  </span>
+  <span style="position: absolute; right: 24px; top: 22px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 58px; line-height: .9; color: #9dff3b;">4/4</span>
+</a><a href="Comparar-Mobile.dc.html" style="position: relative; display: flex; flex-direction: column; box-sizing: border-box; height: 270px; padding: 26px; border-radius: 24px; background: #0a0d0f; border: 1px solid rgba(255,255,255,.07); text-decoration: none; overflow: hidden;">
+  <span style="font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #9aa39c;">Nº 09 · Celular</span>
+  <span style="margin-top: 12px; font-size: 28px; line-height: 32px; font-weight: 800; letter-spacing: -.02em; color: #eef2ee;">Comparar celulares</span>
+  <span style="margin-top: auto; display: flex; flex-direction: column; gap: 4px; font-family: 'Martian Mono', monospace; font-size: 12px; line-height: 18px;">
+    <span style="color: #9aa39c;">A caixa diz · 2 fichas técnicas</span>
+    <span style="color: #eef2ee;">A nota mostra · Linha por linha, só número</span>
+  </span>
+  <span style="position: absolute; right: 24px; top: 22px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 58px; line-height: .9; color: #9dff3b;">A×B</span>
+</a>
+</div>
+<div style="flex-grow: 1; min-height: 60px;"></div>
+<footer style="padding: 32px 64px; border-top: 1px solid rgba(255,255,255,.07); display: flex; justify-content: space-between; align-items: center; font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #9aa39c;">
+  <span>Dica sem caô<span style="color: #9dff3b;">.</span> · © 2026 Elphy</span>
+  <div style="display: flex; gap: 28px;"><a href="Metodologia-Mobile.dc.html" style="color: #9aa39c;">Metodologia</a><a href="Correcoes-Mobile.dc.html" style="color: #9aa39c;">Correções</a><a href="Legal-Mobile.dc.html" style="color: #9aa39c;">Privacidade e afiliado</a><a href="Sobre-Mobile.dc.html" style="color: #9aa39c;">Sobre</a></div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1560}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

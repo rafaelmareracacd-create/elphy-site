@@ -1,0 +1,482 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "A-Manual-Home.dc.html": {
+      "h": 1200,
+      "page": "exploracao",
+      "title": "A · Manual — home",
+      "w": 390,
+      "x": 0,
+      "y": 0
+    },
+    "A-Manual-Sistema.dc.html": {
+      "h": 760,
+      "page": "exploracao",
+      "title": "A · Manual — sistema",
+      "w": 390,
+      "x": 0,
+      "y": 2284
+    },
+    "A-Manual.dc.html": {
+      "h": 844,
+      "page": "exploracao",
+      "title": "A · Manual — ferramenta",
+      "w": 390,
+      "x": 0,
+      "y": 1320
+    },
+    "B-Preto-Home.dc.html": {
+      "h": 1200,
+      "page": "exploracao",
+      "title": "B · Preto — home",
+      "w": 390,
+      "x": 470,
+      "y": 0
+    },
+    "B-Preto-Sistema.dc.html": {
+      "h": 760,
+      "page": "exploracao",
+      "title": "B · Preto — sistema",
+      "w": 390,
+      "x": 470,
+      "y": 2284
+    },
+    "B-Preto.dc.html": {
+      "h": 844,
+      "page": "exploracao",
+      "title": "B · Preto — ferramenta",
+      "w": 390,
+      "x": 470,
+      "y": 1320
+    },
+    "Busca-Mobile.dc.html": {
+      "h": 1880,
+      "page": "resto",
+      "title": "Resultado da busca",
+      "w": 390,
+      "x": 470,
+      "y": 4180
+    },
+    "C-Hardware-Home.dc.html": {
+      "h": 1200,
+      "page": "exploracao",
+      "title": "C · Hardware — home",
+      "w": 390,
+      "x": 940,
+      "y": 0
+    },
+    "C-Hardware-Sistema.dc.html": {
+      "h": 760,
+      "page": "exploracao",
+      "title": "C · Hardware — sistema",
+      "w": 390,
+      "x": 940,
+      "y": 2284
+    },
+    "C-Hardware.dc.html": {
+      "h": 844,
+      "page": "exploracao",
+      "title": "C · Hardware — ferramenta",
+      "w": 390,
+      "x": 940,
+      "y": 1320
+    },
+    "Comparar-Mobile.dc.html": {
+      "h": 2060,
+      "is_interactive": true,
+      "page": "v1",
+      "title": "Comparar celulares — fica para depois do lançamento",
+      "w": 390,
+      "x": 4380,
+      "y": 2480
+    },
+    "Correcoes-Mobile.dc.html": {
+      "h": 2160,
+      "page": "resto",
+      "title": "Correções (enviar funciona)",
+      "w": 390,
+      "x": 1880,
+      "y": 4180,
+      "is_interactive": true
+    },
+    "D-Medicao-Home.dc.html": {
+      "h": 1200,
+      "page": "exploracao",
+      "title": "D · Medição — home",
+      "w": 390,
+      "x": 1410,
+      "y": 0
+    },
+    "D-Medicao-Sistema.dc.html": {
+      "h": 760,
+      "page": "exploracao",
+      "title": "D · Medição — sistema",
+      "w": 390,
+      "x": 1410,
+      "y": 2284
+    },
+    "D-Medicao.dc.html": {
+      "h": 844,
+      "page": "exploracao",
+      "title": "D · Medição — ferramenta",
+      "w": 390,
+      "x": 1410,
+      "y": 1320
+    },
+    "Dica-Mobile.dc.html": {
+      "h": 2640,
+      "page": "v1",
+      "title": "Página de dica — celular",
+      "w": 390,
+      "x": 2500,
+      "y": 2480
+    },
+    "Dicas-Lista.dc.html": {
+      "h": 1760,
+      "is_interactive": true,
+      "page": "resto",
+      "title": "Lista de dicas (filtro funciona)",
+      "w": 390,
+      "x": 0,
+      "y": 4180
+    },
+    "Estados-Mobile.dc.html": {
+      "h": 2720,
+      "page": "resto",
+      "title": "404, carregando, busca vazia e formulário que falhou",
+      "w": 390,
+      "x": 3760,
+      "y": 4180
+    },
+    "Ferramenta-Mobile.dc.html": {
+      "h": 1840,
+      "is_interactive": true,
+      "page": "v1",
+      "title": "Ferramenta — celular (interativa)",
+      "w": 390,
+      "x": 1560,
+      "y": 2480
+    },
+    "Ferramentas-Desktop.dc.html": {
+      "h": 1560,
+      "page": "resto",
+      "title": "Todas as ferramentas — desktop",
+      "w": 1440,
+      "x": 1520,
+      "y": 2500
+    },
+    "Fonte-Desktop.dc.html": {
+      "h": 1560,
+      "is_interactive": true,
+      "page": "resto",
+      "title": "Calculadora de fonte — desktop (interativa)",
+      "w": 1440,
+      "x": 0,
+      "y": 2500
+    },
+    "Gabinete-Mobile.dc.html": {
+      "h": 2160,
+      "is_interactive": true,
+      "page": "resto",
+      "title": "Cabe no gabinete — celular (interativa)",
+      "w": 390,
+      "x": 940,
+      "y": 0
+    },
+    "Home-Mobile.dc.html": {
+      "h": 4600,
+      "page": "v1",
+      "title": "Home — celular",
+      "w": 390,
+      "x": 2030,
+      "y": 2480
+    },
+    "Legal-Mobile.dc.html": {
+      "h": 1700,
+      "is_interactive": true,
+      "page": "resto",
+      "title": "Privacidade, termos e afiliado (abas funcionam)",
+      "w": 390,
+      "x": 2820,
+      "y": 4180
+    },
+    "Luz-Mobile.dc.html": {
+      "h": 1960,
+      "is_interactive": true,
+      "page": "resto",
+      "title": "Conta de luz — celular (interativa)",
+      "w": 390,
+      "x": 0,
+      "y": 0
+    },
+    "Main.dc.html": {
+      "h": 5204,
+      "is_interactive": true,
+      "page": "v1",
+      "title": "Home — desktop (interativa)",
+      "w": 1440,
+      "x": 0,
+      "y": 0
+    },
+    "Memoria-Mobile.dc.html": {
+      "h": 1700,
+      "is_interactive": true,
+      "page": "resto",
+      "title": "Memória certa — celular (interativa)",
+      "w": 390,
+      "x": 1410,
+      "y": 0
+    },
+    "Menu-Mobile.dc.html": {
+      "h": 1180,
+      "page": "resto",
+      "title": "Menu aberto",
+      "w": 390,
+      "x": 3290,
+      "y": 4180
+    },
+    "Metodologia-Mobile.dc.html": {
+      "h": 2640,
+      "page": "resto",
+      "title": "Metodologia",
+      "w": 390,
+      "x": 1410,
+      "y": 4180
+    },
+    "Monitor-Mobile.dc.html": {
+      "h": 1820,
+      "is_interactive": true,
+      "page": "resto",
+      "title": "Nitidez do monitor — celular (interativa)",
+      "w": 390,
+      "x": 470,
+      "y": 0
+    },
+    "Montador-Mobile.dc.html": {
+      "h": 2380,
+      "is_interactive": true,
+      "page": "resto",
+      "title": "Montador de PC — celular (interativa)",
+      "w": 390,
+      "x": 1880,
+      "y": 0
+    },
+    "Montador.dc.html": {
+      "h": 1720,
+      "is_interactive": true,
+      "page": "v1",
+      "title": "Montador de PC — desktop (interativa)",
+      "w": 1440,
+      "x": 0,
+      "y": 5324
+    },
+    "Montagem-Link-Mobile.dc.html": {
+      "h": 1760,
+      "page": "resto",
+      "title": "Montagem compartilhada por link",
+      "w": 390,
+      "x": 4230,
+      "y": 4180
+    },
+    "Nota-OG.dc.html": {
+      "h": 630,
+      "page": "resto",
+      "title": "Imagem da nota no WhatsApp (1200×630)",
+      "w": 1200,
+      "x": 3040,
+      "y": 2500
+    },
+    "Peca-Mobile.dc.html": {
+      "h": 1900,
+      "page": "resto",
+      "title": "Ficha da peça",
+      "w": 390,
+      "x": 940,
+      "y": 4180
+    },
+    "PowerBank-Mobile.dc.html": {
+      "h": 1780,
+      "is_interactive": true,
+      "page": "v1",
+      "title": "Power bank — celular (interativa)",
+      "w": 390,
+      "x": 3440,
+      "y": 2480
+    },
+    "SSD-Mobile.dc.html": {
+      "h": 1640,
+      "is_interactive": true,
+      "page": "v1",
+      "title": "SSD — celular (interativa)",
+      "w": 390,
+      "x": 3910,
+      "y": 2480
+    },
+    "Sistema.dc.html": {
+      "h": 2360,
+      "page": "v1",
+      "title": "Sistema visual 1.0",
+      "w": 1440,
+      "x": 1560,
+      "y": 0
+    },
+    "Sobre-Mobile.dc.html": {
+      "h": 1640,
+      "page": "resto",
+      "title": "Sobre",
+      "w": 390,
+      "x": 2350,
+      "y": 4180
+    },
+    "Nota-Estados-Mobile.dc.html": {
+      "x": 4700,
+      "y": 4180,
+      "w": 390,
+      "h": 2640,
+      "title": "Estados da nota: resultado ruim, sem ficha, número inválido",
+      "page": "resto"
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-09-22T19:40:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "page": "v1",
+    "view": "canvas"
+  },
+  "notes": {
+    "como": {
+      "fill": "gray",
+      "page": "exploracao",
+      "text": "Cada coluna é um sistema inteiro: home em cima, ferramenta no meio, folha do sistema embaixo (cores com hex, escala de tipo, botões, campos, cartão).\n\nO conteúdo é o MESMO nas quatro. Só muda a linguagem visual — então o que você comparar é desenho, não texto.\n\nTodas as referências saíram do inspora.design, aba Web, que é a fonte do Nível 1 do método do Jack Roberts.",
+      "w": 420,
+      "x": 1900,
+      "y": 0
+    },
+    "leia-resto": {
+      "fill": "green",
+      "page": "resto",
+      "text": "Linha de cima: as 4 ferramentas que faltavam e o montador no celular. Toca nos botões em Play: a nota reimprime.\n\nMeio: a fonte no computador, a página com todas as ferramentas e a imagem que aparece quando alguém manda a nota no WhatsApp.\n\nEmbaixo: dicas, busca, ficha da peça, metodologia, correções, sobre, legal, menu, estados de erro e a página do link de montagem.\n\nTudo entre [colchetes] é dado que falta preencher. A memória usa a especificação oficial de cada geração de processador, ainda a conferir.",
+      "w": 420,
+      "x": 2350,
+      "y": 0
+    },
+    "leia-v1": {
+      "fill": "green",
+      "page": "v1",
+      "text": "Como olhar:\n\n1. Aperte Play na home desktop e na ferramenta do celular — as duas funcionam. Toque numa placa: a nota reimprime, o número roda, o selo carimba e o brilho cresce com os watts.\n\n2. Na home desktop, troque a peça na bancada e suba até o topo: o número na tela do celular do Elphy muda junto.\n\n3. Todos os watts são do catálogo semente, ainda não conferidos na página do fabricante.",
+      "w": 420,
+      "x": 2970,
+      "y": 2480
+    },
+    "montador": {
+      "page": "v1",
+      "text": "Montador de PC (estilo Terabyte): 6 peças, 4 conferências — soquete, memória, espaço da placa no gabinete (mín. 10 mm de folga) e fonte com 30% de folga.\n\nTesta: troca o processador para Ryzen 5 5600 — a placa-mãe e a memória ficam âmbar e o selo vira 2/4.\n\nComparar celulares (estilo TudoCelular): marcas e números de EXEMPLO. Cada linha usa as ferramentas do próprio Elphy (cargas de power bank, espaço real).",
+      "w": 420,
+      "x": 1560,
+      "y": 5324
+    },
+    "onda1": {
+      "page": "v1",
+      "text": "Onda 1 — ferramentas 02 e 03.\n\nPower bank: mAh × 3,7 V = Wh da célula; 65% chega no celular (faixa 60–70%); divide pelo Wh do celular (mAh × 3,85 V). 20.000 mAh num celular de 5.000 = 2,5 cargas, não 4.\n\nSSD: bytes da caixa ÷ 1024³. 1 TB = 931 GB no Windows.\n\nAs duas são só conta: nenhum catálogo para curar.",
+      "w": 420,
+      "x": 3440,
+      "y": 2080
+    },
+    "refs": {
+      "fill": "blue",
+      "page": "exploracao",
+      "text": "De onde veio cada uma:\n\nA — cartões de diagrama técnico em creme e laranja.\nB — a página preta minimalista, tipo lista, sem cor de acento.\nC — a página de produto do Game Boy (\"Small screen. Big ideas.\"), fundo claro com a peça grande.\nD — o painel escuro de dados, colunas e barras.",
+      "w": 420,
+      "x": 1900,
+      "y": 560
+    },
+    "titulo": {
+      "kind": "title1",
+      "maxW": 1800,
+      "page": "exploracao",
+      "text": "Elphy — quatro sistemas, o mesmo conteúdo",
+      "w": 240,
+      "x": 0,
+      "y": -320
+    },
+    "titulo-resto": {
+      "kind": "title1",
+      "maxW": 4600,
+      "page": "resto",
+      "text": "Elphy 1.0 — o resto do site",
+      "w": 240,
+      "x": 0,
+      "y": -320
+    },
+    "titulo-v1": {
+      "kind": "title1",
+      "maxW": 3000,
+      "page": "v1",
+      "text": "Elphy 1.0 — a conta à vista",
+      "w": 240,
+      "x": 0,
+      "y": -320
+    }
+  },
+  "order": [
+    "A-Manual-Home.dc.html",
+    "B-Preto-Home.dc.html",
+    "C-Hardware-Home.dc.html",
+    "D-Medicao-Home.dc.html",
+    "A-Manual.dc.html",
+    "B-Preto.dc.html",
+    "C-Hardware.dc.html",
+    "D-Medicao.dc.html",
+    "A-Manual-Sistema.dc.html",
+    "B-Preto-Sistema.dc.html",
+    "C-Hardware-Sistema.dc.html",
+    "D-Medicao-Sistema.dc.html",
+    "Main.dc.html",
+    "Sistema.dc.html",
+    "Ferramenta-Mobile.dc.html",
+    "Home-Mobile.dc.html",
+    "Dica-Mobile.dc.html",
+    "PowerBank-Mobile.dc.html",
+    "SSD-Mobile.dc.html",
+    "Montador.dc.html",
+    "Comparar-Mobile.dc.html",
+    "Luz-Mobile.dc.html",
+    "Monitor-Mobile.dc.html",
+    "Gabinete-Mobile.dc.html",
+    "Memoria-Mobile.dc.html",
+    "Montador-Mobile.dc.html",
+    "Fonte-Desktop.dc.html",
+    "Ferramentas-Desktop.dc.html",
+    "Nota-OG.dc.html",
+    "Dicas-Lista.dc.html",
+    "Busca-Mobile.dc.html",
+    "Peca-Mobile.dc.html",
+    "Metodologia-Mobile.dc.html",
+    "Correcoes-Mobile.dc.html",
+    "Sobre-Mobile.dc.html",
+    "Legal-Mobile.dc.html",
+    "Menu-Mobile.dc.html",
+    "Estados-Mobile.dc.html",
+    "Montagem-Link-Mobile.dc.html",
+    "Nota-Estados-Mobile.dc.html"
+  ],
+  "pages": [
+    {
+      "id": "v1",
+      "name": "Elphy 1.0"
+    },
+    {
+      "id": "resto",
+      "name": "Elphy 1.0 — o resto do site"
+    },
+    {
+      "id": "exploracao",
+      "name": "Exploração — 4 direções"
+    }
+  ],
+  "title": "Elphy — escolher o desenho"
+}

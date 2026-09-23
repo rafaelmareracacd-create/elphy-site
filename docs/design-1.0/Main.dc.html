@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Elphy — home desktop</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&amp;family=Schibsted+Grotesk:wght@400;500;600;700;800&amp;family=Martian+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0;background:#050607}
+a{color:#eef2ee}a:hover{color:#9dff3b}
+button{cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid #9dff3b;outline-offset:3px}
+.el-chip:hover{border-color:rgba(157,255,59,.6)!important}
+.el-card:hover .el-card-t{color:#9dff3b}
+@keyframes el-sobe{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes el-imprime{from{transform:translateY(-46px);clip-path:inset(0 0 100% 0)}to{transform:none;clip-path:inset(0 0 0 0)}}
+@keyframes el-linha{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:none}}
+@keyframes el-carimba{0%{opacity:0;transform:scale(1.6) rotate(-10deg)}62%{opacity:1;transform:scale(.93) rotate(15deg)}100%{opacity:1;transform:scale(1) rotate(12deg)}}
+@keyframes el-ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes el-pulso{0%,100%{opacity:.4}50%{opacity:1}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div id="topo" style="position: relative; width: 1440px; height: 5204px; overflow: hidden; background: #050607; color: #eef2ee; font-family: 'Schibsted Grotesk', system-ui, sans-serif;">
+
+<!-- ============ HERO ============ -->
+<section style="position: relative; width: 1440px; height: 960px; overflow: hidden;">
+  <div aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 1440px; height: 960px; background: radial-gradient(ellipse 44% 58% at 82% 66%, rgba(86,190,52,.22), rgba(86,190,52,0) 70%), radial-gradient(ellipse 34% 40% at 6% 18%, rgba(157,255,59,.05), rgba(157,255,59,0) 70%);"></div>
+
+  <img src="/_blob/082ff22cb80a3d9a1f8d403620ae7bb2" alt="Elphy, o elefante verde de moletom preto, faz joinha e mostra a nota da fonte no celular" style="position: absolute; left: 575px; top: -390px; width: 900px; height: 1350px; -webkit-mask-image: radial-gradient(ellipse 62% 48% at 58% 70%, #000 70%, transparent 100%); mask-image: radial-gradient(ellipse 62% 48% at 58% 70%, #000 70%, transparent 100%);">
+
+  <!-- a tela do celular do Elphy: mapeada nos quatro cantos da foto -->
+  <div aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 250px; height: 606px; transform-origin: 0 0; transform: matrix3d(0.26184996, 0.050411992, 0, -0.00012577234, -0.042147467, 0.46132214, 0, 6.6610112e-05, 0, 0, 1, 0, 1281.5758, 434.77121, 0, 1);">
+    <div style="position: absolute; left: 9px; top: 9px; right: 9px; bottom: 9px; border-radius: 30px; overflow: hidden; background: linear-gradient(180deg, #0c130d 0%, #050607 72%); box-shadow: inset 0 0 0 1px rgba(255,255,255,.06);">
+      <div style="position: absolute; left: 50%; top: 12px; width: 14px; height: 14px; margin-left: -7px; border-radius: 50%; background: #000; box-shadow: 0 0 0 2px #161b1e;"></div>
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 20px 0; font-family: 'Martian Mono', monospace; font-size: 13px; color: #eef2ee;">
+        <span>19:40</span>
+        <span style="display: flex; align-items: flex-end; gap: 3px;"><i style="display: block; width: 4px; height: 6px; border-radius: 1px; background: #eef2ee;"></i><i style="display: block; width: 4px; height: 9px; border-radius: 1px; background: #eef2ee;"></i><i style="display: block; width: 4px; height: 12px; border-radius: 1px; background: #eef2ee;"></i><i style="display: block; width: 22px; height: 11px; margin-left: 6px; box-sizing: border-box; border: 1.5px solid #eef2ee; border-radius: 3px;"></i></span>
+      </div>
+      <div style="padding: 34px 20px 0;">
+        <div style="font-weight: 800; font-size: 24px; letter-spacing: -.04em; color: #eef2ee;">elphy<span style="color: #9dff3b;">.</span></div>
+        <div style="margin-top: 70px; font-family: 'Martian Mono', monospace; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: #9dff3b;">Sua fonte</div>
+        <div style="display: flex; align-items: baseline; gap: 4px; margin-top: 6px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; line-height: .82; color: #9dff3b;"><span style="font-size: 112px;">{{ rec }}</span><span style="font-size: 34px;">W</span></div>
+        <div style="display: flex; height: 10px; margin-top: 18px; border-radius: 5px; overflow: hidden; background: #13251b;"><i style="display: block; width: {{ pctConsumo }}; background: #9dff3b;"></i><i style="display: block; width: {{ pctFolga }}; background: #ffb020;"></i></div>
+        <div style="margin-top: 22px; font-family: 'Martian Mono', monospace; font-size: 13px; color: #c9d0ca;">
+          <div style="display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid #1a1f23;"><span>{{ gpuCurto }}</span><span>{{ tgp }} W</span></div>
+          <div style="display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid #1a1f23;"><span>{{ cpuCurto }}</span><span>{{ ppt }} W</span></div>
+          <div style="display: flex; justify-content: space-between; padding: 9px 0;"><span>Sistema</span><span>60 W</span></div>
+        </div>
+      </div>
+      <div style="position: absolute; left: 20px; right: 20px; bottom: 24px; height: 54px; border-radius: 27px; background: #9dff3b; color: #07110a; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 17px;">Mandar a nota</div>
+      <div style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; pointer-events: none; background: linear-gradient(118deg, rgba(255,255,255,.13) 0%, rgba(255,255,255,.04) 32%, rgba(255,255,255,0) 33%);"></div>
+    </div>
+  </div>
+
+  <div aria-hidden="true" style="position: absolute; left: 0; bottom: 0; width: 1440px; height: 200px; background: linear-gradient(to top, #050607 8%, rgba(5,6,7,0));"></div>
+  <svg aria-hidden="true" width="1440" height="960" style="position: absolute; left: 0; top: 0; opacity: .07; mix-blend-mode: overlay; pointer-events: none;"><filter id="grao-hero"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><rect width="1440" height="960" filter="url(#grao-hero)"></rect></svg>
+
+  <header style="position: absolute; left: 0; top: 0; width: 1440px; height: 88px; box-sizing: border-box; padding: 0 96px; display: flex; align-items: center; justify-content: space-between;">
+    <a href="#topo" style="font-weight: 800; font-size: 27px; letter-spacing: -.045em; text-decoration: none; color: #eef2ee;">elphy<span style="color: #9dff3b;">.</span></a>
+    <nav style="display: flex; align-items: center; gap: 38px; font-size: 15px; font-weight: 500;">
+      <a href="#bancada" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: #eef2ee;"><i style="display: block; width: 7px; height: 7px; border-radius: 50%; background: #9dff3b; box-shadow: 0 0 10px #9dff3b; animation: el-pulso 1.8s ease-in-out infinite;"></i>Montar PC</a>
+      <a href="#dicas" style="text-decoration: none; color: #c9d0ca;">Dicas</a>
+      <a href="#selo" style="text-decoration: none; color: #c9d0ca;">Como a gente mede</a>
+    </nav>
+    <a href="#bancada" style="display: inline-flex; align-items: center; height: 44px; padding: 0 20px; border-radius: 22px; border: 1px solid rgba(255,255,255,.18); text-decoration: none; font-size: 15px; font-weight: 600; color: #eef2ee;">Fazer a conta</a>
+  </header>
+
+  <div style="position: absolute; left: 96px; top: 190px; width: 640px; display: flex; flex-direction: column;">
+    <p style="margin: 0; font-family: 'Martian Mono', monospace; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: #9dff3b; animation: el-sobe .8s cubic-bezier(.2,.7,.2,1) both;">Montar PC · Ferramenta nº 01</p>
+    <h1 style="margin: 22px 0 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 150px; line-height: .86; letter-spacing: -.005em; text-transform: uppercase; color: #eef2ee; animation: el-sobe .9s cubic-bezier(.2,.7,.2,1) both; animation-delay: 80ms;">A conta<br>que a loja<br>não faz<span style="color: #9dff3b;">.</span></h1>
+    <p style="margin: 30px 0 0; max-width: 470px; font-size: 19px; line-height: 30px; color: #b9c1bb; animation: el-sobe .9s cubic-bezier(.2,.7,.2,1) both; animation-delay: 180ms;">Escolhe a placa de vídeo e o processador. O Elphy soma cada watt — e te entrega a nota com a conta inteira à vista.</p>
+    <div style="display: flex; align-items: center; gap: 26px; margin-top: 34px; animation: el-sobe .9s cubic-bezier(.2,.7,.2,1) both; animation-delay: 260ms;">
+      <a href="#bancada" style="display: inline-flex; align-items: center; gap: 12px; height: 60px; padding: 0 30px; border-radius: 30px; background: #9dff3b; color: #07110a; text-decoration: none; font-weight: 700; font-size: 17px; box-shadow: 0 14px 40px rgba(157,255,59,.25);">Fazer a conta<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#07110a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      <a href="#conta" style="font-size: 16px; font-weight: 600; color: #eef2ee; text-underline-offset: 6px;">Como a conta é feita</a>
+    </div>
+    <div style="display: flex; gap: 22px; margin-top: 40px; font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #9aa39c; animation: el-sobe .9s cubic-bezier(.2,.7,.2,1) both; animation-delay: 340ms;">
+      <span style="display: inline-flex; align-items: center; gap: 8px;"><i style="display: block; width: 5px; height: 5px; background: #9dff3b;"></i>Sem cadastro</span>
+      <span style="display: inline-flex; align-items: center; gap: 8px;"><i style="display: block; width: 5px; height: 5px; background: #9dff3b;"></i>Duas escolhas</span>
+      <span style="display: inline-flex; align-items: center; gap: 8px;"><i style="display: block; width: 5px; height: 5px; background: #9dff3b;"></i>A conta inteira</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LETREIRO ============ -->
+<div aria-label="Consumo máximo de cada placa de vídeo" style="height: 64px; box-sizing: border-box; border-top: 1px solid rgba(255,255,255,.08); border-bottom: 1px solid rgba(255,255,255,.08); overflow: hidden; display: flex; align-items: center;">
+  <div style="display: flex; flex-shrink: 0; white-space: nowrap; animation: el-ticker 44s linear infinite;">
+    <sc-for list="{{ letreiro }}" as="t" hint-placeholder-count="18">
+      <span style="display: inline-flex; align-items: center; gap: 12px; padding: 0 0 0 28px; font-family: 'Martian Mono', monospace; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: #9aa39c;">{{ t.curto }}<b style="font-weight: 500; color: #9dff3b;">{{ t.w }} W</b><i style="font-style: normal; color: #3a423c; margin-left: 16px;">/</i></span>
+    </sc-for>
+  </div>
+</div>
+
+<!-- ============ BANCADA (interativa) ============ -->
+<section id="bancada" style="position: relative; height: 1000px; box-sizing: border-box; padding: 110px 96px 0; display: flex; gap: 56px;">
+  <div style="width: 608px; flex-shrink: 0; display: flex; flex-direction: column;">
+    <p style="margin: 0; font-family: 'Martian Mono', monospace; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: #9dff3b;">Nº 01 — A bancada</p>
+    <h2 style="margin: 18px 0 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 112px; line-height: .88; text-transform: uppercase; color: #eef2ee;">Fazer a conta<span style="color: #9dff3b;">.</span></h2>
+    <p style="margin: 20px 0 0; max-width: 520px; font-size: 17px; line-height: 27px; color: #b9c1bb;">Toca na placa e no processador. A nota sai na hora — cada linha é uma peça, e a soma fica embaixo, onde a loja nunca mostra.</p>
+
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 44px;">
+      <span style="font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #9aa39c;">01 — Placa de vídeo</span>
+      <span style="font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .06em; color: #9dff3b;">{{ gpuCurto }} · {{ tgp }} W</span>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; margin-top: 14px;">
+      <sc-for list="{{ gpuChips }}" as="g" hint-placeholder-count="10">
+        <button type="button" class="el-chip" onClick="{{ g.pick }}" aria-pressed="{{ g.on }}" style="height: 64px; box-sizing: border-box; padding: 10px 12px; border-radius: 14px; border: 1px solid {{ g.bd }}; background: {{ g.bg }}; box-shadow: {{ g.sh }}; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; text-align: left; transition: background .18s ease, box-shadow .18s ease, border-color .18s ease;">
+          <span style="font-family: 'Schibsted Grotesk', sans-serif; font-weight: 700; font-size: 14px; line-height: 16px; color: {{ g.fg }};">{{ g.curto }}</span>
+          <span style="font-family: 'Martian Mono', monospace; font-size: 11px; color: {{ g.fg2 }};">{{ g.w }} W</span>
+        </button>
+      </sc-for>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 32px;">
+      <span style="font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #9aa39c;">02 — Processador</span>
+      <span style="font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .06em; color: #9dff3b;">{{ cpuCurto }} · {{ ppt }} W</span>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-top: 14px;">
+      <sc-for list="{{ cpuChips }}" as="c" hint-placeholder-count="8">
+        <button type="button" class="el-chip" onClick="{{ c.pick }}" aria-pressed="{{ c.on }}" style="height: 64px; box-sizing: border-box; padding: 10px 12px; border-radius: 14px; border: 1px solid {{ c.bd }}; background: {{ c.bg }}; box-shadow: {{ c.sh }}; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; text-align: left; transition: background .18s ease, box-shadow .18s ease, border-color .18s ease;">
+          <span style="font-family: 'Schibsted Grotesk', sans-serif; font-weight: 700; font-size: 14px; line-height: 16px; color: {{ c.fg }};">{{ c.curto }}</span>
+          <span style="font-family: 'Martian Mono', monospace; font-size: 11px; color: {{ c.fg2 }};">{{ c.w }} W</span>
+        </button>
+      </sc-for>
+    </div>
+
+    <div style="display: flex; gap: 12px; margin-top: 36px;">
+      <button type="button" onClick="{{ mandar }}" style="display: inline-flex; align-items: center; gap: 10px; height: 56px; padding: 0 26px; border: 0; border-radius: 28px; background: #9dff3b; color: #07110a; font-family: 'Schibsted Grotesk', sans-serif; font-weight: 700; font-size: 16px;">{{ mandarTexto }}<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#07110a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M16 6l-4-4-4 4M12 2v13"></path></svg></button>
+      <button type="button" onClick="{{ reimprimir }}" style="height: 56px; padding: 0 22px; border: 1px solid rgba(255,255,255,.18); border-radius: 28px; background: transparent; color: #eef2ee; font-family: 'Schibsted Grotesk', sans-serif; font-weight: 600; font-size: 16px;">Imprimir de novo</button>
+    </div>
+  </div>
+
+  <div style="position: relative; width: 584px; height: 890px; display: flex; flex-direction: column; align-items: center;">
+    <div aria-hidden="true" style="position: absolute; left: -80px; top: 60px; width: 744px; height: 760px; background: radial-gradient(ellipse 48% 46% at 50% 52%, rgba(157,255,59,.5), rgba(157,255,59,0) 72%); opacity: {{ brilho }}; transition: opacity .6s ease;"></div>
+
+    <div style="position: relative; z-index: 3; width: 452px; height: 32px; box-sizing: border-box; padding: 0 18px; border-radius: 16px; background: linear-gradient(180deg, #1c2226, #0d1013); box-shadow: inset 0 1px 0 rgba(255,255,255,.09), 0 12px 30px rgba(0,0,0,.6); display: flex; align-items: center; justify-content: space-between; font-family: 'Martian Mono', monospace; font-size: 9.5px; letter-spacing: .16em; text-transform: uppercase;">
+      <span style="color: #8d958f;">Elphy · impressora de contas</span>
+      <span style="display: inline-flex; align-items: center; gap: 8px; color: #9dff3b;"><i style="display: block; width: 7px; height: 7px; border-radius: 50%; background: #9dff3b; box-shadow: 0 0 10px #9dff3b; animation: el-pulso 1.6s ease-in-out infinite;"></i>Ao vivo</span>
+    </div>
+    <div aria-hidden="true" style="position: relative; z-index: 3; width: 424px; height: 6px; margin-top: -4px; border-radius: 3px; background: #020303;"></div>
+
+    <sc-if value="{{ impresso }}" hint-placeholder-val="{{ true }}">
+      <div style="position: relative; z-index: 2; margin-top: -8px; transform: rotate(-1.6deg); transform-origin: 50% 0;">
+        <div style="position: relative; width: 404px; background: #f3f1ea; color: #111311; font-family: 'Martian Mono', monospace; font-size: 11.5px; line-height: 18px; box-shadow: 0 44px 80px rgba(0,0,0,.55), 0 2px 0 rgba(0,0,0,.25); animation: el-imprime .6s cubic-bezier(.2,.7,.3,1) backwards;">
+          <div aria-hidden="true" style="position: absolute; left: 0; bottom: -10px; width: 404px; height: 10px; background: linear-gradient(45deg, #f3f1ea 50%, rgba(243,241,234,0) 50%) 0 0 / 12px 10px repeat-x, linear-gradient(-45deg, #f3f1ea 50%, rgba(243,241,234,0) 50%) 0 0 / 12px 10px repeat-x; transform: scaleY(-1);"></div>
+          <svg aria-hidden="true" width="404" height="100%" style="position: absolute; left: 0; top: 0; height: 100%; opacity: .1; mix-blend-mode: multiply; pointer-events: none;"><filter id="papel-main"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><rect width="100%" height="100%" filter="url(#papel-main)"></rect></svg>
+
+          <div style="position: relative; padding: 26px 30px 30px;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; animation: el-linha .3s ease-out both; animation-delay: 80ms;">
+              <span style="font-family: 'Schibsted Grotesk', sans-serif; font-weight: 800; font-size: 24px; letter-spacing: -.045em;">elphy.</span>
+              <span style="font-weight: 700;">Nº {{ numero }}</span>
+            </div>
+            <div style="margin-top: 8px; letter-spacing: .1em; text-transform: uppercase; animation: el-linha .3s ease-out both; animation-delay: 120ms;">Cupom de consumo · Montar PC</div>
+            <div style="color: #5b5f58; animation: el-linha .3s ease-out both; animation-delay: 150ms;">{{ data }}</div>
+            <div style="margin: 14px 0; border-top: 1.5px dashed rgba(17,19,17,.4);"></div>
+
+            <div style="animation: el-linha .3s ease-out both; animation-delay: 200ms;">
+              <div style="font-size: 9.5px; letter-spacing: .14em; text-transform: uppercase; color: #5b5f58;">Placa de vídeo</div>
+              <div style="display: flex; align-items: baseline;"><span>{{ gpuNome }}</span><span style="flex: 1; margin: 0 6px 4px; border-bottom: 1.5px dotted rgba(17,19,17,.45);"></span><b>{{ tgp }} W</b></div>
+            </div>
+            <div style="margin-top: 10px; animation: el-linha .3s ease-out both; animation-delay: 260ms;">
+              <div style="font-size: 9.5px; letter-spacing: .14em; text-transform: uppercase; color: #5b5f58;">Processador</div>
+              <div style="display: flex; align-items: baseline;"><span>{{ cpuNome }}</span><span style="flex: 1; margin: 0 6px 4px; border-bottom: 1.5px dotted rgba(17,19,17,.45);"></span><b>{{ ppt }} W</b></div>
+            </div>
+            <div style="display: flex; align-items: baseline; margin-top: 10px; animation: el-linha .3s ease-out both; animation-delay: 320ms;"><span>Placa-mãe, memória, SSD</span><span style="flex: 1; margin: 0 6px 4px; border-bottom: 1.5px dotted rgba(17,19,17,.45);"></span><b>60 W</b></div>
+            <div style="margin: 14px 0; border-top: 1.5px dashed rgba(17,19,17,.4);"></div>
+
+            <div style="display: flex; align-items: baseline; animation: el-linha .3s ease-out both; animation-delay: 380ms;"><span>Consumo em carga</span><span style="flex: 1; margin: 0 6px 4px; border-bottom: 1.5px dotted rgba(17,19,17,.45);"></span><b>{{ consumo }} W</b></div>
+            <div style="display: flex; align-items: baseline; margin-top: 4px; animation: el-linha .3s ease-out both; animation-delay: 430ms;"><span>Folga para picos (+30%)</span><span style="flex: 1; margin: 0 6px 4px; border-bottom: 1.5px dotted rgba(17,19,17,.45);"></span><b>{{ folga }} W</b></div>
+            <div style="display: flex; align-items: baseline; margin-top: 4px; animation: el-linha .3s ease-out both; animation-delay: 480ms;"><span style="font-weight: 700;">Total com folga</span><span style="flex: 1; margin: 0 6px 4px; border-bottom: 1.5px dotted rgba(17,19,17,.45);"></span><b>{{ comFolga }} W</b></div>
+
+            <div style="margin-top: 16px; animation: el-linha .3s ease-out both; animation-delay: 540ms;">
+              <div style="position: relative; display: flex; height: 16px; box-sizing: border-box; border: 1.5px solid #111311;">
+                <i style="display: block; width: {{ pctConsumo }}; background: #111311;"></i>
+                <i style="display: block; width: {{ pctFolga }}; background: repeating-linear-gradient(135deg, #111311 0 2px, rgba(17,19,17,0) 2px 5px);"></i>
+                <i style="position: absolute; top: -7px; left: {{ pctRec }}; width: 2px; height: 28px; margin-left: -1px; background: #111311;"></i>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-top: 6px; font-size: 9.5px; color: #5b5f58;"><span>0</span><span>300</span><span>600</span><span>900</span><span>1200 W</span></div>
+              <div style="display: flex; gap: 14px; margin-top: 6px; font-size: 9.5px; color: #5b5f58;">
+                <span style="display: inline-flex; align-items: center; gap: 5px;"><i style="display: block; width: 9px; height: 9px; background: #111311;"></i>consumo</span>
+                <span style="display: inline-flex; align-items: center; gap: 5px;"><i style="display: block; width: 9px; height: 9px; box-sizing: border-box; border: 1px solid #111311; background: repeating-linear-gradient(135deg, #111311 0 1.5px, rgba(17,19,17,0) 1.5px 3.5px);"></i>folga</span>
+                <span style="display: inline-flex; align-items: center; gap: 5px;"><i style="display: block; width: 2px; height: 11px; background: #111311;"></i>fonte</span>
+              </div>
+            </div>
+
+            <div style="margin-top: 16px; border-top: 3px double #111311;"></div>
+            <div style="padding: 14px 0 10px; animation: el-linha .3s ease-out both; animation-delay: 620ms;">
+              <div style="font-size: 9.5px; letter-spacing: .14em; text-transform: uppercase; color: #5b5f58;">Fonte recomendada</div>
+              <div style="display: flex; align-items: baseline; gap: 6px; margin-top: 4px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; line-height: .84; color: #111311;"><span style="font-size: 104px;">{{ mostrado }}</span><span style="font-size: 40px;">W</span></div>
+              <div style="margin-top: 8px; font-size: 10.5px; color: #5b5f58;">Degrau comercial logo acima de {{ comFolga }} W.</div>
+            </div>
+            <div style="border-top: 3px double #111311;"></div>
+
+            <div style="margin-top: 14px; animation: el-linha .3s ease-out both; animation-delay: 700ms;">
+              <div style="font-size: 10.5px; line-height: 16px; color: #3f433d;">Só listamos fonte com relatório de teste público. Watt escrito na caixa não conta.</div>
+              <div style="margin-top: 6px; font-size: 9.5px; line-height: 14px; color: #5b5f58;">Estimativa pela fórmula da metodologia. Não garante compatibilidade.</div>
+              <div aria-hidden="true" style="display: flex; height: 38px; margin-top: 12px;">
+                <sc-for list="{{ barras }}" as="b" hint-placeholder-count="40"><i style="display: block; width: {{ b.w }}px; background: {{ b.c }};"></i></sc-for>
+              </div>
+              <div style="margin-top: 6px; font-size: 9.5px; letter-spacing: .14em; color: #5b5f58;">{{ codigo }}</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="position: absolute; right: -40px; bottom: 170px; width: 148px; height: 148px; border-radius: 50%; background: #9dff3b; color: #07110a; display: flex; flex-direction: column; align-items: center; justify-content: center; outline: 1.5px dashed rgba(7,17,10,.35); outline-offset: -11px; box-shadow: 0 18px 40px rgba(0,0,0,.45); transform: rotate(12deg); animation: el-carimba .44s cubic-bezier(.2,1.3,.4,1) both; animation-delay: 820ms;">
+          <span style="font-family: 'Martian Mono', monospace; font-size: 9.5px; letter-spacing: .18em; text-transform: uppercase;">Sua fonte</span>
+          <span style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 64px; line-height: .86;">{{ rec }}</span>
+          <span style="font-family: 'Martian Mono', monospace; font-size: 9.5px; letter-spacing: .18em; text-transform: uppercase;">watts</span>
+        </div>
+      </div>
+    </sc-if>
+  </div>
+</section>
+
+<!-- ============ A CONTA ABERTA ============ -->
+<section id="conta" style="height: 720px; box-sizing: border-box; padding: 110px 96px 0; border-top: 1px solid rgba(255,255,255,.08);">
+  <p style="margin: 0; font-family: 'Martian Mono', monospace; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: #9dff3b;">Nº 02 — A conta aberta</p>
+  <h2 style="margin: 18px 0 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: 72px; line-height: .92; text-transform: uppercase; color: #eef2ee;">Toda calculadora te dá o {{ rec }}.<br><span style="color: #9aa39c;">Aqui você vê de onde ele saiu.</span></h2>
+
+  <div style="display: flex; align-items: flex-start; gap: 32px; margin-top: 64px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; line-height: .9;">
+    <div style="display: flex; flex-direction: column; gap: 14px;"><span style="font-size: 140px; color: #eef2ee;">{{ tgp }}</span><span style="font-family: 'Martian Mono', monospace; font-weight: 400; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #9aa39c;">TGP · {{ gpuCurto }}</span></div>
+    <span style="font-size: 100px; color: #4a524c; padding-top: 18px;">+</span>
+    <div style="display: flex; flex-direction: column; gap: 14px;"><span style="font-size: 140px; color: #eef2ee;">{{ ppt }}</span><span style="font-family: 'Martian Mono', monospace; font-weight: 400; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #9aa39c;">PPT · {{ cpuCurto }}</span></div>
+    <span style="font-size: 100px; color: #4a524c; padding-top: 18px;">+</span>
+    <div style="display: flex; flex-direction: column; gap: 14px;"><span style="font-size: 140px; color: #eef2ee;">60</span><span style="font-family: 'Martian Mono', monospace; font-weight: 400; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #9aa39c;">Placa-mãe, memória, SSD</span></div>
+    <span style="font-size: 100px; color: #4a524c; padding-top: 18px;">=</span>
+    <div style="display: flex; flex-direction: column; gap: 14px;"><span style="font-size: 140px; color: #eef2ee;">{{ consumo }}</span><span style="font-family: 'Martian Mono', monospace; font-weight: 400; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #9aa39c;">Consumo em carga</span></div>
+  </div>
+
+  <div style="display: flex; align-items: flex-start; gap: 32px; margin-top: 36px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; line-height: .9;">
+    <span style="font-size: 100px; color: #4a524c; padding-top: 18px;">×</span>
+    <div style="display: flex; flex-direction: column; gap: 14px;"><span style="font-size: 140px; color: #eef2ee;">1,3</span><span style="font-family: 'Martian Mono', monospace; font-weight: 400; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #9aa39c;">Folga para picos</span></div>
+    <span style="font-size: 100px; color: #4a524c; padding-top: 18px;">=</span>
+    <div style="display: flex; flex-direction: column; gap: 14px;"><span style="font-size: 140px; color: #ffb020;">{{ comFolga }}</span><span style="font-family: 'Martian Mono', monospace; font-weight: 400; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #9aa39c;">Com folga</span></div>
+    <svg width="88" height="60" viewBox="0 0 88 60" fill="none" stroke="#4a524c" stroke-width="7" stroke-linecap="square" aria-label="arredonda para" style="margin-top: 44px;"><path d="M4 30h70M54 10l20 20-20 20"></path></svg>
+    <div style="display: flex; flex-direction: column; gap: 14px;"><span style="font-size: 140px; color: #9dff3b;">{{ rec }} W</span><span style="font-family: 'Martian Mono', monospace; font-weight: 400; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #9aa39c;">Degrau comercial acima</span></div>
+  </div>
+</section>
+
+<!-- ============ O SELO ============ -->
+<section id="selo" style="height: 760px; box-sizing: border-box; padding: 110px 96px 0; background: #f3f1ea; color: #111311;">
+  <p style="margin: 0; font-family: 'Martian Mono', monospace; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: #5b5f58;">Nº 03 — O selo</p>
+  <h2 style="margin: 18px 0 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 104px; line-height: .88; text-transform: uppercase;">80 Plus mede eficiência.<br>Não mede proteção.</h2>
+
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; margin-top: 56px;">
+    <div>
+      <div style="padding-bottom: 12px; border-bottom: 2px solid #111311; font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase;">O que o selo mede</div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 56px; border-bottom: 1px solid rgba(17,19,17,.16);"><span style="font-size: 19px; font-weight: 600;">Eficiência com 20% de carga</span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#111311" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-label="mede"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 56px; border-bottom: 1px solid rgba(17,19,17,.16);"><span style="font-size: 19px; font-weight: 600;">Eficiência com 50% de carga</span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#111311" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-label="mede"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 56px; border-bottom: 1px solid rgba(17,19,17,.16);"><span style="font-size: 19px; font-weight: 600;">Eficiência com 100% de carga</span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#111311" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-label="mede"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></div>
+    </div>
+    <div>
+      <div style="padding-bottom: 12px; border-bottom: 2px solid #111311; font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase;">O que o selo não mede</div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 56px; border-bottom: 1px solid rgba(17,19,17,.16);"><span style="font-size: 19px; font-weight: 600;">OVP <span style="font-weight: 400; color: #5b5f58;">— sobretensão</span></span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b8400e" stroke-width="2.4" stroke-linecap="round" aria-label="não mede"><path d="M6 6l12 12M18 6L6 18"></path></svg></div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 56px; border-bottom: 1px solid rgba(17,19,17,.16);"><span style="font-size: 19px; font-weight: 600;">OCP <span style="font-weight: 400; color: #5b5f58;">— sobrecorrente</span></span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b8400e" stroke-width="2.4" stroke-linecap="round" aria-label="não mede"><path d="M6 6l12 12M18 6L6 18"></path></svg></div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 56px; border-bottom: 1px solid rgba(17,19,17,.16);"><span style="font-size: 19px; font-weight: 600;">SCP <span style="font-weight: 400; color: #5b5f58;">— curto-circuito</span></span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b8400e" stroke-width="2.4" stroke-linecap="round" aria-label="não mede"><path d="M6 6l12 12M18 6L6 18"></path></svg></div>
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 56px; border-bottom: 1px solid rgba(17,19,17,.16);"><span style="font-size: 19px; font-weight: 600;">OPP <span style="font-weight: 400; color: #5b5f58;">— sobrepotência</span></span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b8400e" stroke-width="2.4" stroke-linecap="round" aria-label="não mede"><path d="M6 6l12 12M18 6L6 18"></path></svg></div>
+    </div>
+  </div>
+
+  <div style="display: flex; align-items: center; justify-content: space-between; height: 76px; box-sizing: border-box; margin-top: 44px; padding: 0 30px; border-radius: 16px; background: #111311; color: #eef2ee;">
+    <span style="font-size: 18px; font-weight: 600;">Por isso só entra no Elphy fonte com relatório de teste que dá para abrir e ler.</span>
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9dff3b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+  </div>
+</section>
+
+<!-- ============ DICAS ============ -->
+<section id="dicas" style="height: 720px; box-sizing: border-box; padding: 110px 96px 0;">
+  <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+    <div>
+      <p style="margin: 0; font-family: 'Martian Mono', monospace; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: #9dff3b;">Nº 04 — Dicas</p>
+      <h2 style="margin: 18px 0 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 88px; line-height: .9; text-transform: uppercase;">Dicas que cabem numa conta.</h2>
+    </div>
+    <a href="#dicas" style="font-size: 16px; font-weight: 600; text-underline-offset: 6px; padding-bottom: 8px;">Ver todas</a>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 48px;">
+    <a href="Dica-Mobile.dc.html" class="el-card" style="display: flex; flex-direction: column; height: 420px; border-radius: 22px; overflow: hidden; border: 1px solid rgba(255,255,255,.08); background: #0a0d0f; text-decoration: none; color: #eef2ee;">
+      <div style="position: relative; height: 260px; box-sizing: border-box; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; background: radial-gradient(ellipse 70% 70% at 30% 100%, rgba(157,255,59,.18), rgba(157,255,59,0) 70%), #0d1013;">
+        <span style="align-self: flex-start; padding: 6px 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,.14); font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #c9d0ca;">RTX 5070</span>
+        <span style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 132px; line-height: .8; color: #9dff3b;">250 W</span>
+      </div>
+      <div style="padding: 22px; display: flex; flex-direction: column; gap: 10px;">
+        <span class="el-card-t" style="font-size: 21px; line-height: 27px; font-weight: 700; transition: color .2s ease;">A RTX 5070 puxa 250 W. A caixa não conta o resto.</span>
+        <span style="font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #9aa39c;">4 min · Montar PC</span>
+      </div>
+    </a>
+    <a href="#dicas" class="el-card" style="display: flex; flex-direction: column; height: 420px; border-radius: 22px; overflow: hidden; border: 1px solid rgba(255,255,255,.08); background: #0a0d0f; text-decoration: none; color: #eef2ee;">
+      <div style="position: relative; height: 260px; box-sizing: border-box; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; background: #f3f1ea; color: #111311; font-family: 'Martian Mono', monospace; font-size: 11px;">
+        <div style="display: flex; flex-direction: column; gap: 4px; color: #3f433d;">
+          <span style="display: flex; justify-content: space-between;"><span>Consumo em carga</span><b style="color: #111311;">398 W</b></span>
+          <span style="display: flex; justify-content: space-between;"><span>Folga (+30%)</span><b style="color: #111311;">119 W</b></span>
+          <span style="border-top: 1.5px dashed rgba(17,19,17,.4); margin-top: 4px;"></span>
+        </div>
+        <span style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 132px; line-height: .8;">×1,3</span>
+      </div>
+      <div style="padding: 22px; display: flex; flex-direction: column; gap: 10px;">
+        <span class="el-card-t" style="font-size: 21px; line-height: 27px; font-weight: 700; transition: color .2s ease;">A conta arredonda para cima. O pico da placa explica.</span>
+        <span style="font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #9aa39c;">3 min · Montar PC</span>
+      </div>
+    </a>
+    <a href="#selo" class="el-card" style="display: flex; flex-direction: column; height: 420px; border-radius: 22px; overflow: hidden; border: 1px solid rgba(255,255,255,.08); background: #0a0d0f; text-decoration: none; color: #eef2ee;">
+      <div style="position: relative; height: 260px; box-sizing: border-box; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; background: #111418;">
+        <div style="display: flex; gap: 8px; font-family: 'Martian Mono', monospace; font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase;">
+          <span style="padding: 6px 10px; border-radius: 8px; background: #9dff3b; color: #07110a;">Eficiência</span>
+          <span style="padding: 6px 10px; border-radius: 8px; border: 1px dashed rgba(255,176,32,.7); color: #ffb020;">Proteção?</span>
+        </div>
+        <span style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 132px; line-height: .8; color: transparent; -webkit-text-stroke: 2px #eef2ee;">80 Plus</span>
+      </div>
+      <div style="padding: 22px; display: flex; flex-direction: column; gap: 10px;">
+        <span class="el-card-t" style="font-size: 21px; line-height: 27px; font-weight: 700; transition: color .2s ease;">O selo 80 Plus mede eficiência. Proteção fica de fora.</span>
+        <span style="font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #9aa39c;">5 min · Fontes</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ============ PRO ============ -->
+<section style="height: 360px; box-sizing: border-box; padding: 60px 96px;">
+  <div style="height: 240px; box-sizing: border-box; padding: 0 56px; border-radius: 28px; border: 1px solid rgba(157,255,59,.3); background: radial-gradient(ellipse 60% 130% at 0% 0%, rgba(157,255,59,.11), rgba(157,255,59,0) 60%), #0a0d0f; display: flex; align-items: center; justify-content: space-between; gap: 48px;">
+    <div style="display: flex; flex-direction: column;">
+      <span style="font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #9dff3b;">Elphy Pro · em breve</span>
+      <span style="margin-top: 12px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 68px; line-height: .9; text-transform: uppercase;">O PC inteiro, peça por peça.</span>
+      <span style="margin-top: 12px; max-width: 600px; font-size: 16px; line-height: 25px; color: #b9c1bb;">Gabinete, cooler, memória e fonte — cada peça com a sua conta, e a nota completa do PC para mandar para quem vai montar.</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px; width: 420px; flex-shrink: 0;">
+      <label for="pro-email" style="font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #9aa39c;">Seu e-mail</label>
+      <div style="display: flex; gap: 10px;">
+        <input id="pro-email" type="email" placeholder="voce@email.com" style="flex: 1; min-width: 0; height: 54px; box-sizing: border-box; padding: 0 18px; border-radius: 27px; border: 1px solid rgba(255,255,255,.16); background: #050607; color: #eef2ee; font-family: 'Schibsted Grotesk', sans-serif; font-size: 16px;">
+        <button type="button" style="height: 54px; padding: 0 22px; border: 0; border-radius: 27px; background: #eef2ee; color: #07110a; font-family: 'Schibsted Grotesk', sans-serif; font-weight: 700; font-size: 15px;">Entrar na lista</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RODAPÉ ============ -->
+<footer style="position: relative; height: 620px; box-sizing: border-box; padding: 80px 96px 0; border-top: 1px solid rgba(255,255,255,.08); overflow: hidden;">
+  <div style="display: flex; justify-content: space-between;">
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <span style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 44px; line-height: .9; text-transform: uppercase;">Dica sem caô<span style="color: #9dff3b;">.</span></span>
+      <span style="max-width: 360px; font-size: 15px; line-height: 23px; color: #9aa39c;">Ferramentas que mostram a conta inteira, para você comprar peça sabendo o que está comprando.</span>
+      <span style="max-width: 360px; margin-top: 6px; font-family: 'Martian Mono', monospace; font-size: 10.5px; line-height: 17px; letter-spacing: .04em; color: #9aa39c;">© 2026 Elphy. Links de loja podem render comissão para o Elphy. O preço para você não muda.</span>
+    </div>
+    <div style="display: flex; gap: 80px; font-size: 15px;">
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <span style="font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #9aa39c;">Ferramentas</span>
+        <a href="#bancada" style="text-decoration: none;">Fazer a conta</a>
+        <span style="color: #6a726c;">Cabe no gabinete? · em breve</span>
+        <span style="color: #6a726c;">Dois pentes ou um? · em breve</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <span style="font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #9aa39c;">Elphy</span>
+        <a href="#selo" style="text-decoration: none;">Como a gente mede</a>
+        <a href="#topo" style="text-decoration: none;">Como ganhamos dinheiro</a>
+        <a href="#topo" style="text-decoration: none;">Privacidade</a>
+      </div>
+    </div>
+  </div>
+  <div aria-hidden="true" style="position: absolute; left: 82px; bottom: 30px; font-weight: 800; font-size: 380px; line-height: .78; letter-spacing: -.07em; color: #eef2ee;">elphy<span style="color: #9dff3b;">.</span></div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":5204}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.G = [
+      { id: 'rtx-5090', curto: 'RTX 5090', nome: 'GeForce RTX 5090', w: 575, cod: '5090' },
+      { id: 'rtx-5080', curto: 'RTX 5080', nome: 'GeForce RTX 5080', w: 360, cod: '5080' },
+      { id: 'rtx-5070-ti', curto: 'RTX 5070 Ti', nome: 'GeForce RTX 5070 Ti', w: 300, cod: '5070TI' },
+      { id: 'rtx-5070', curto: 'RTX 5070', nome: 'GeForce RTX 5070', w: 250, cod: '5070' },
+      { id: 'rtx-5060-ti', curto: 'RTX 5060 Ti', nome: 'GeForce RTX 5060 Ti', w: 180, cod: '5060TI' },
+      { id: 'rtx-5060', curto: 'RTX 5060', nome: 'GeForce RTX 5060', w: 145, cod: '5060' },
+      { id: 'rtx-4060', curto: 'RTX 4060', nome: 'GeForce RTX 4060', w: 115, cod: '4060' },
+      { id: 'rx-9070-xt', curto: 'RX 9070 XT', nome: 'Radeon RX 9070 XT', w: 304, cod: '9070XT' },
+      { id: 'rx-9060-xt', curto: 'RX 9060 XT', nome: 'Radeon RX 9060 XT', w: 160, cod: '9060XT' },
+      { id: 'sem-gpu', curto: 'Sem placa', nome: 'Sem placa de vídeo', w: 0, cod: 'IGPU' }
+    ];
+    this.C = [
+      { id: 'r5-5600', curto: 'Ryzen 5 5600', nome: 'Ryzen 5 5600', w: 88, cod: '5600' },
+      { id: 'r5-7600', curto: 'Ryzen 5 7600', nome: 'Ryzen 5 7600', w: 88, cod: '7600' },
+      { id: 'r7-5700x3d', curto: 'Ryzen 7 5700X3D', nome: 'Ryzen 7 5700X3D', w: 142, cod: '5700X3D' },
+      { id: 'r7-7800x3d', curto: 'Ryzen 7 7800X3D', nome: 'Ryzen 7 7800X3D', w: 162, cod: '7800X3D' },
+      { id: 'r7-9800x3d', curto: 'Ryzen 7 9800X3D', nome: 'Ryzen 7 9800X3D', w: 162, cod: '9800X3D' },
+      { id: 'i5-12400f', curto: 'Core i5-12400F', nome: 'Core i5-12400F', w: 117, cod: '12400F' },
+      { id: 'i5-14400f', curto: 'Core i5-14400F', nome: 'Core i5-14400F', w: 148, cod: '14400F' },
+      { id: 'i7-14700k', curto: 'Core i7-14700K', nome: 'Core i7-14700K', w: 253, cod: '14700K' }
+    ];
+    this.DEG = [400, 450, 500, 550, 600, 650, 700, 750, 850, 1000, 1200, 1300, 1600];
+    this.state = { gpu: 'rtx-5070', cpu: 'r5-7600', impresso: true, mostrado: 550, t: Date.now(), enviado: false };
+    this._raf = 0; this._to = 0; this._to2 = 0;
+  }
+  componentDidMount() { this.reimprime({}); }
+  componentWillUnmount() { cancelAnimationFrame(this._raf); clearTimeout(this._to); clearTimeout(this._to2); }
+  conta() {
+    var s = this.state;
+    var g = this.G.find(function (x) { return x.id === s.gpu; }) || this.G[3];
+    var c = this.C.find(function (x) { return x.id === s.cpu; }) || this.C[1];
+    var consumo = g.w + c.w + 60;
+    var comFolga = Math.round(consumo * 1.3);
+    var rec = this.DEG[this.DEG.length - 1];
+    for (var i = 0; i < this.DEG.length; i++) { if (this.DEG[i] >= comFolga) { rec = this.DEG[i]; break; } }
+    return { g: g, c: c, consumo: consumo, comFolga: comFolga, folga: comFolga - consumo, rec: rec };
+  }
+  reimprime(patch) {
+    var self = this;
+    clearTimeout(this._to); cancelAnimationFrame(this._raf);
+    this.setState(Object.assign({ impresso: false, mostrado: 0 }, patch));
+    this._to = setTimeout(function () { self.setState({ impresso: true, t: Date.now() }); self.conta_anima(); }, 60);
+  }
+  conta_anima() {
+    var self = this, alvo = this.conta().rec, t0 = performance.now(), dur = 700;
+    var reduz = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduz) { this.setState({ mostrado: alvo }); return; }
+    var passo = function (t) {
+      var p = Math.min((t - t0) / dur, 1);
+      self.setState({ mostrado: Math.round(alvo * (1 - Math.pow(1 - p, 3))) });
+      if (p < 1) self._raf = requestAnimationFrame(passo);
+    };
+    this._raf = requestAnimationFrame(passo);
+  }
+  barras(semente) {
+    var h = 7, out = [];
+    for (var i = 0; i < semente.length; i++) h = (h * 31 + semente.charCodeAt(i)) >>> 0;
+    for (var j = 0; j < 46; j++) { h = (h * 1103515245 + 12345) >>> 0; out.push({ w: 1 + ((h >>> 8) % 3), c: j % 2 ? 'rgba(0,0,0,0)' : '#111311' }); }
+    return out;
+  }
+  renderVals() {
+    var self = this, s = this.state, k = this.conta();
+    var pct = function (v) { return (Math.min(v, 1200) / 1200 * 100).toFixed(2) + '%'; };
+    var chip = function (item, on, pick) {
+      return Object.assign({}, item, {
+        on: on, pick: pick,
+        bg: on ? '#9dff3b' : '#0d1013',
+        bd: on ? '#9dff3b' : 'rgba(255,255,255,.08)',
+        fg: on ? '#07110a' : '#eef2ee',
+        fg2: on ? '#24461a' : '#9aa39c',
+        sh: on ? '0 10px 30px rgba(157,255,59,.28)' : 'none'
+      });
+    };
+    var d = new Date(s.t), p2 = function (n) { return String(n).padStart(2, '0'); };
+    var numero = String(k.rec).padStart(4, '0');
+    var semSem = this.G.filter(function (x) { return x.w > 0; });
+    return {
+      gpuChips: this.G.map(function (g) { return chip(g, g.id === s.gpu, function () { self.reimprime({ gpu: g.id }); }); }),
+      cpuChips: this.C.map(function (c) { return chip(c, c.id === s.cpu, function () { self.reimprime({ cpu: c.id }); }); }),
+      letreiro: semSem.concat(semSem),
+      gpuNome: k.g.nome, gpuCurto: k.g.curto, tgp: k.g.w,
+      cpuNome: k.c.nome, cpuCurto: k.c.curto, ppt: k.c.w,
+      consumo: k.consumo, comFolga: k.comFolga, folga: k.folga, rec: k.rec,
+      mostrado: s.mostrado, impresso: s.impresso,
+      pctConsumo: pct(k.consumo), pctFolga: pct(k.comFolga - k.consumo), pctRec: pct(k.rec),
+      brilho: (0.2 + 0.6 * Math.min(k.rec / 1200, 1)).toFixed(2),
+      numero: numero,
+      data: p2(d.getDate()) + '/' + p2(d.getMonth() + 1) + '/' + d.getFullYear() + ' · ' + p2(d.getHours()) + ':' + p2(d.getMinutes()),
+      codigo: 'ELPHY-' + numero + '-' + k.g.cod + '-' + k.c.cod,
+      barras: this.barras(k.g.cod + k.c.cod + numero),
+      mandarTexto: s.enviado ? 'Nota copiada' : 'Mandar a nota',
+      mandar: function () { self.setState({ enviado: true }); clearTimeout(self._to2); self._to2 = setTimeout(function () { self.setState({ enviado: false }); }, 1800); },
+      reimprimir: function () { self.reimprime({}); }
+    };
+  }
+}
+</script>
+</body>
+</html>

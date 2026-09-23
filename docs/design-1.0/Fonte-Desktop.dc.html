@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Elphy — calculadora de fonte no computador</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&amp;family=Schibsted+Grotesk:wght@400;500;600;700;800&amp;family=Martian+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0;background:#050607}
+a{color:#eef2ee}a:hover{color:#9dff3b}
+button{cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid #9dff3b;outline-offset:3px}
+.el-rolo{scrollbar-width:none}.el-rolo::-webkit-scrollbar{display:none}
+.el-col>*{flex-shrink:0}
+@keyframes el-imprime{from{transform:translateY(-46px);clip-path:inset(0 0 100% 0)}to{transform:none;clip-path:inset(0 0 0 0)}}
+@keyframes el-linha{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:none}}
+@keyframes el-carimba{0%{opacity:0;transform:scale(1.6) rotate(-10deg)}62%{opacity:1;transform:scale(.93) rotate(15deg)}100%{opacity:1;transform:scale(1) rotate(12deg)}}
+@keyframes el-pulso{0%,100%{opacity:.4}50%{opacity:1}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div class="el-col" style="position: relative; width: 1440px; height: 1560px; overflow: hidden; display: flex; flex-direction: column; background: #050607; color: #eef2ee; font-family: 'Schibsted Grotesk', system-ui, sans-serif;">
+<header style="display: flex; align-items: center; justify-content: space-between; height: 80px; box-sizing: border-box; padding: 0 64px; border-bottom: 1px solid rgba(255,255,255,.07);">
+  <a href="Main.dc.html" style="font-weight: 800; font-size: 28px; letter-spacing: -.045em; text-decoration: none; color: #eef2ee;">elphy<span style="color: #9dff3b;">.</span></a>
+  <nav aria-label="Principal" style="display: flex; gap: 32px; font-size: 15px; font-weight: 600;"><a href="Ferramentas-Desktop.dc.html" style="color: #9dff3b; text-decoration: none;">Ferramentas</a><a href="Montador.dc.html" style="color: #c9d0ca; text-decoration: none;">Montador</a><a href="Dicas-Lista.dc.html" style="color: #c9d0ca; text-decoration: none;">Dicas</a><a href="Metodologia-Mobile.dc.html" style="color: #c9d0ca; text-decoration: none;">Metodologia</a></nav>
+  <label style="display: flex; align-items: center; gap: 10px; width: 320px; height: 44px; box-sizing: border-box; padding: 0 16px; border-radius: 22px; background: #0d1013; border: 1px solid rgba(255,255,255,.1);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9aa39c" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg><span style="position: absolute; width: 1px; height: 1px; overflow: hidden;">Buscar</span><input type="search" placeholder="fonte para RTX 5070…" style="flex: 1; border: 0; background: transparent; color: #eef2ee; font: inherit; font-size: 15px; outline: none;"></label>
+</header>
+<div style="padding: 56px 64px 0; display: flex; justify-content: space-between; align-items: flex-end;">
+  <div>
+    <p style="margin: 0; font-family: 'Martian Mono', monospace; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: #9dff3b;">Ferramenta nº 01 · PC</p>
+    <h1 style="margin: 14px 0 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 128px; line-height: .84; text-transform: uppercase;">Fazer<br>a conta<span style="color: #9dff3b;">.</span></h1>
+  </div>
+  <p style="margin: 0 0 8px; width: 400px; font-size: 18px; line-height: 28px; color: #b9c1bb;">Clica na placa e no processador. A nota sai na hora, com a soma inteira e a folga para os picos.</p>
+</div>
+<div style="display: grid; grid-template-columns: 1fr 440px; gap: 64px; padding: 56px 64px 0;">
+  <div style="display: flex; flex-direction: column; gap: 16px;">
+    <sc-for list="{{ grupos }}" as="g" hint-placeholder-count="2">
+      <div style="box-sizing: border-box; padding: 24px; border-radius: 22px; background: #0a0d0f; border: 1px solid rgba(255,255,255,.07);">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <span style="font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #9aa39c;">{{ g.n }} — {{ g.titulo }}</span>
+          <span style="font-family: 'Martian Mono', monospace; font-size: 11px; color: #9dff3b;">{{ g.resumo }}</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-top: 16px;">
+          <sc-for list="{{ g.ops }}" as="o" hint-placeholder-count="10">
+            <button type="button" onClick="{{ o.pick }}" aria-pressed="{{ o.on }}" style="height: 68px; box-sizing: border-box; padding: 10px 14px; border-radius: 14px; border: 1px solid {{ o.bd }}; background: {{ o.bg }}; box-shadow: {{ o.sh }}; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; text-align: left; transition: background .18s ease;">
+              <span style="font-weight: 700; font-size: 15px; color: {{ o.fg }};">{{ o.curto }}</span>
+              <span style="font-family: 'Martian Mono', monospace; font-size: 11px; color: {{ o.fg2 }};">{{ o.sub }}</span>
+            </button>
+          </sc-for>
+        </div>
+      </div>
+    </sc-for>
+    <div style="box-sizing: border-box; padding: 24px; border-radius: 22px; border: 1px solid rgba(255,176,32,.35); background: #0a0d0f; display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+      <div>
+        <span style="font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #ffb020;">Fontes nessa faixa · em curadoria</span>
+        <p style="margin: 10px 0 0; font-size: 15px; line-height: 23px; color: #c9d0ca;">Só entra modelo com relatório de teste público, que dá para abrir e ler. Watt escrito na caixa é justamente o que a fonte genérica falsifica.</p>
+      </div>
+      <div>
+        <span style="font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #9aa39c;">Contas vizinhas</span>
+        <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px; font-size: 15px; font-weight: 600;">
+          <a href="Luz-Mobile.dc.html">Quanto esse PC gasta de luz</a>
+          <a href="Gabinete-Mobile.dc.html">Essa placa cabe no gabinete</a>
+          <a href="Montador.dc.html">Conferir o PC inteiro no montador</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="position: relative; display: flex; flex-direction: column; align-items: center;">
+    <div aria-hidden="true" style="position: absolute; left: -80px; top: 20px; width: 600px; height: 700px; background: radial-gradient(ellipse 46% 44% at 50% 50%, rgba(157,255,59,.45), rgba(157,255,59,0) 72%); opacity: {{ brilho }}; transition: opacity .6s ease;"></div>
+    <div style="position: relative; z-index: 3; width: 416px; height: 30px; box-sizing: border-box; padding: 0 14px; border-radius: 15px; background: linear-gradient(180deg, #1c2226, #0d1013); box-shadow: inset 0 1px 0 rgba(255,255,255,.09), 0 12px 30px rgba(0,0,0,.6); display: flex; align-items: center; justify-content: space-between; font-family: 'Martian Mono', monospace; font-size: 9px; letter-spacing: .14em; text-transform: uppercase;">
+  <span style="color: #8d958f;">Impressora de contas</span>
+  <span style="display: inline-flex; align-items: center; gap: 7px; color: {{ ledCor }};"><i style="display: block; width: 7px; height: 7px; border-radius: 50%; background: {{ ledCor }}; box-shadow: 0 0 10px {{ ledCor }}; animation: el-pulso 1.6s ease-in-out infinite;"></i>{{ ledTexto }}</span>
+</div>
+<div aria-hidden="true" style="position: relative; z-index: 3; width: 392px; height: 6px; margin-top: -4px; border-radius: 3px; background: #020303;"></div>
+    <sc-if value="{{ impresso }}" hint-placeholder-val="{{ true }}">
+  <div style="position: relative; z-index: 2; margin-top: -8px; transform: rotate(-1.4deg); transform-origin: 50% 0;">
+    <div style="position: relative; width: 392px; background: #f3f1ea; color: #111311; font-family: 'Martian Mono', monospace; font-size: 10.5px; line-height: 17px; box-shadow: 0 40px 70px rgba(0,0,0,.55), 0 2px 0 rgba(0,0,0,.25); animation: el-imprime .6s cubic-bezier(.2,.7,.3,1) backwards;">
+      <div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: -10px; height: 10px; background: linear-gradient(45deg, #f3f1ea 50%, rgba(243,241,234,0) 50%) 0 0 / 12px 10px repeat-x, linear-gradient(-45deg, #f3f1ea 50%, rgba(243,241,234,0) 50%) 0 0 / 12px 10px repeat-x; transform: scaleY(-1);"></div>
+      <div style="position: relative; padding: 22px 22px 24px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <span style="font-family: 'Schibsted Grotesk', sans-serif; font-weight: 800; font-size: 21px; letter-spacing: -.045em;">elphy.</span>
+          <span style="font-weight: 700;">Nº {{ numero }}</span>
+        </div>
+        <div style="margin-top: 6px; letter-spacing: .08em; text-transform: uppercase;">{{ cupom }}</div>
+        <div style="color: #5b5f58;">{{ data }}</div>
+        <div style="margin: 12px 0; border-top: 1.5px dashed rgba(17,19,17,.4);"></div>
+        <sc-for list="{{ linhas }}" as="l" hint-placeholder-count="5">
+          <div style="display: flex; align-items: baseline; margin-top: {{ l.mt }}; padding-top: {{ l.pad }}; border-top: {{ l.borda }}; font-weight: {{ l.peso }}; animation: el-linha .3s ease-out both; animation-delay: {{ l.atraso }};"><span>{{ l.nome }}</span><span style="flex: 1; margin: 0 5px 4px; border-bottom: 1.5px dotted rgba(17,19,17,.45);"></span><b>{{ l.v }}</b></div>
+        </sc-for>
+        <div style="margin-top: 14px;"></div>
+        <div style="border-top: 3px double #111311;"></div>
+        <div style="padding: 12px 0 8px;">
+          <div style="font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: #5b5f58;">{{ rotulo }}</div>
+          <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px; margin-top: 4px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; line-height: .84;"><span style="font-size: 36px;">{{ pre }}</span><span style="font-size: 96px;">{{ mostrado }}</span><span style="font-size: 30px;">{{ unidade }}</span></div>
+          <div style="margin-top: 8px; font-size: 10px; line-height: 15px; color: #5b5f58;">{{ sub }}</div>
+        </div>
+        <div style="border-top: 3px double #111311;"></div>
+        <div style="margin-top: 12px; font-size: 10px; line-height: 15px; color: #3f433d;">{{ nota }}</div>
+        <div style="margin-top: 6px; font-size: 9.5px; line-height: 14px; color: #5b5f58;">Estimativa pela fórmula da metodologia. Não garante compatibilidade.</div>
+        <div aria-hidden="true" style="display: flex; height: 30px; margin-top: 10px;">
+          <sc-for list="{{ barras }}" as="b" hint-placeholder-count="36"><i style="display: block; width: {{ b.w }}px; background: {{ b.c }};"></i></sc-for>
+        </div>
+        <div style="margin-top: 5px; font-size: 9px; letter-spacing: .12em; color: #5b5f58;">{{ codigo }}</div>
+      </div>
+    </div>
+    <div style="position: absolute; right: -22px; bottom: 170px; width: 120px; height: 120px; border-radius: 50%; background: {{ seloFundo }}; color: #07110a; display: flex; flex-direction: column; align-items: center; justify-content: center; outline: 1.5px dashed rgba(7,17,10,.35); outline-offset: -9px; box-shadow: 0 16px 36px rgba(0,0,0,.45); transform: rotate(12deg); animation: el-carimba .44s cubic-bezier(.2,1.3,.4,1) both; animation-delay: 820ms;">
+  <span style="font-family: 'Martian Mono', monospace; font-size: 8.5px; letter-spacing: .16em; text-transform: uppercase;">{{ seloTopo }}</span>
+  <span style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 38px; line-height: .9;">{{ seloMeio }}</span>
+  <span style="font-family: 'Martian Mono', monospace; font-size: 8.5px; letter-spacing: .14em; text-transform: uppercase;">{{ seloBase }}</span>
+</div>
+  </div>
+</sc-if>
+    <div style="position: relative; align-self: stretch; display: flex; gap: 10px; margin-top: 44px;">
+      <button type="button" onClick="{{ mandar }}" style="flex: 1; height: 56px; border: 0; border-radius: 28px; background: #9dff3b; color: #07110a; font: inherit; font-weight: 700; font-size: 16px;">{{ mandarTexto }}</button>
+    </div>
+  </div>
+</div>
+<div style="flex-grow: 1; min-height: 60px;"></div>
+<footer style="padding: 32px 64px; border-top: 1px solid rgba(255,255,255,.07); display: flex; justify-content: space-between; align-items: center; font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #9aa39c;">
+  <span>Dica sem caô<span style="color: #9dff3b;">.</span> · © 2026 Elphy</span>
+  <div style="display: flex; gap: 28px;"><a href="Metodologia-Mobile.dc.html" style="color: #9aa39c;">Metodologia</a><a href="Correcoes-Mobile.dc.html" style="color: #9aa39c;">Correções</a><a href="Legal-Mobile.dc.html" style="color: #9aa39c;">Privacidade e afiliado</a><a href="Sobre-Mobile.dc.html" style="color: #9aa39c;">Sobre</a></div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1560}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.GR = [{"k": "gpu", "titulo": "Placa de vídeo", "ops": [{"id": "rtx-5090", "curto": "RTX 5090", "sub": "575 W", "nome": "GeForce RTX 5090", "w": 575, "cod": "5090"}, {"id": "rtx-5080", "curto": "RTX 5080", "sub": "360 W", "nome": "GeForce RTX 5080", "w": 360, "cod": "5080"}, {"id": "rtx-5070-ti", "curto": "RTX 5070 Ti", "sub": "300 W", "nome": "GeForce RTX 5070 Ti", "w": 300, "cod": "5070TI"}, {"id": "rtx-5070", "curto": "RTX 5070", "sub": "250 W", "nome": "GeForce RTX 5070", "w": 250, "cod": "5070"}, {"id": "rtx-5060-ti", "curto": "RTX 5060 Ti", "sub": "180 W", "nome": "GeForce RTX 5060 Ti", "w": 180, "cod": "5060TI"}, {"id": "rtx-5060", "curto": "RTX 5060", "sub": "145 W", "nome": "GeForce RTX 5060", "w": 145, "cod": "5060"}, {"id": "rtx-4060", "curto": "RTX 4060", "sub": "115 W", "nome": "GeForce RTX 4060", "w": 115, "cod": "4060"}, {"id": "rx-9070-xt", "curto": "RX 9070 XT", "sub": "304 W", "nome": "Radeon RX 9070 XT", "w": 304, "cod": "9070XT"}, {"id": "rx-9060-xt", "curto": "RX 9060 XT", "sub": "160 W", "nome": "Radeon RX 9060 XT", "w": 160, "cod": "9060XT"}, {"id": "sem-gpu", "curto": "Sem placa", "sub": "0 W", "nome": "Sem placa de vídeo", "w": 0, "cod": "IGPU"}]}, {"k": "cpu", "titulo": "Processador", "ops": [{"id": "r5-7600", "curto": "Ryzen 5 7600", "sub": "88 W", "nome": "Ryzen 5 7600", "w": 88, "cod": "7600"}, {"id": "r5-5600", "curto": "Ryzen 5 5600", "sub": "88 W", "nome": "Ryzen 5 5600", "w": 88, "cod": "5600"}, {"id": "r7-5700x3d", "curto": "Ryzen 7 5700X3D", "sub": "142 W", "nome": "Ryzen 7 5700X3D", "w": 142, "cod": "5700X3D"}, {"id": "r7-7800x3d", "curto": "Ryzen 7 7800X3D", "sub": "162 W", "nome": "Ryzen 7 7800X3D", "w": 162, "cod": "7800X3D"}, {"id": "r7-9800x3d", "curto": "Ryzen 7 9800X3D", "sub": "162 W", "nome": "Ryzen 7 9800X3D", "w": 162, "cod": "9800X3D"}, {"id": "i5-12400f", "curto": "Core i5-12400F", "sub": "117 W", "nome": "Core i5-12400F", "w": 117, "cod": "12400F"}, {"id": "i5-14400f", "curto": "Core i5-14400F", "sub": "148 W", "nome": "Core i5-14400F", "w": 148, "cod": "14400F"}, {"id": "i7-14700k", "curto": "Core i7-14700K", "sub": "253 W", "nome": "Core i7-14700K", "w": 253, "cod": "14700K"}]}];
+    this.state = Object.assign({ impresso: true, mostrado: 0, enviado: false, t: Date.now() }, {"gpu": "rtx-5070", "cpu": "r5-7600"});
+  }
+  componentDidMount() { this.reimprime({}); }
+  componentWillUnmount() { cancelAnimationFrame(this._raf); clearTimeout(this._to); clearTimeout(this._to2); }
+  f(v, d) {
+    var t = Math.abs(v).toFixed(d || 0).split('.');
+    t[0] = t[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    return (v < 0 && Number(t.join('.')) !== 0 ? '−' : '') + t.join(',');
+  }
+  conta(s) {
+    s = s || this.state;
+    var v = {}, f = this.f;
+    this.GR.forEach(function (g) { v[g.k] = g.ops.find(function (o) { return o.id === s[g.k]; }) || g.ops[0]; });
+    var g = v.gpu, c = v.cpu, consumo = g.w + c.w + 60, cf = Math.round(consumo * 1.3);
+    var DEG = [400, 450, 500, 550, 600, 650, 700, 750, 850, 1000, 1200, 1300, 1600], rec = DEG[DEG.length - 1];
+    for (var i = 0; i < DEG.length; i++) { if (DEG[i] >= cf) { rec = DEG[i]; break; } }
+    return { alvo: rec, dec: 0, unidade: 'W', rotulo: 'Fonte recomendada', cupom: 'Cupom de consumo',
+      numero: String(rec).padStart(4, '0'), cod: g.cod + '-' + c.cod,
+      linhas: [
+        { nome: g.nome, v: g.w + ' W' }, { nome: c.nome, v: c.w + ' W' }, { nome: 'Mãe, memória, SSD', v: '60 W' },
+        { nome: 'Consumo em carga', v: consumo + ' W', sep: true }, { nome: 'Folga (+30%)', v: (cf - consumo) + ' W' },
+        { nome: 'Total com folga', v: cf + ' W', forte: true }
+      ],
+      sub: 'Degrau comercial logo acima de ' + cf + ' W.',
+      nota: 'Só listamos fonte com relatório de teste público. Watt escrito na caixa não conta.',
+      seloTopo: 'Sua fonte', seloMeio: String(rec), seloBase: 'watts', brilho: (0.2 + 0.6 * Math.min(rec / 1200, 1)).toFixed(2) };
+  }
+  reimprime(patch) {
+    var self = this;
+    clearTimeout(this._to); cancelAnimationFrame(this._raf);
+    var prox = Object.assign({}, this.state, patch);
+    this.setState(Object.assign({ impresso: false, mostrado: 0 }, patch));
+    this._to = setTimeout(function () { self.setState({ impresso: true, t: Date.now() }); self.anima(prox); }, 60);
+  }
+  anima(prox) {
+    var self = this, alvo = this.conta(prox).alvo, t0 = performance.now();
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { this.setState({ mostrado: alvo }); return; }
+    var passo = function (t) {
+      var q = Math.min((t - t0) / 700, 1);
+      self.setState({ mostrado: alvo * (1 - Math.pow(1 - q, 3)) });
+      if (q < 1) self._raf = requestAnimationFrame(passo);
+    };
+    this._raf = requestAnimationFrame(passo);
+  }
+  barras(semente) {
+    var h = 7, out = [];
+    for (var i = 0; i < semente.length; i++) h = (h * 31 + semente.charCodeAt(i)) >>> 0;
+    for (var j = 0; j < 40; j++) { h = (h * 1103515245 + 12345) >>> 0; out.push({ w: 1 + ((h >>> 8) % 3), c: j % 2 ? 'rgba(0,0,0,0)' : '#111311' }); }
+    return out;
+  }
+  renderVals() {
+    var self = this, s = this.state, k = this.conta(), f = this.f;
+    var d = new Date(s.t), p2 = function (n) { return String(n).padStart(2, '0'); };
+    return {
+      grupos: this.GR.map(function (g, i) {
+        var cur = g.ops.find(function (o) { return o.id === s[g.k]; }) || g.ops[0];
+        return {
+          n: p2(i + 1), titulo: g.titulo, resumo: cur.curto, temDica: !!g.dica, dica: g.dica || '',
+          ops: g.ops.map(function (o) {
+            var on = o.id === s[g.k];
+            return { curto: o.curto, sub: o.sub, on: on, larg: (g.larg || 112) + 'px',
+              pick: function () { var q = {}; q[g.k] = o.id; self.reimprime(q); },
+              bg: on ? '#9dff3b' : '#0d1013', bd: on ? '#9dff3b' : 'rgba(255,255,255,.08)',
+              fg: on ? '#07110a' : '#eef2ee', fg2: on ? '#24461a' : '#9aa39c',
+              sh: on ? '0 10px 30px rgba(157,255,59,.28)' : 'none' };
+          })
+        };
+      }),
+      linhas: k.linhas.map(function (l, i) {
+        return { nome: l.nome, v: l.v, peso: l.forte ? '700' : '400',
+          borda: l.sep ? '1.5px dashed rgba(17,19,17,.4)' : '0 solid transparent',
+          pad: l.sep ? '10px' : '0px', mt: l.sep ? '10px' : '4px', atraso: (200 + i * 50) + 'ms' };
+      }),
+      impresso: s.impresso, numero: k.numero, cupom: k.cupom,
+      data: p2(d.getDate()) + '/' + p2(d.getMonth() + 1) + '/' + d.getFullYear() + ' · ' + p2(d.getHours()) + ':' + p2(d.getMinutes()),
+      rotulo: k.rotulo, pre: k.pre || '', mostrado: f(s.mostrado, k.dec || 0), unidade: k.unidade,
+      sub: k.sub, nota: k.nota,
+      seloTopo: k.seloTopo, seloMeio: k.seloMeio, seloBase: k.seloBase,
+      seloFundo: k.ok === false ? '#ffb020' : '#9dff3b',
+      ledCor: k.ok === false ? '#ffb020' : '#9dff3b', ledTexto: k.ok === false ? 'Revisar' : 'Pronta',
+      brilho: String(k.brilho == null ? 0.45 : k.brilho),
+      codigo: 'ELPHY-' + k.numero + '-' + k.cod,
+      barras: this.barras(String(k.cod) + k.numero),
+      mandarTexto: s.enviado ? 'Nota copiada' : 'Mandar a nota no WhatsApp',
+      mandar: function () { self.setState({ enviado: true }); clearTimeout(self._to2); self._to2 = setTimeout(function () { self.setState({ enviado: false }); }, 1800); }
+    };
+  }
+}
+</script>
+</body>
+</html>

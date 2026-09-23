@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Elphy — comparar celulares</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&amp;family=Schibsted+Grotesk:wght@400;500;600;700;800&amp;family=Martian+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0;background:#050607}
+a{color:#eef2ee}a:hover{color:#9dff3b}
+button{cursor:pointer}
+button:focus-visible,a:focus-visible{outline:2px solid #9dff3b;outline-offset:3px}
+.el-rolo{scrollbar-width:none}.el-rolo::-webkit-scrollbar{display:none}
+@keyframes el-enche{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes el-imprime{from{transform:translateY(-46px);clip-path:inset(0 0 100% 0)}to{transform:none;clip-path:inset(0 0 0 0)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div style="position: relative; width: 390px; height: 2060px; overflow: hidden; background: #050607; color: #eef2ee; font-family: 'Schibsted Grotesk', system-ui, sans-serif;">
+
+  <header style="display: flex; align-items: center; justify-content: space-between; height: 64px; box-sizing: border-box; padding: 0 24px; border-bottom: 1px solid rgba(255,255,255,.07);">
+    <a href="Home-Mobile.dc.html" style="font-weight: 800; font-size: 24px; letter-spacing: -.045em; text-decoration: none; color: #eef2ee;">elphy<span style="color: #9dff3b;">.</span></a>
+    <span style="font-family: 'Martian Mono', monospace; font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: #c9d0ca;">Celular · Comparar</span>
+  </header>
+
+  <div style="padding: 28px 24px 0;">
+    <h1 style="margin: 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 70px; line-height: .86; text-transform: uppercase;">Lado<br>a lado<span style="color: #9dff3b;">.</span></h1>
+    <p style="margin: 14px 0 0; font-size: 16px; line-height: 24px; color: #b9c1bb;">Só número de ficha. A barra lima marca quem mede mais em cada linha — não quem é "melhor".</p>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 28px 24px 0;">
+    <sc-for list="{{ lados }}" as="l" hint-placeholder-count="2">
+      <div style="box-sizing: border-box; padding: 14px; border-radius: 18px; background: #0a0d0f; border: 1px solid {{ l.bd }};">
+        <div style="font-family: 'Martian Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: {{ l.cor }};">Lado {{ l.letra }}</div>
+        <div style="margin-top: 8px; font-size: 13px; color: #9aa39c;">{{ l.marca }}</div>
+        <div style="font-size: 18px; line-height: 22px; font-weight: 800;">{{ l.modelo }}</div>
+        <button type="button" onClick="{{ l.troca }}" style="margin-top: 12px; width: 100%; height: 44px; border-radius: 22px; border: 1px solid rgba(255,255,255,.16); background: transparent; color: #eef2ee; font: inherit; font-size: 14px; font-weight: 600;">Trocar</button>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="padding: 28px 24px 0;">
+    <div style="font-family: 'Martian Mono', monospace; font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: #9aa39c;">Filtrar por marca</div>
+  </div>
+  <div class="el-rolo" style="overflow-x: auto; margin-top: 10px;">
+    <div style="display: flex; gap: 8px; padding: 0 24px; width: max-content;">
+      <sc-for list="{{ marcas }}" as="m" hint-placeholder-count="5">
+        <button type="button" onClick="{{ m.pick }}" aria-pressed="{{ m.on }}" style="height: 44px; padding: 0 18px; border-radius: 22px; border: 1px solid {{ m.bd }}; background: {{ m.bg }}; color: {{ m.fg }}; font: inherit; font-size: 14px; font-weight: 700;">{{ m.nome }}</button>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding: 24px 24px 0; display: flex; flex-direction: column;">
+    <sc-for list="{{ linhas }}" as="r" hint-placeholder-count="7">
+      <div style="padding: 16px 0; border-top: 1px solid rgba(255,255,255,.08);">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <span style="font-family: 'Martian Mono', monospace; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: #9aa39c;">{{ r.nome }}</span>
+          <span style="font-family: 'Martian Mono', monospace; font-size: 10px; color: #6f7871;">{{ r.regra }}</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 10px;">
+          <div>
+            <div style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 36px; line-height: .9; color: {{ r.corA }};">{{ r.a }}</div>
+            <div style="height: 6px; margin-top: 8px; border-radius: 3px; background: #14191c;"><i style="display: block; height: 100%; width: {{ r.pa }}; border-radius: 3px; background: {{ r.corA }}; transform-origin: 0 50%; animation: el-enche .6s cubic-bezier(.2,.7,.3,1) both;"></i></div>
+          </div>
+          <div>
+            <div style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 36px; line-height: .9; color: {{ r.corB }};">{{ r.b }}</div>
+            <div style="height: 6px; margin-top: 8px; border-radius: 3px; background: #14191c;"><i style="display: block; height: 100%; width: {{ r.pb }}; border-radius: 3px; background: {{ r.corB }}; transform-origin: 0 50%; animation: el-enche .6s cubic-bezier(.2,.7,.3,1) both;"></i></div>
+          </div>
+        </div>
+        <sc-if value="{{ r.temConta }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top: 8px; font-size: 13px; line-height: 19px; color: #9aa39c;">{{ r.conta }}</div>
+        </sc-if>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="margin: 20px 24px 0; transform: rotate(-1deg);">
+    <div style="box-sizing: border-box; padding: 20px; background: #f3f1ea; color: #111311; font-family: 'Martian Mono', monospace; font-size: 11px; line-height: 18px; box-shadow: 0 30px 60px rgba(0,0,0,.5); animation: el-imprime .6s cubic-bezier(.2,.7,.3,1) backwards;">
+      <div style="display: flex; justify-content: space-between;"><span style="font-family: 'Schibsted Grotesk', sans-serif; font-weight: 800; font-size: 20px; letter-spacing: -.045em;">elphy.</span><b>PLACAR</b></div>
+      <div style="margin: 10px 0; border-top: 1.5px dashed rgba(17,19,17,.4);"></div>
+      <div style="display: flex; align-items: baseline;"><span>{{ nomeA }}</span><span style="flex: 1; margin: 0 5px 4px; border-bottom: 1.5px dotted rgba(17,19,17,.45);"></span><b>{{ ganhaA }} linhas</b></div>
+      <div style="display: flex; align-items: baseline; margin-top: 3px;"><span>{{ nomeB }}</span><span style="flex: 1; margin: 0 5px 4px; border-bottom: 1.5px dotted rgba(17,19,17,.45);"></span><b>{{ ganhaB }} linhas</b></div>
+      <div style="margin-top: 12px; border-top: 3px double #111311;"></div>
+      <div style="margin-top: 10px; font-size: 10px; line-height: 15px; color: #3f433d;">Placar conta linhas, não decide compra. Se bateria importa mais que câmera para você, olhe só a linha da bateria.</div>
+    </div>
+  </div>
+
+  <div style="padding: 32px 24px 0; display: flex; flex-direction: column; gap: 10px;">
+    <button type="button" style="height: 56px; border: 0; border-radius: 28px; background: #9dff3b; color: #07110a; font: inherit; font-weight: 700; font-size: 16px;">Mandar o comparativo no WhatsApp</button>
+    <a href="PowerBank-Mobile.dc.html" style="display: flex; align-items: center; justify-content: center; height: 52px; border-radius: 26px; border: 1px solid rgba(255,255,255,.16); text-decoration: none; font-weight: 600;">Quantas cargas um power bank dá nele</a>
+  </div>
+  <p style="margin: 16px 24px 0; font-family: 'Martian Mono', monospace; font-size: 10.5px; line-height: 17px; color: #ffb020;">Marcas e números de exemplo. Cada ficha entra com link oficial e data de conferência.</p>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":2060}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.C = [
+      { id: 'a1', marca: 'Marca A', modelo: 'Modelo A1', bat: 5000, tela: 6.6, peso: 190, carga: 25, arm: 128, anos: 6 },
+      { id: 'a2', marca: 'Marca A', modelo: 'Modelo A2', bat: 4700, tela: 6.2, peso: 168, carga: 45, arm: 256, anos: 7 },
+      { id: 'b1', marca: 'Marca B', modelo: 'Modelo B1', bat: 5500, tela: 6.7, peso: 205, carga: 67, arm: 256, anos: 3 },
+      { id: 'c1', marca: 'Marca C', modelo: 'Modelo C1', bat: 3600, tela: 6.1, peso: 170, carga: 20, arm: 128, anos: 6 },
+      { id: 'd1', marca: 'Marca D', modelo: 'Modelo D1', bat: 6000, tela: 6.8, peso: 210, carga: 33, arm: 256, anos: 2 }
+    ];
+    this.state = { a: 'a1', b: 'b1', marca: 'Todas', lado: 'b' };
+  }
+  renderVals() {
+    var self = this, s = this.state;
+    var A = this.C.find(function (x) { return x.id === s.a; }), B = this.C.find(function (x) { return x.id === s.b; });
+    var br = function (v, d) { return v.toFixed(d).replace('.', ','); };
+    var gib = function (gb) { return Math.round(gb * 1e9 / Math.pow(1024, 3)); };
+    var cargas = function (c) { return br(20000 * 3.7 * 0.65 / (c.bat * 3.85), 1); };
+    var R = [
+      { nome: 'Bateria', regra: 'mais = mede mais', a: A.bat, b: B.bat, fa: A.bat + ' mAh', fb: B.bat + ' mAh', alto: true, conta: 'Power bank de 20.000: ' + cargas(A) + ' × ' + cargas(B) + ' cargas' },
+      { nome: 'Carregamento', regra: 'watts do carregador', a: A.carga, b: B.carga, fa: A.carga + ' W', fb: B.carga + ' W', alto: true },
+      { nome: 'Tela', regra: 'polegadas', a: A.tela, b: B.tela, fa: br(A.tela, 1) + '"', fb: br(B.tela, 1) + '"', alto: true },
+      { nome: 'Peso', regra: 'menos = mais leve', a: A.peso, b: B.peso, fa: A.peso + ' g', fb: B.peso + ' g', alto: false },
+      { nome: 'Armazenamento', regra: 'o que aparece de fato', a: A.arm, b: B.arm, fa: A.arm + ' GB', fb: B.arm + ' GB', alto: true, conta: 'No sistema: ' + gib(A.arm) + ' GB × ' + gib(B.arm) + ' GB' },
+      { nome: 'Atualizações', regra: 'anos prometidos', a: A.anos, b: B.anos, fa: A.anos + ' anos', fb: B.anos + ' anos', alto: true }
+    ];
+    var ga = 0, gb = 0;
+    var linhas = R.map(function (r) {
+      var max = Math.max(r.a, r.b), aw = r.alto ? r.a > r.b : r.a < r.b, bw = r.alto ? r.b > r.a : r.b < r.a;
+      if (aw) ga++; if (bw) gb++;
+      return { nome: r.nome, regra: r.regra, a: r.fa, b: r.fb,
+        pa: (r.a / max * 100).toFixed(0) + '%', pb: (r.b / max * 100).toFixed(0) + '%',
+        corA: aw ? '#9dff3b' : '#eef2ee', corB: bw ? '#9dff3b' : '#eef2ee',
+        temConta: !!r.conta, conta: r.conta || '' };
+    });
+    var lista = this.C.filter(function (x) { return s.marca === 'Todas' || x.marca === s.marca; });
+    var troca = function (lado) {
+      return function () {
+        var cur = s[lado], outro = s[lado === 'a' ? 'b' : 'a'];
+        var pool = lista.filter(function (x) { return x.id !== outro; });
+        if (!pool.length) return;
+        var i = pool.findIndex(function (x) { return x.id === cur; });
+        var p = {}; p[lado] = pool[(i + 1) % pool.length].id; self.setState(p);
+      };
+    };
+    var nomes = ['Todas', 'Marca A', 'Marca B', 'Marca C', 'Marca D'];
+    return {
+      lados: [
+        { letra: 'A', marca: A.marca, modelo: A.modelo, troca: troca('a'), cor: '#9dff3b', bd: 'rgba(157,255,59,.3)' },
+        { letra: 'B', marca: B.marca, modelo: B.modelo, troca: troca('b'), cor: '#ffb020', bd: 'rgba(255,176,32,.3)' }
+      ],
+      marcas: nomes.map(function (n) {
+        var on = s.marca === n;
+        return { nome: n, on: on, pick: function () { self.setState({ marca: n }); },
+          bg: on ? '#9dff3b' : '#0d1013', bd: on ? '#9dff3b' : 'rgba(255,255,255,.1)', fg: on ? '#07110a' : '#eef2ee' };
+      }),
+      linhas: linhas,
+      nomeA: A.modelo, nomeB: B.modelo, ganhaA: ga, ganhaB: gb
+    };
+  }
+}
+</script>
+</body>
+</html>

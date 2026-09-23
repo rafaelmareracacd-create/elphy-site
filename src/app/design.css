@@ -1,0 +1,65 @@
+/*
+ * Elphy 1.0 — base das páginas transcritas do desenho (docs/design-1.0).
+ * As pranchetas foram desenhadas sobre o CSS padrão do navegador, sem o reset do Tailwind.
+ * Dentro de .dz o reset volta ao padrão do navegador; o resto está no style de cada elemento.
+ */
+@layer base {
+  /* especificidade de classe para vencer o preflight (img, button…); fora do SVG, onde o atributo manda */
+  .dz, .dz *:not(svg):not(svg *) { all: revert; }
+  .dz svg { display: inline; vertical-align: baseline; }
+}
+
+.dz {
+  --fd: "Big Shoulders Display", sans-serif;
+  --fm: "Martian Mono", monospace;
+  --fb: "Schibsted Grotesk", system-ui, sans-serif;
+  min-height: 100vh;
+  background: #050607;
+  color: #eef2ee;
+  font-family: var(--fb);
+  font-size: 16px;
+  line-height: normal;
+  overflow-x: clip;
+}
+body:has(.dz) { margin: 0; background: #050607; }
+
+.dz a { color: #eef2ee; }
+.dz a:hover { color: #9dff3b; }
+.dz button { cursor: pointer; }
+.dz :is(button, a, input, textarea, select):focus-visible { outline: 2px solid #9dff3b; outline-offset: 3px; }
+/* campo de busca sem contorno próprio (desenho): o anel vai na cápsula que o envolve */
+.dz :is(label, form):has(> input[type="search"]:focus-visible) { outline: 2px solid #9dff3b; outline-offset: 3px; }
+.dz .dz-rolo { scrollbar-width: none; }
+.dz .dz-rolo::-webkit-scrollbar { display: none; }
+.dz .dz-col > * { flex-shrink: 0; }
+.dz .dz-chip:hover { border-color: rgba(157, 255, 59, .6) !important; }
+.dz .dz-card:hover .dz-card-t { color: #9dff3b; }
+
+@keyframes el-imprime { from { transform: translateY(-46px); clip-path: inset(0 0 100% 0); } to { transform: none; clip-path: inset(0 0 0 0); } }
+@keyframes el-linha { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: none; } }
+@keyframes el-carimba { 0% { opacity: 0; transform: scale(1.6) rotate(-10deg); } 62% { opacity: 1; transform: scale(.93) rotate(15deg); } 100% { opacity: 1; transform: scale(1) rotate(12deg); } }
+@keyframes el-pulso { 0%, 100% { opacity: .4; } 50% { opacity: 1; } }
+@keyframes el-enche { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes el-sobe { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+@keyframes el-ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .dz * { animation: none !important; transition: none !important; } }
+
+/*
+ * Celular e computador. Página com prancheta de computador tem as duas árvores;
+ * a de computador é a prancheta de 1440 px, com zoom para caber (variável --zd, calculada no layout).
+ */
+.dz-m { display: block; }
+.dz-d { display: none; }
+.dz-quadro-m { width: 100%; max-width: 560px; margin: 0 auto; }
+.dz-quadro-d { width: 1440px; margin: 0 auto; zoom: var(--zd, 1); }
+@media (min-width: 1024px) {
+  .dz-m.tem-d { display: none; }
+  .dz-d { display: block; }
+}
+
+/* link de rodapé (10–15 px de texto): área de toque maior sem mexer no desenho */
+.dz footer a { position: relative; }
+.dz footer a::after { content: ""; position: absolute; inset: -9px -4px; }
+
+/* Menu aberto no celular: por cima de tudo */
+.dz-menu { position: fixed; inset: 0; z-index: 50; overflow-y: auto; background: #050607; }

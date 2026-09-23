@@ -1,10 +1,18 @@
-import Link from "next/link";
-import { pageMetadata } from "@/lib/site";
+import { Casca, Pagina404 } from "@/components/dz/Estados";
+import type { Metadata } from "next";
 
-export const metadata = pageMetadata("Dica não encontrada", "Essa dica não existe (ainda). Veja as outras dicas do Elphy.", "/404/");
+/* sem canonical: a página que falta não é /404/ */
+export const metadata: Metadata = {
+  title: "Essa página não fecha a conta",
+  description: "O link pode ter mudado. As contas continuam aqui.",
+  robots: { index: false },
+};
+
+/* Estados-Mobile, estado 1, de docs/design-1.0 */
 export default function NotFound() {
-  return <main id="conteudo" className="container reading page-section not-found">
-    <span className="eyebrow">404 · Cadê a dica?</span><h1>O elefante perdeu essa página.</h1><p className="muted">Mas tem outras por aqui.</p>
-    <Link className="button" href="/">Voltar para as dicas <span aria-hidden="true">↗</span></Link>
-  </main>;
+  return (
+    <div className="dz" id="conteudo">
+      <div className="dz-m"><div className="dz-quadro-m"><Casca rotulo="404"><Pagina404 /></Casca></div></div>
+    </div>
+  );
 }

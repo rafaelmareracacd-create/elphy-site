@@ -1,0 +1,322 @@
+{
+  "_aviso": "Watts das placas e dos Intel conferidos na página oficial em 2026-09-23 (campo fonte). Ryzen: PPT sem fonte oficial (ver _nota). Montador (placa-mãe, memória, gabinete, fonte) continua exemplo, verificado:false.",
+  "_metodologia": {
+    "folga": 0.3,
+    "texto": "Somamos o consumo máximo da placa de vídeo (TGP) com o do processador em carga (PPT/PL2, não o TDP base, que ignora o turbo), mais 60 W para placa-mãe, memória, armazenamento e ventoinhas. Sobre esse total aplicamos 30% de folga, que cobre o pico instantâneo da placa de vídeo e mantém a fonte na faixa de melhor eficiência. Arredondamos para cima até a potência comercial mais próxima."
+  },
+  "base_sistema_w": 60,
+  "gpus": [
+    {
+      "id": "rtx-5090",
+      "nome": "GeForce RTX 5090",
+      "tgp": 575,
+      "verificado": true,
+      "fonte": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5090/",
+      "conferido_em": "2026-09-23"
+    },
+    {
+      "id": "rtx-5080",
+      "nome": "GeForce RTX 5080",
+      "tgp": 360,
+      "verificado": true,
+      "fonte": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5080/",
+      "conferido_em": "2026-09-23"
+    },
+    {
+      "id": "rtx-5070-ti",
+      "nome": "GeForce RTX 5070 Ti",
+      "tgp": 300,
+      "verificado": true,
+      "fonte": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5070-family/",
+      "conferido_em": "2026-09-23"
+    },
+    {
+      "id": "rtx-5070",
+      "nome": "GeForce RTX 5070",
+      "tgp": 250,
+      "verificado": true,
+      "fonte": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5070-family/",
+      "conferido_em": "2026-09-23"
+    },
+    {
+      "id": "rtx-5060-ti",
+      "nome": "GeForce RTX 5060 Ti",
+      "tgp": 180,
+      "verificado": true,
+      "fonte": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5060-family/",
+      "conferido_em": "2026-09-23"
+    },
+    {
+      "id": "rtx-5060",
+      "nome": "GeForce RTX 5060",
+      "tgp": 145,
+      "verificado": true,
+      "fonte": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5060-family/",
+      "conferido_em": "2026-09-23"
+    },
+    {
+      "id": "rtx-4060",
+      "nome": "GeForce RTX 4060",
+      "tgp": 115,
+      "verificado": true,
+      "fonte": "https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4060-4060ti/",
+      "conferido_em": "2026-09-23"
+    },
+    {
+      "id": "rx-9070-xt",
+      "nome": "Radeon RX 9070 XT",
+      "tgp": 304,
+      "verificado": true,
+      "fonte": "https://www.amd.com/en/products/graphics/desktops/radeon/9000-series/amd-radeon-rx-9070xt.html",
+      "conferido_em": "2026-09-23"
+    },
+    {
+      "id": "rx-9060-xt",
+      "nome": "Radeon RX 9060 XT",
+      "tgp": 160,
+      "verificado": true,
+      "fonte": "https://www.amd.com/en/products/graphics/desktops/radeon/9000-series/amd-radeon-rx-9060xt.html",
+      "conferido_em": "2026-09-23",
+      "_nota": "160 W é a versão de 16 GB (página oficial)."
+    },
+    {
+      "id": "sem-gpu",
+      "nome": "Sem placa de vídeo (usa o vídeo do processador)",
+      "tgp": 0,
+      "verificado": true
+    }
+  ],
+  "cpus": [
+    {
+      "id": "r5-5600",
+      "nome": "Ryzen 5 5600",
+      "ppt": 88,
+      "verificado": false,
+      "_nota": "Página oficial da AMD mostra só o TDP (65 W, conferido em 2026-09-23); o PPT (88 W) é 1,35 × TDP e não aparece na página. Falta fonte oficial do PPT."
+    },
+    {
+      "id": "r5-7600",
+      "nome": "Ryzen 5 7600",
+      "ppt": 88,
+      "verificado": false,
+      "_nota": "Página oficial da AMD mostra só o TDP (65 W, conferido em 2026-09-23); o PPT (88 W) é 1,35 × TDP e não aparece na página. Falta fonte oficial do PPT."
+    },
+    {
+      "id": "r7-5700x3d",
+      "nome": "Ryzen 7 5700X3D",
+      "ppt": 142,
+      "verificado": false,
+      "_nota": "Página oficial da AMD mostra só o TDP (105 W, conferido em 2026-09-23); o PPT (142 W) é 1,35 × TDP e não aparece na página. Falta fonte oficial do PPT."
+    },
+    {
+      "id": "r7-7800x3d",
+      "nome": "Ryzen 7 7800X3D",
+      "ppt": 162,
+      "verificado": false,
+      "_nota": "Página oficial da AMD mostra só o TDP (120 W, conferido em 2026-09-23); o PPT (162 W) é 1,35 × TDP e não aparece na página. Falta fonte oficial do PPT."
+    },
+    {
+      "id": "r7-9800x3d",
+      "nome": "Ryzen 7 9800X3D",
+      "ppt": 162,
+      "verificado": false,
+      "_nota": "Página oficial da AMD mostra só o TDP (120 W, conferido em 2026-09-23); o PPT (162 W) é 1,35 × TDP e não aparece na página. Falta fonte oficial do PPT."
+    },
+    {
+      "id": "i5-12400f",
+      "nome": "Core i5-12400F",
+      "ppt": 117,
+      "verificado": true,
+      "fonte": "https://www.intel.com/content/www/us/en/products/sku/134587/intel-core-i512400f-processor-18m-cache-up-to-4-40-ghz/specifications.html",
+      "conferido_em": "2026-09-23"
+    },
+    {
+      "id": "i5-14400f",
+      "nome": "Core i5-14400F",
+      "ppt": 148,
+      "verificado": true,
+      "fonte": "https://www.intel.com/content/www/us/en/products/sku/236777/intel-core-i5-processor-14400f-20m-cache-up-to-4-70-ghz/specifications.html",
+      "conferido_em": "2026-09-23"
+    },
+    {
+      "id": "i7-14700k",
+      "nome": "Core i7-14700K",
+      "ppt": 253,
+      "verificado": true,
+      "fonte": "https://www.intel.com/content/www/us/en/products/sku/236783/intel-core-i7-processor-14700k-33m-cache-up-to-5-60-ghz/specifications.html",
+      "conferido_em": "2026-09-23"
+    }
+  ],
+  "_aviso_fontes": "Só entra fonte com relatório de teste público (Cybenetics, HWbusters ou equivalente). Watt escrito na caixa não basta: é justamente o que a genérica falsifica. Campo relatorio é obrigatório.",
+  "fontes": [
+    {
+      "id": "exemplo-550",
+      "nome": "EXEMPLO — trocar por modelo real",
+      "watts": 550,
+      "selo": "80 Plus Bronze",
+      "relatorio": "",
+      "preco": null,
+      "preco_data": null,
+      "url": "",
+      "verificado": false
+    }
+  ],
+  "montador": {
+    "cpu": [
+      {
+        "id": "r5-7600",
+        "nome": "Ryzen 5 7600",
+        "w": 88,
+        "sock": "AM5",
+        "ddr": "DDR5",
+        "cooler": true,
+        "url": "",
+        "verificado": false
+      },
+      {
+        "id": "r7-7800x3d",
+        "nome": "Ryzen 7 7800X3D",
+        "w": 162,
+        "sock": "AM5",
+        "ddr": "DDR5",
+        "cooler": false,
+        "url": "",
+        "verificado": false
+      },
+      {
+        "id": "r5-5600",
+        "nome": "Ryzen 5 5600",
+        "w": 88,
+        "sock": "AM4",
+        "ddr": "DDR4",
+        "cooler": true,
+        "url": "",
+        "verificado": false
+      },
+      {
+        "id": "i5-14400f",
+        "nome": "Core i5-14400F",
+        "w": 148,
+        "sock": "LGA1700",
+        "ddr": "DDR5",
+        "cooler": true,
+        "url": "",
+        "verificado": false
+      }
+    ],
+    "mae": [
+      {
+        "id": "b650",
+        "nome": "Placa B650",
+        "sock": "AM5",
+        "ddr": "DDR5",
+        "url": "",
+        "verificado": false
+      },
+      {
+        "id": "b550",
+        "nome": "Placa B550",
+        "sock": "AM4",
+        "ddr": "DDR4",
+        "url": "",
+        "verificado": false
+      },
+      {
+        "id": "b760",
+        "nome": "Placa B760 DDR5",
+        "sock": "LGA1700",
+        "ddr": "DDR5",
+        "url": "",
+        "verificado": false
+      }
+    ],
+    "mem": [
+      {
+        "id": "d5",
+        "nome": "2×16 GB DDR5",
+        "ddr": "DDR5",
+        "url": "",
+        "verificado": false
+      },
+      {
+        "id": "d4",
+        "nome": "2×16 GB DDR4",
+        "ddr": "DDR4",
+        "url": "",
+        "verificado": false
+      }
+    ],
+    "gpu": [
+      {
+        "id": "rtx-5060",
+        "nome": "RTX 5060",
+        "w": 145,
+        "mm": 240,
+        "url": "",
+        "verificado": false
+      },
+      {
+        "id": "rtx-5070",
+        "nome": "RTX 5070",
+        "w": 250,
+        "mm": 300,
+        "url": "",
+        "verificado": false
+      },
+      {
+        "id": "rtx-5080",
+        "nome": "RTX 5080",
+        "w": 360,
+        "mm": 340,
+        "url": "",
+        "verificado": false
+      }
+    ],
+    "gab": [
+      {
+        "id": "mini",
+        "nome": "Gabinete compacto",
+        "mm": 280,
+        "url": "",
+        "verificado": false
+      },
+      {
+        "id": "mid",
+        "nome": "Gabinete médio",
+        "mm": 330,
+        "url": "",
+        "verificado": false
+      },
+      {
+        "id": "full",
+        "nome": "Gabinete grande",
+        "mm": 400,
+        "url": "",
+        "verificado": false
+      }
+    ],
+    "psu": [
+      {
+        "id": "p550",
+        "nome": "Fonte 550 W",
+        "w": 550,
+        "url": "",
+        "verificado": false
+      },
+      {
+        "id": "p650",
+        "nome": "Fonte 650 W",
+        "w": 650,
+        "url": "",
+        "verificado": false
+      },
+      {
+        "id": "p850",
+        "nome": "Fonte 850 W",
+        "w": 850,
+        "url": "",
+        "verificado": false
+      }
+    ]
+  }
+}

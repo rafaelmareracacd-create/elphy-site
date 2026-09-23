@@ -1,19 +1,20 @@
-import Hero from "@/components/Hero";
-import ArticleFeed from "@/components/ArticleFeed";
-import CategoryNav from "@/components/CategoryNav";
+import HomeDesktop from "@/components/dz/HomeDesktop";
+import HomeMobile from "@/components/dz/HomeMobile";
 import { pageMetadata } from "@/lib/site";
 
-export const metadata = pageMetadata("Elphy · Dica sem caô", "Cupons e reviews sem passar pano. As dicas dos vídeos, com espaço para o que é bom e o que deixa a desejar.", "/");
+export const metadata = pageMetadata(
+  "Elphy · A conta que a loja não faz",
+  "Escolhe a placa de vídeo e o processador. O Elphy soma cada watt e entrega a nota com a conta inteira à vista.",
+  "/",
+  "/og-nota.png",
+);
 
+/* Home: Home-Mobile (celular) e Main (computador), de docs/design-1.0 */
 export default function Home() {
   return (
-    <main id="conteudo" className="container">
-      <CategoryNav />
-      <Hero />
-      <section className="tips-section" aria-labelledby="dicas-titulo">
-        <div className="section-heading"><h2 id="dicas-titulo">Últimas dicas<span className="lime">.</span></h2><span className="eyebrow muted">Mais recentes primeiro</span></div>
-        <ArticleFeed />
-      </section>
-    </main>
+    <div className="dz" id="conteudo">
+      <div className="dz-m tem-d"><div className="dz-quadro-m"><HomeMobile /></div></div>
+      <div className="dz-d"><div className="dz-quadro-d"><HomeDesktop /></div></div>
+    </div>
   );
 }

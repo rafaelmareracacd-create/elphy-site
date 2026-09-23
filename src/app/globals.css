@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "./elphy.css";
+@import "./design.css";
 
 :root {
   --bg-0: #0b0f14;
@@ -13,6 +15,12 @@
   --warn: #ffd23f;
   --danger: #ff5c6c;
   --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+  --fundo: #050607;
+  --texto: #eef2ee;
+  --lima: #9dff3b;
+  --ambar: #ffb020;
+  --papel: #f3f1ea;
+  --tinta: #111311;
   color-scheme: dark;
 }
 @theme inline {
@@ -21,6 +29,8 @@
   --color-lime: var(--lime);
   --font-sans: var(--font-body);
 }
+/* legado: em camada, para as páginas .dz (design.css) poderem voltar ao padrão do navegador */
+@layer base {
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--bg-0); color: var(--fg-0); font-family: var(--font-body), system-ui, sans-serif; font-size: 17px; line-height: 26px; }
 main { min-height: 45vh; }
@@ -35,6 +45,7 @@ button:disabled { cursor: default; }
 img { max-width: 100%; }
 :focus-visible { outline: 2px solid var(--lime); outline-offset: 5px; }
 ::selection { background: var(--lime); color: var(--lime-ink); }
+}
 .container { width: min(100% - 40px, 1080px); margin-inline: auto; }
 .reading { max-width: 680px; }
 .lime { color: var(--lime); }

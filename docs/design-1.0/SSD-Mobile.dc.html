@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Elphy — SSD no celular</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&amp;family=Schibsted+Grotesk:wght@400;500;600;700;800&amp;family=Martian+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0;background:#050607}
+a{color:#eef2ee}a:hover{color:#9dff3b}
+button{cursor:pointer}
+button:focus-visible,a:focus-visible{outline:2px solid #9dff3b;outline-offset:3px}
+.el-rolo{scrollbar-width:none}.el-rolo::-webkit-scrollbar{display:none}
+@keyframes el-imprime{from{transform:translateY(-46px);clip-path:inset(0 0 100% 0)}to{transform:none;clip-path:inset(0 0 0 0)}}
+@keyframes el-linha{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:none}}
+@keyframes el-carimba{0%{opacity:0;transform:scale(1.6) rotate(-10deg)}62%{opacity:1;transform:scale(.93) rotate(15deg)}100%{opacity:1;transform:scale(1) rotate(12deg)}}
+@keyframes el-pulso{0%,100%{opacity:.4}50%{opacity:1}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div style="position: relative; width: 390px; height: 1640px; overflow: hidden; background: #050607; color: #eef2ee; font-family: 'Schibsted Grotesk', system-ui, sans-serif;">
+
+  <header style="display: flex; align-items: center; justify-content: space-between; height: 64px; box-sizing: border-box; padding: 0 24px; border-bottom: 1px solid rgba(255,255,255,.07);">
+    <a href="Home-Mobile.dc.html" style="font-weight: 800; font-size: 24px; letter-spacing: -.045em; text-decoration: none; color: #eef2ee;">elphy<span style="color: #9dff3b;">.</span></a>
+    <span style="display: inline-flex; align-items: center; gap: 7px; font-family: 'Martian Mono', monospace; font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: #c9d0ca;"><i style="display: block; width: 6px; height: 6px; border-radius: 50%; background: #9dff3b; box-shadow: 0 0 8px #9dff3b; animation: el-pulso 1.8s ease-in-out infinite;"></i>Armazenamento</span>
+  </header>
+
+  <div style="padding: 28px 24px 0;">
+    <p style="margin: 0; font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #9dff3b;">Ferramenta nº 03</p>
+    <h1 style="margin: 14px 0 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 70px; line-height: .86; text-transform: uppercase;">O que o<br>Windows<br>vai mostrar<span style="color: #9dff3b;">.</span></h1>
+    <p style="margin: 14px 0 0; font-size: 16px; line-height: 24px; color: #b9c1bb;">A caixa conta de mil em mil. O Windows conta de 1.024 em 1.024. Nenhum dos dois está mentindo.</p>
+  </div>
+
+  <div style="padding: 34px 24px 0; display: flex; justify-content: space-between; align-items: baseline;">
+    <span style="font-family: 'Martian Mono', monospace; font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: #9aa39c;">01 — O que a caixa diz</span>
+    <span style="font-family: 'Martian Mono', monospace; font-size: 10.5px; color: #9dff3b;">{{ resumo }}</span>
+  </div>
+  <div class="el-rolo" style="overflow-x: auto; margin-top: 12px;">
+    <div style="display: flex; gap: 8px; padding: 0 24px; width: max-content;">
+      <sc-for list="{{ chips }}" as="g" hint-placeholder-count="6">
+        <button type="button" onClick="{{ g.pick }}" aria-pressed="{{ g.on }}" style="width: 96px; height: 64px; flex-shrink: 0; box-sizing: border-box; padding: 10px 12px; border-radius: 14px; border: 1px solid {{ g.bd }}; background: {{ g.bg }}; box-shadow: {{ g.sh }}; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; text-align: left; transition: background .18s ease, box-shadow .18s ease;">
+          <span style="font-weight: 700; font-size: 17px; color: {{ g.fg }};">{{ g.curto }}</span>
+          <span style="font-family: 'Martian Mono', monospace; font-size: 11px; color: {{ g.fg2 }};">na caixa</span>
+        </button>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="position: relative; margin-top: 40px; padding: 0 24px; display: flex; flex-direction: column; align-items: center;">
+    <div aria-hidden="true" style="position: absolute; left: -60px; top: 40px; width: 510px; height: 640px; background: radial-gradient(ellipse 46% 44% at 50% 50%, rgba(157,255,59,.5), rgba(157,255,59,0) 72%); opacity: .45;"></div>
+    <div style="position: relative; z-index: 3; width: 342px; height: 30px; box-sizing: border-box; padding: 0 14px; border-radius: 15px; background: linear-gradient(180deg, #1c2226, #0d1013); box-shadow: inset 0 1px 0 rgba(255,255,255,.09), 0 12px 30px rgba(0,0,0,.6); display: flex; align-items: center; justify-content: space-between; font-family: 'Martian Mono', monospace; font-size: 9px; letter-spacing: .14em; text-transform: uppercase;">
+      <span style="color: #8d958f;">Impressora de contas</span>
+      <span style="display: inline-flex; align-items: center; gap: 7px; color: #9dff3b;"><i style="display: block; width: 7px; height: 7px; border-radius: 50%; background: #9dff3b; box-shadow: 0 0 10px #9dff3b; animation: el-pulso 1.6s ease-in-out infinite;"></i>Pronta</span>
+    </div>
+    <div aria-hidden="true" style="position: relative; z-index: 3; width: 318px; height: 6px; margin-top: -4px; border-radius: 3px; background: #020303;"></div>
+
+    <sc-if value="{{ impresso }}" hint-placeholder-val="{{ true }}">
+      <div style="position: relative; z-index: 2; margin-top: -8px; transform: rotate(-1.4deg); transform-origin: 50% 0;">
+        <div style="position: relative; width: 318px; background: #f3f1ea; color: #111311; font-family: 'Martian Mono', monospace; font-size: 10.5px; line-height: 17px; box-shadow: 0 40px 70px rgba(0,0,0,.55), 0 2px 0 rgba(0,0,0,.25); animation: el-imprime .6s cubic-bezier(.2,.7,.3,1) backwards;">
+          <div aria-hidden="true" style="position: absolute; left: 0; bottom: -10px; width: 318px; height: 10px; background: linear-gradient(45deg, #f3f1ea 50%, rgba(243,241,234,0) 50%) 0 0 / 12px 10px repeat-x, linear-gradient(-45deg, #f3f1ea 50%, rgba(243,241,234,0) 50%) 0 0 / 12px 10px repeat-x; transform: scaleY(-1);"></div>
+          <div style="position: relative; padding: 22px 22px 24px;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+              <span style="font-family: 'Schibsted Grotesk', sans-serif; font-weight: 800; font-size: 21px; letter-spacing: -.045em;">elphy.</span>
+              <span style="font-weight: 700;">Nº {{ numero }}</span>
+            </div>
+            <div style="margin-top: 6px; letter-spacing: .08em; text-transform: uppercase;">Cupom de medição · espaço</div>
+            <div style="margin: 12px 0; border-top: 1.5px dashed rgba(17,19,17,.4);"></div>
+
+            <div style="font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: #5b5f58; animation: el-linha .3s ease-out both; animation-delay: 200ms;">Na caixa ({{ rotulo }})</div>
+            <div style="animation: el-linha .3s ease-out both; animation-delay: 230ms;"><b>{{ bytes }}</b> bytes</div>
+            <div style="display: flex; align-items: baseline; margin-top: 8px; animation: el-linha .3s ease-out both; animation-delay: 300ms;"><span>÷ 1.073.741.824</span><span style="flex: 1; margin: 0 5px 4px; border-bottom: 1.5px dotted rgba(17,19,17,.45);"></span><b>{{ gib }} GB</b></div>
+            <div style="margin-top: 2px; font-size: 9.5px; color: #5b5f58; animation: el-linha .3s ease-out both; animation-delay: 330ms;">1.024 × 1.024 × 1.024 — o jeito que o Windows conta</div>
+            <div style="margin: 12px 0; border-top: 1.5px dashed rgba(17,19,17,.4);"></div>
+            <div style="display: flex; align-items: baseline; animation: el-linha .3s ease-out both; animation-delay: 400ms;"><span>Some da conta</span><span style="flex: 1; margin: 0 5px 4px; border-bottom: 1.5px dotted rgba(17,19,17,.45);"></span><b>−{{ some }} GB</b></div>
+            <div style="display: flex; align-items: baseline; margin-top: 3px; animation: el-linha .3s ease-out both; animation-delay: 450ms;"><span>Em porcentagem</span><span style="flex: 1; margin: 0 5px 4px; border-bottom: 1.5px dotted rgba(17,19,17,.45);"></span><b>−{{ pct }}%</b></div>
+
+            <div style="margin-top: 14px; display: flex; height: 14px; box-sizing: border-box; border: 1.5px solid #111311; animation: el-linha .3s ease-out both; animation-delay: 500ms;">
+              <i style="display: block; width: {{ pctMostra }}; background: #111311;"></i>
+              <i style="display: block; flex: 1; background: repeating-linear-gradient(135deg, #111311 0 2px, rgba(17,19,17,0) 2px 5px);"></i>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-top: 5px; font-size: 9px; color: #5b5f58;"><span>O Windows mostra</span><span>a diferença da conta</span></div>
+
+            <div style="margin-top: 16px; border-top: 3px double #111311;"></div>
+            <div style="padding: 12px 0 8px;">
+              <div style="font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: #5b5f58;">Aparece no Windows</div>
+              <div style="display: flex; align-items: baseline; gap: 6px; margin-top: 4px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; line-height: .84;"><span style="font-size: 88px;">{{ mostrado }}</span><span style="font-size: 34px;">{{ unidade }}</span></div>
+              <div style="margin-top: 8px; font-size: 10px; color: #5b5f58;">Antes de instalar qualquer coisa. O sistema ocupa mais.</div>
+            </div>
+            <div style="border-top: 3px double #111311;"></div>
+            <div style="margin-top: 12px; font-size: 10px; line-height: 15px; color: #3f433d;">Não é defeito e não dá para recuperar. Se o número for muito menor que este, aí vale desconfiar do SSD.</div>
+            <div style="margin-top: 6px; font-size: 9.5px; line-height: 14px; color: #5b5f58;">Estimativa pela fórmula da metodologia. Não garante compatibilidade.</div>
+          </div>
+        </div>
+        <div style="position: absolute; right: -22px; bottom: 110px; width: 120px; height: 120px; border-radius: 50%; background: #9dff3b; color: #07110a; display: flex; flex-direction: column; align-items: center; justify-content: center; outline: 1.5px dashed rgba(7,17,10,.35); outline-offset: -9px; box-shadow: 0 16px 36px rgba(0,0,0,.45); transform: rotate(12deg); animation: el-carimba .44s cubic-bezier(.2,1.3,.4,1) both; animation-delay: 820ms;">
+          <span style="font-family: 'Martian Mono', monospace; font-size: 8.5px; letter-spacing: .16em; text-transform: uppercase;">Normal</span>
+          <span style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 44px; line-height: .86;">−{{ pctCurto }}%</span>
+          <span style="font-family: 'Martian Mono', monospace; font-size: 8.5px; letter-spacing: .16em; text-transform: uppercase;">não é golpe</span>
+        </div>
+      </div>
+    </sc-if>
+  </div>
+
+  <div style="padding: 44px 24px 0;">
+    <button type="button" onClick="{{ mandar }}" style="width: 100%; height: 58px; border: 0; border-radius: 29px; background: #9dff3b; color: #07110a; font-family: 'Schibsted Grotesk', sans-serif; font-weight: 700; font-size: 17px; box-shadow: 0 14px 40px rgba(157,255,59,.25);">{{ mandarTexto }}</button>
+  </div>
+
+  <div style="margin: 28px 24px 0; box-sizing: border-box; padding: 20px; border-radius: 20px; border: 1px solid rgba(255,176,32,.35); background: #0a0d0f;">
+    <span style="font-family: 'Martian Mono', monospace; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: #ffb020;">Onde desconfiar</span>
+    <p style="margin: 10px 0 0; font-size: 15px; line-height: 23px; color: #c9d0ca;">SSD de 2 TB por preço de 256 GB costuma ser pen drive com firmware mexido: mostra 2 TB e corrompe o que passar do tamanho real. Isso a conta não pega — só um teste de gravação.</p>
+  </div>
+
+  <div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 24px; border-top: 1px solid rgba(255,255,255,.07); display: flex; justify-content: space-between; font-family: 'Martian Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: #9aa39c;">
+    <span>Dica sem caô<span style="color: #9dff3b;">.</span></span>
+    <a href="PowerBank-Mobile.dc.html" style="color: #9aa39c;">Anterior: power bank</a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1640}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.OP = [
+      { gb: 128, r: '128 GB' }, { gb: 256, r: '256 GB' }, { gb: 512, r: '512 GB' },
+      { gb: 1000, r: '1 TB' }, { gb: 2000, r: '2 TB' }, { gb: 4000, r: '4 TB' }
+    ];
+    this.state = { gb: 1000, impresso: true, mostrado: 0, enviado: false };
+  }
+  componentDidMount() { this.reimprime({}); }
+  componentWillUnmount() { cancelAnimationFrame(this._raf); clearTimeout(this._to); clearTimeout(this._to2); }
+  gib(gb) { return gb * 1e9 / Math.pow(1024, 3); }
+  reimprime(patch) {
+    var self = this; clearTimeout(this._to); cancelAnimationFrame(this._raf);
+    var prox = Object.assign({}, this.state, patch);
+    this.setState(Object.assign({ impresso: false, mostrado: 0 }, patch));
+    this._to = setTimeout(function () { self.setState({ impresso: true }); self.anima(prox.gb); }, 60);
+  }
+  anima(gb) {
+    var self = this, alvo = this.gib(gb), t0 = performance.now();
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { this.setState({ mostrado: alvo }); return; }
+    var passo = function (t) {
+      var p = Math.min((t - t0) / 700, 1);
+      self.setState({ mostrado: alvo * (1 - Math.pow(1 - p, 3)) });
+      if (p < 1) self._raf = requestAnimationFrame(passo);
+    };
+    this._raf = requestAnimationFrame(passo);
+  }
+  renderVals() {
+    var self = this, s = this.state, g = this.gib(s.gb), tb = g >= 1024;
+    var op = this.OP.find(function (x) { return x.gb === s.gb; });
+    var mil = function (v) { return String(v).replace(/\B(?=(\d{3})+(?!\d))/g, '.'); };
+    var br = function (v, d) { return v.toFixed(d).replace('.', ','); };
+    var perda = 1 - g / s.gb;
+    return {
+      chips: this.OP.map(function (x) {
+        var on = x.gb === s.gb;
+        return { curto: x.r, on: on, pick: function () { self.reimprime({ gb: x.gb }); },
+          bg: on ? '#9dff3b' : '#0d1013', bd: on ? '#9dff3b' : 'rgba(255,255,255,.08)',
+          fg: on ? '#07110a' : '#eef2ee', fg2: on ? '#24461a' : '#9aa39c',
+          sh: on ? '0 10px 30px rgba(157,255,59,.28)' : 'none' };
+      }),
+      resumo: op.r, rotulo: op.r, impresso: s.impresso,
+      numero: String(s.gb).padStart(4, '0'),
+      bytes: mil(s.gb * 1e9),
+      gib: mil(Math.round(g)), some: mil(Math.round(s.gb - g)),
+      pct: br(perda * 100, 1), pctCurto: br(perda * 100, 1).split(',')[0],
+      pctMostra: ((1 - perda) * 100).toFixed(1) + '%',
+      mostrado: tb ? br(s.mostrado / 1024, 2) : String(Math.round(s.mostrado)),
+      unidade: tb ? 'TB' : 'GB',
+      mandarTexto: s.enviado ? 'Nota copiada' : 'Mandar a nota no WhatsApp',
+      mandar: function () { self.setState({ enviado: true }); clearTimeout(self._to2); self._to2 = setTimeout(function () { self.setState({ enviado: false }); }, 1800); }
+    };
+  }
+}
+</script>
+</body>
+</html>

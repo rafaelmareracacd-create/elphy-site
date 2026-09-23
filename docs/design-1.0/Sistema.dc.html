@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Elphy — sistema visual 1.0</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&amp;family=Schibsted+Grotesk:wght@400;500;600;700;800&amp;family=Martian+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0;background:#050607}
+a{color:#eef2ee}a:hover{color:#9dff3b}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 2360px; overflow: hidden; box-sizing: border-box; padding: 88px 96px; background: #050607; color: #eef2ee; font-family: 'Schibsted Grotesk', system-ui, sans-serif; display: flex; flex-direction: column;">
+
+  <!-- cabeçalho -->
+  <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+    <div>
+      <div style="font-family: 'Martian Mono', monospace; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: #9dff3b;">elphy. — sistema visual 1.0</div>
+      <div style="margin-top: 18px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 128px; line-height: .86; text-transform: uppercase;">Uma ideia só:<br>a conta à vista<span style="color: #9dff3b;">.</span></div>
+    </div>
+    <div style="width: 440px; display: flex; flex-direction: column; gap: 14px; padding-top: 36px;">
+      <div style="display: flex; align-items: center; gap: 16px; padding: 16px 18px; border-radius: 16px; background: #0d1013;"><i style="display: block; width: 36px; height: 36px; flex-shrink: 0; border-radius: 10px; background: #9dff3b;"></i><span style="font-size: 17px; line-height: 24px;"><b>Lima é o que foi medido.</b> Consumo, resultado, o que acende.</span></div>
+      <div style="display: flex; align-items: center; gap: 16px; padding: 16px 18px; border-radius: 16px; background: #0d1013;"><i style="display: block; width: 36px; height: 36px; flex-shrink: 0; border-radius: 10px; background: #ffb020;"></i><span style="font-size: 17px; line-height: 24px;"><b>Âmbar é folga.</b> Margem e aviso. Nunca um número medido.</span></div>
+      <div style="display: flex; align-items: center; gap: 16px; padding: 16px 18px; border-radius: 16px; background: #0d1013;"><i style="display: block; width: 36px; height: 36px; flex-shrink: 0; border-radius: 4px; background: #f3f1ea;"></i><span style="font-size: 17px; line-height: 24px;"><b>Papel é a conta.</b> Tudo que se soma vira cupom.</span></div>
+    </div>
+  </div>
+
+  <!-- cores -->
+  <div style="margin-top: 88px; font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #9aa39c;">01 — Cor</div>
+  <div style="display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 16px; margin-top: 18px;">
+    <div><div style="height: 110px; border-radius: 14px; background: #050607; box-shadow: inset 0 0 0 1px rgba(255,255,255,.12);"></div><div style="margin-top: 10px; font-size: 14px; font-weight: 700;">Vácuo</div><div style="font-family: 'Martian Mono', monospace; font-size: 10.5px; line-height: 17px; color: #9aa39c;">#050607<br>fundo</div></div>
+    <div><div style="height: 110px; border-radius: 14px; background: #0d1013; box-shadow: inset 0 0 0 1px rgba(255,255,255,.08);"></div><div style="margin-top: 10px; font-size: 14px; font-weight: 700;">Carvão</div><div style="font-family: 'Martian Mono', monospace; font-size: 10.5px; line-height: 17px; color: #9aa39c;">#0d1013<br>superfície</div></div>
+    <div><div style="height: 110px; border-radius: 14px; background: #1a1f23;"></div><div style="margin-top: 10px; font-size: 14px; font-weight: 700;">Grafite</div><div style="font-family: 'Martian Mono', monospace; font-size: 10.5px; line-height: 17px; color: #9aa39c;">#1a1f23<br>desligado</div></div>
+    <div><div style="height: 110px; border-radius: 14px; background: #9aa39c;"></div><div style="margin-top: 10px; font-size: 14px; font-weight: 700;">Névoa</div><div style="font-family: 'Martian Mono', monospace; font-size: 10.5px; line-height: 17px; color: #9aa39c;">#9aa39c<br>texto 2 · 7,8:1</div></div>
+    <div><div style="height: 110px; border-radius: 14px; background: #eef2ee;"></div><div style="margin-top: 10px; font-size: 14px; font-weight: 700;">Luz</div><div style="font-family: 'Martian Mono', monospace; font-size: 10.5px; line-height: 17px; color: #9aa39c;">#eef2ee<br>texto · 18:1</div></div>
+    <div><div style="height: 110px; border-radius: 14px; background: #9dff3b; box-shadow: 0 10px 30px rgba(157,255,59,.25);"></div><div style="margin-top: 10px; font-size: 14px; font-weight: 700;">Lima</div><div style="font-family: 'Martian Mono', monospace; font-size: 10.5px; line-height: 17px; color: #9aa39c;">#9dff3b<br>medido · 16:1</div></div>
+    <div><div style="height: 110px; border-radius: 14px; background: #ffb020;"></div><div style="margin-top: 10px; font-size: 14px; font-weight: 700;">Âmbar</div><div style="font-family: 'Martian Mono', monospace; font-size: 10.5px; line-height: 17px; color: #9aa39c;">#ffb020<br>folga · 11:1</div></div>
+    <div><div style="height: 110px; border-radius: 4px; background: #f3f1ea;"></div><div style="margin-top: 10px; font-size: 14px; font-weight: 700;">Papel</div><div style="font-family: 'Martian Mono', monospace; font-size: 10.5px; line-height: 17px; color: #9aa39c;">#f3f1ea<br>a conta</div></div>
+    <div><div style="height: 110px; border-radius: 4px; background: #111311; box-shadow: inset 0 0 0 1px rgba(255,255,255,.1);"></div><div style="margin-top: 10px; font-size: 14px; font-weight: 700;">Tinta</div><div style="font-family: 'Martian Mono', monospace; font-size: 10.5px; line-height: 17px; color: #9aa39c;">#111311<br>no papel · 16:1</div></div>
+    <div><div style="height: 110px; border-radius: 4px; background: #b8400e;"></div><div style="margin-top: 10px; font-size: 14px; font-weight: 700;">Brasa</div><div style="font-family: 'Martian Mono', monospace; font-size: 10.5px; line-height: 17px; color: #9aa39c;">#b8400e<br>"não" no papel</div></div>
+  </div>
+  <div style="margin-top: 16px; font-size: 14px; color: #9aa39c;">Lima nunca vai em cima de papel (1,1:1). No papel, o destaque é a tinta; o "não" é brasa.</div>
+
+  <!-- tipografia -->
+  <div style="margin-top: 80px; font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #9aa39c;">02 — Tipografia</div>
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 18px;">
+    <div style="padding: 28px; border-radius: 22px; background: #0d1013; min-height: 330px; box-sizing: border-box;">
+      <div style="font-family: 'Martian Mono', monospace; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: #9dff3b;">Display e números</div>
+      <div style="margin-top: 16px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 150px; line-height: .8;">550 W</div>
+      <div style="margin-top: 14px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 34px; line-height: 1; text-transform: uppercase;">A conta que a loja não faz</div>
+      <div style="margin-top: 14px; font-size: 14px; line-height: 21px; color: #9aa39c;">Big Shoulders Display 800–900, sempre caixa alta. Condensada: cabe número gigante na tela do celular.</div>
+    </div>
+    <div style="padding: 28px; border-radius: 22px; background: #0d1013; min-height: 330px; box-sizing: border-box;">
+      <div style="font-family: 'Martian Mono', monospace; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: #9dff3b;">Texto</div>
+      <div style="margin-top: 18px; font-size: 32px; line-height: 36px; font-weight: 800; letter-spacing: -.02em;">O que a etiqueta não diz</div>
+      <div style="margin-top: 12px; font-size: 19px; line-height: 30px; color: #dfe5e0;">A fonte tem que aguentar o PC inteiro — e é essa parte da conta que o anúncio pula.</div>
+      <div style="margin-top: 14px; font-size: 14px; line-height: 21px; color: #9aa39c;">Schibsted Grotesk 400–800. Frase curta, acento e cedilha desenhados para português.</div>
+    </div>
+    <div style="padding: 28px; border-radius: 22px; background: #f3f1ea; color: #111311; min-height: 330px; box-sizing: border-box;">
+      <div style="font-family: 'Martian Mono', monospace; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: #5b5f58;">Dados e cupom</div>
+      <div style="margin-top: 18px; font-family: 'Martian Mono', monospace; font-size: 13px; line-height: 22px;">
+        <div style="display: flex; align-items: baseline;"><span>GeForce RTX 5070</span><span style="flex: 1; margin: 0 6px 5px; border-bottom: 1.5px dotted rgba(17,19,17,.45);"></span><b>250 W</b></div>
+        <div style="display: flex; align-items: baseline;"><span>Ryzen 5 7600</span><span style="flex: 1; margin: 0 6px 5px; border-bottom: 1.5px dotted rgba(17,19,17,.45);"></span><b>88 W</b></div>
+        <div style="display: flex; align-items: baseline;"><span>Consumo em carga</span><span style="flex: 1; margin: 0 6px 5px; border-bottom: 1.5px dotted rgba(17,19,17,.45);"></span><b>398 W</b></div>
+      </div>
+      <div style="margin-top: 14px; font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase;">Rótulo 11 · +16%</div>
+      <div style="margin-top: 14px; font-size: 14px; line-height: 21px; color: #3f433d;">Martian Mono 400–700. Todo número que se soma usa mono, para as colunas alinharem.</div>
+    </div>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 0; margin-top: 18px; border-top: 1px solid rgba(255,255,255,.1); font-family: 'Martian Mono', monospace; font-size: 10.5px; line-height: 17px; color: #9aa39c;">
+    <div style="padding: 12px 10px 0 0;"><b style="color: #eef2ee;">Display XL</b><br>150 / .86</div>
+    <div style="padding: 12px 10px 0 0;"><b style="color: #eef2ee;">Display L</b><br>112 / .88</div>
+    <div style="padding: 12px 10px 0 0;"><b style="color: #eef2ee;">Display M</b><br>72 / .92</div>
+    <div style="padding: 12px 10px 0 0;"><b style="color: #eef2ee;">Título</b><br>26–32 / 1,2</div>
+    <div style="padding: 12px 10px 0 0;"><b style="color: #eef2ee;">Corpo L</b><br>19 / 30</div>
+    <div style="padding: 12px 10px 0 0;"><b style="color: #eef2ee;">Corpo</b><br>16–17 / 26</div>
+    <div style="padding: 12px 10px 0 0;"><b style="color: #eef2ee;">Dado</b><br>11–13 / 18</div>
+    <div style="padding: 12px 10px 0 0;"><b style="color: #eef2ee;">Rótulo</b><br>10–12 · caixa alta</div>
+  </div>
+
+  <!-- componentes -->
+  <div style="margin-top: 80px; font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #9aa39c;">03 — Componentes</div>
+  <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; margin-top: 18px;">
+    <div style="padding: 24px; border-radius: 22px; background: #0d1013; display: flex; flex-direction: column; gap: 12px;">
+      <div style="font-family: 'Martian Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: #9aa39c;">Botões</div>
+      <button type="button" style="height: 56px; border: 0; border-radius: 28px; background: #9dff3b; color: #07110a; font-family: 'Schibsted Grotesk', sans-serif; font-weight: 700; font-size: 16px; box-shadow: 0 14px 40px rgba(157,255,59,.22);">Fazer a conta</button>
+      <button type="button" style="height: 52px; border: 1px solid rgba(255,255,255,.18); border-radius: 26px; background: transparent; color: #eef2ee; font-family: 'Schibsted Grotesk', sans-serif; font-weight: 600; font-size: 16px;">Imprimir de novo</button>
+      <button type="button" disabled style="height: 52px; border: 0; border-radius: 26px; background: #1a1f23; color: #9aa39c; font-family: 'Schibsted Grotesk', sans-serif; font-weight: 600; font-size: 16px;">Escolhe as duas peças</button>
+    </div>
+    <div style="padding: 24px; border-radius: 22px; background: #0d1013; display: flex; flex-direction: column; gap: 12px;">
+      <div style="font-family: 'Martian Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: #9aa39c;">Peça · normal e escolhida</div>
+      <div style="display: flex; gap: 8px;">
+        <button type="button" style="flex: 1; height: 64px; box-sizing: border-box; padding: 10px 12px; border-radius: 14px; border: 1px solid rgba(255,255,255,.08); background: #050607; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between;"><span style="font-family: 'Schibsted Grotesk', sans-serif; font-weight: 700; font-size: 14px; color: #eef2ee;">RTX 5060</span><span style="font-family: 'Martian Mono', monospace; font-size: 11px; color: #9aa39c;">145 W</span></button>
+        <button type="button" aria-pressed="true" style="flex: 1; height: 64px; box-sizing: border-box; padding: 10px 12px; border-radius: 14px; border: 1px solid #9dff3b; background: #9dff3b; box-shadow: 0 10px 30px rgba(157,255,59,.28); display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between;"><span style="font-family: 'Schibsted Grotesk', sans-serif; font-weight: 700; font-size: 14px; color: #07110a;">RTX 5070</span><span style="font-family: 'Martian Mono', monospace; font-size: 11px; color: #24461a;">250 W</span></button>
+      </div>
+      <div style="margin-top: 6px; font-size: 13px; line-height: 20px; color: #9aa39c;">Tocar numa peça já reimprime a nota. Não existe botão "calcular".</div>
+    </div>
+    <div style="padding: 24px; border-radius: 22px; background: #0d1013; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; position: relative;">
+      <div style="align-self: flex-start; font-family: 'Martian Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: #9aa39c;">Selo do resultado</div>
+      <div style="width: 148px; height: 148px; margin: 8px 0 4px; border-radius: 50%; background: #9dff3b; color: #07110a; display: flex; flex-direction: column; align-items: center; justify-content: center; outline: 1.5px dashed rgba(7,17,10,.35); outline-offset: -11px; box-shadow: 0 18px 40px rgba(0,0,0,.45); transform: rotate(12deg);">
+        <span style="font-family: 'Martian Mono', monospace; font-size: 9.5px; letter-spacing: .18em; text-transform: uppercase;">Sua fonte</span>
+        <span style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 64px; line-height: .86;">550</span>
+        <span style="font-family: 'Martian Mono', monospace; font-size: 9.5px; letter-spacing: .18em; text-transform: uppercase;">watts</span>
+      </div>
+      <div style="align-self: flex-start; font-size: 13px; line-height: 20px; color: #9aa39c;">A etiqueta de preço, virada do avesso: em vez do preço, o watt.</div>
+    </div>
+    <div style="padding: 24px; border-radius: 22px; background: #0d1013; display: flex; flex-direction: column; gap: 12px;">
+      <div style="font-family: 'Martian Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: #9aa39c;">Aviso e regra</div>
+      <div style="padding: 16px; border-radius: 14px; border: 1px solid rgba(255,176,32,.35); background: #050607;">
+        <div style="font-family: 'Martian Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: #ffb020;">Dado não conferido</div>
+        <div style="margin-top: 6px; font-size: 14px; line-height: 21px;">Ainda não checamos esse número na página do fabricante. Não use para comprar.</div>
+      </div>
+      <div style="padding: 16px; border-radius: 14px; background: #111311; box-shadow: inset 0 0 0 1px rgba(255,255,255,.08);">
+        <div style="font-size: 14px; line-height: 21px; font-weight: 600;">Sem relatório de teste público, não entra na lista.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- movimento / grade / voz -->
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 80px;">
+    <div>
+      <div style="font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #9aa39c;">04 — Movimento</div>
+      <div style="margin-top: 18px; display: flex; flex-direction: column; border-top: 1px solid rgba(255,255,255,.1);">
+        <div style="padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.07);"><b style="font-size: 17px;">Imprime</b><div style="margin-top: 4px; font-size: 14px; line-height: 21px; color: #9aa39c;">O cupom desce da fenda em 600 ms; cada linha entra 50–60 ms depois da anterior.</div></div>
+        <div style="padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.07);"><b style="font-size: 17px;">Conta</b><div style="margin-top: 4px; font-size: 14px; line-height: 21px; color: #9aa39c;">O número roda de 0 até o resultado em 700 ms, desacelerando no fim.</div></div>
+        <div style="padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.07);"><b style="font-size: 17px;">Carimba</b><div style="margin-top: 4px; font-size: 14px; line-height: 21px; color: #9aa39c;">O selo entra de 160% para 100% girando, em 440 ms, com um leve quique.</div></div>
+        <div style="padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.07);"><b style="font-size: 17px;">Acende</b><div style="margin-top: 4px; font-size: 14px; line-height: 21px; color: #9aa39c;">O brilho lima atrás da nota cresce junto com os watts. PC maior, luz maior.</div></div>
+        <div style="padding: 14px 0;"><div style="font-size: 14px; line-height: 21px; color: #9aa39c;">Quem pede menos movimento no celular recebe tudo pronto, sem animação.</div></div>
+      </div>
+    </div>
+    <div>
+      <div style="font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #9aa39c;">05 — Grade e forma</div>
+      <div style="margin-top: 18px; display: flex; flex-direction: column; border-top: 1px solid rgba(255,255,255,.1); font-size: 15px;">
+        <div style="display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.07);"><span style="color: #9aa39c;">Base</span><b>4 px</b></div>
+        <div style="display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.07);"><span style="color: #9aa39c;">Margem no celular</span><b>24 px</b></div>
+        <div style="display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.07);"><span style="color: #9aa39c;">Margem no desktop</span><b>96 px · 12 colunas</b></div>
+        <div style="display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.07);"><span style="color: #9aa39c;">Raio do papel</span><b>0–4 px</b></div>
+        <div style="display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.07);"><span style="color: #9aa39c;">Raio da peça</span><b>14 px</b></div>
+        <div style="display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.07);"><span style="color: #9aa39c;">Raio do cartão</span><b>20–28 px</b></div>
+        <div style="display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.07);"><span style="color: #9aa39c;">Botão</span><b>pílula</b></div>
+        <div style="display: flex; justify-content: space-between; padding: 14px 0;"><span style="color: #9aa39c;">Alvo de toque</span><b>44 px no mínimo</b></div>
+      </div>
+    </div>
+    <div>
+      <div style="font-family: 'Martian Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #9aa39c;">06 — Voz</div>
+      <div style="margin-top: 18px; display: flex; flex-direction: column; border-top: 1px solid rgba(255,255,255,.1);">
+        <div style="padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.07);"><b style="font-size: 17px;">Número antes do adjetivo.</b><div style="margin-top: 6px; font-size: 14px; line-height: 21px; color: #9aa39c;"><span style="color: #9dff3b;">Sim:</span> "A RTX 5070 puxa 250 W."<br><span style="color: #ffb020;">Não:</span> "Uma placa potente e eficiente."</div></div>
+        <div style="padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.07);"><b style="font-size: 17px;">A bronca é da loja, nunca de quem lê.</b><div style="margin-top: 6px; font-size: 14px; line-height: 21px; color: #9aa39c;"><span style="color: #9dff3b;">Sim:</span> "A conta que a loja não faz."<br><span style="color: #ffb020;">Não:</span> "Você comprou a fonte errada."</div></div>
+        <div style="padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.07);"><b style="font-size: 17px;">Verbo no presente, sem pergunta no título.</b><div style="margin-top: 6px; font-size: 14px; line-height: 21px; color: #9aa39c;"><span style="color: #9dff3b;">Sim:</span> "O selo mede eficiência."<br><span style="color: #ffb020;">Não:</span> "Será que o selo protege?"</div></div>
+        <div style="padding: 14px 0;"><b style="font-size: 17px;">Nunca "melhor". Sempre "mede".</b></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2360}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
