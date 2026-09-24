@@ -82,7 +82,8 @@ body:has(.v3) { background: #eeebe5; }
 .v3-chamada-copy { display: flex; flex-direction: column; gap: 6px; }
 .v3-chamada-copy .v3-etiqueta { color: var(--v3-lima); font-size: 9px; }
 .v3-chamada-copy > p:last-child { color: #c9cdc6; font-size: 14px; line-height: 1.4; }
-.v3-chamada-fc .v3-botao { grid-column: 1/-1; box-shadow: none; border-color: var(--v3-lima); min-height: 50px; }
+.v3-chamada-fc .v3-botao, .v3 .v3-chamada-fc a.v3-botao { grid-column: 1/-1; box-shadow: none; border-color: var(--v3-lima); min-height: 50px; color: var(--v3-tinta); }
+.v3 .v3-chamada-fc a.v3-botao:hover { background: var(--v3-fundo); color: var(--v3-tinta); }
 .v3-chamada-fc .v3-botao:focus-visible { outline-color: var(--v3-lima); }
 .v3-listagem-home { margin-top: 40px; }
 .v3-titulo-linha { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
