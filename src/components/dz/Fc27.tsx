@@ -14,6 +14,12 @@ const DEGRAUS = [
   { nome: "Ultra", placa: "RTX 4070 · RX 7800 XT", imagem: "4K · 60 fps", ram: "32 GB" },
 ];
 
+const EDICOES = [
+  { nome: "Standard", console: "R$ 349", pc: "R$ 299" },
+  { nome: "Ultimate", console: "R$ 499", pc: "R$ 429" },
+  { nome: "Ultimate Plus", console: "R$ 749,50", pc: "R$ 699" },
+];
+
 const mono = { fontFamily: "var(--fm)", fontSize: "10.5px", letterSpacing: ".16em", textTransform: "uppercase" as const };
 
 /** "Meu PC roda o FC 27?" — digita a placa, a nota diz o degrau na lista da EA. */
@@ -141,6 +147,28 @@ export default function Fc27() {
         <button type="button" onClick={mandar} style={{ height: "58px", border: 0, borderRadius: "29px", background: "#9dff3b", color: "#07110a", fontFamily: "var(--fb)", fontWeight: 700, fontSize: "17px", boxShadow: "0 14px 40px rgba(157,255,59,.25)" }}>
           {copiado ? "Link copiado" : "Mandar pro amigo do PC velho"}
         </button>
+      </div>
+
+      <div id="edicoes" style={{ padding: "40px 24px 0" }}>
+        <p style={{ ...mono, margin: 0, color: "#9aa39c" }}>Quanto custa cada edição</p>
+        <div style={{ marginTop: "12px", borderRadius: "14px", border: "1px solid rgba(255,255,255,.1)", background: "#0a0d0f", overflow: "hidden" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr 1fr", padding: "12px 16px", ...mono, fontSize: "10px", letterSpacing: ".12em", color: "#9aa39c", borderBottom: "1px solid rgba(255,255,255,.08)" }}>
+            <span>Edição</span><span style={{ textAlign: "right" }}>Console</span><span style={{ textAlign: "right" }}>PC</span>
+          </div>
+          {EDICOES.map((e) => (
+            <div key={e.nome} style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr 1fr", alignItems: "baseline", padding: "14px 16px", borderTop: "1px solid rgba(255,255,255,.06)" }}>
+              <b style={{ fontSize: "15px", color: e.nome === "Standard" ? "#9dff3b" : "#eef2ee" }}>{e.nome}</b>
+              <span style={{ textAlign: "right", fontFamily: "var(--fm)", fontSize: "14px", color: "#eef2ee" }}>{e.console}</span>
+              <span style={{ textAlign: "right", fontFamily: "var(--fm)", fontSize: "14px", color: "#eef2ee" }}>{e.pc}</span>
+            </div>
+          ))}
+        </div>
+        <p style={{ margin: "10px 0 0", fontSize: "14px", lineHeight: "21px", color: "#b9c1bb" }}>
+          Os modos de jogo são os mesmos nas três, inclusive o Clubs no mundo aberto (e a caminhada até o clube). As mais caras davam acesso antecipado, que acabou no lançamento, e somam FC Points e itens do Ultimate Team.
+        </p>
+        <p style={{ margin: "8px 0 0", fontSize: "12px", lineHeight: "18px", color: "#7f8881" }}>
+          Preço oficial de lançamento nas lojas digitais (Terra, 2026). Assinante EA Play tem 10% de desconto. Loja física e promoção mudam o valor.
+        </p>
       </div>
 
       <div style={{ padding: "40px 24px 0" }}>
