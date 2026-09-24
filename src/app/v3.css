@@ -286,7 +286,7 @@ body:has(.v3) { background: #eeebe5; }
   .v3-chamada-copy { gap: 8px; }
   .v3-chamada-copy .v3-etiqueta { font-size: 10px; }
   .v3-chamada-copy > p:last-child { font-size: 16px; }
-  .v3-chamada-fc .v3-botao { grid-column: auto; min-height: 58px; }
+  .v3-chamada-fc .v3-botao, .v3 .v3-chamada-fc a.v3-botao { grid-column: auto; min-height: 58px; }
   .v3-listagem-home { margin-top: 72px; }
   .v3-titulo-linha { align-items: flex-end; }
   .v3-titulo-linha a { font-size: 16px; }

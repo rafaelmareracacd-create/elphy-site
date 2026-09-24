@@ -7,3 +7,6 @@
 [15:43] 3/3 Codex corrige
 [15:43] FIM
 [16:05] codex-1 fim
+[16:17] fable fim
+[16:24] grok-2 fim
+[17:19] fable-2 fim

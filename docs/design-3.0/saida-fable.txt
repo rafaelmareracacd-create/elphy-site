@@ -1,0 +1,7 @@
+Pronto: design 3.0 fechado, commit local `fd3d152` na `design-3.0`. Trabalho do **Codex + Cursor (Fable 5)**.
+- O Codex tinha implementado quase tudo (`/`, `/achados/`, `/achados/[slug]/`, `/fc27/`, componentes v3, catálogo, testes) e parou por cota antes de fechar.
+- O Cursor terminou: corrigiu o script `npm test` (flag `--experimental-default-type=module` não existe no Node 24), consertou o harness `verifica-v3.cjs` (resolveDir do React e `process.env` nos shims) e pôs `build/**` nos ignores do ESLint (o harness gerava bundle que o lint varria).
+- `npm run lint` ✔ (zero warnings), `npm run build` ✔ (export estático, todas as rotas), `npm test` ✔ (12/12).
+- Harness visual: PASS em 24 combinações de rota/largura, filtros, FC 27 com a base real, reduced-motion, rotas antigas intactas e rascunho em 404.
+- Os 15 itens da REVISAO-GROK.md estão atendidos, item por item, em `docs/design-3.0/ENTREGA-CODEX.md`.
+- Falta só o Rafael preencher achados reais (`rascunho: false`); até lá a lista pública mostra o estado vazio. Sem push, sem tocar em `.github`/`CNAME`/`next.config.ts`.
