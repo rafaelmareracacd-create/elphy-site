@@ -1,4 +1,6 @@
-import Fc27 from "@/components/dz/Fc27";
+import Fc27 from "@/components/v3/Fc27";
+import Fc27Referencia from "@/components/v3/Fc27Referencia";
+import Estrutura from "@/components/v3/Estrutura";
 import { pageMetadata } from "@/lib/site";
 
 export const metadata = pageMetadata(
@@ -8,9 +10,7 @@ export const metadata = pageMetadata(
 );
 
 export default function Fc27Page() {
-  return (
-    <div className="dz" id="conteudo">
-      <div className="dz-m"><div className="dz-quadro-m"><Fc27 /></div></div>
-    </div>
-  );
+  return <Estrutura><div className="v3-container"><Fc27 /><Fc27Referencia /></div></Estrutura>;
 }
+
+export const viewport = { themeColor: "#eeebe5" };

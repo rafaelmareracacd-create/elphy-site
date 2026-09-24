@@ -1,20 +1,16 @@
-import HomeDesktop from "@/components/dz/HomeDesktop";
-import HomeMobile from "@/components/dz/HomeMobile";
+import HomeV3 from "@/components/v3/Home";
+import Estrutura from "@/components/v3/Estrutura";
 import { pageMetadata } from "@/lib/site";
 
 export const metadata = pageMetadata(
-  "Elphy · A conta que a loja não faz",
-  "Escolhe a placa de vídeo e o processador. O Elphy soma cada watt e entrega a nota com a conta inteira à vista.",
+  "Elphy · O Elphy carimba os achados do TikTok",
+  "Cada achado leva um carimbo e o porquê, com preço, frete e data. Grátis, sem cadastro.",
   "/",
-  "/og-nota.png",
+  "/brand/elphy-heroi.webp",
 );
 
-/* Home: Home-Mobile (celular) e Main (computador), de docs/design-1.0 */
+export const viewport = { themeColor: "#eeebe5" };
+
 export default function Home() {
-  return (
-    <div className="dz" id="conteudo">
-      <div className="dz-m tem-d"><div className="dz-quadro-m"><HomeMobile /></div></div>
-      <div className="dz-d"><div className="dz-quadro-d"><HomeDesktop /></div></div>
-    </div>
-  );
+  return <Estrutura><HomeV3 /></Estrutura>;
 }

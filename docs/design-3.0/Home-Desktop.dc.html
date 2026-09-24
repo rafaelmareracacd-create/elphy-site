@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Elphy — início no computador</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&amp;family=Schibsted+Grotesk:wght@400;500;600;700;800&amp;family=Martian+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0;background:#eeebe5}
+a{color:#111311}a:hover{color:#2f7d0a}
+button{cursor:pointer;font-family:inherit}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid #111311;outline-offset:3px}
+input::placeholder{color:#55594f}
+.el-rolo{scrollbar-width:none}.el-rolo::-webkit-scrollbar{display:none}
+@keyframes el-imprime{from{transform:translateY(-46px);clip-path:inset(0 0 100% 0)}to{transform:none;clip-path:inset(0 0 0 0)}}
+@keyframes el-carimba{0%{opacity:0;transform:scale(1.6) rotate(-10deg)}62%{opacity:1;transform:scale(.93) rotate(15deg)}100%{opacity:1;transform:scale(1) rotate(12deg)}}
+@keyframes el-pulso{0%,100%{opacity:.4}50%{opacity:1}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 2080px; overflow: hidden; display: flex; flex-direction: column; background: #eeebe5; color: #111311; font-family: 'Schibsted Grotesk', system-ui, sans-serif;">
+  <header style="flex-shrink: 0; border-bottom: 1.5px solid rgba(17,19,17,.14);">
+    <div style="width: 1200px; margin: 0 auto; box-sizing: border-box; height: 80px; display: flex; align-items: center; gap: 28px;">
+      <a href="Home-Desktop.dc.html" style="font-weight: 800; font-size: 30px; letter-spacing: -.045em; text-decoration: none; color: #111311;">elphy<span style="color: #2f7d0a;">.</span></a>
+      <nav aria-label="Principal" style="display: flex; gap: 6px;">
+        <a href="Home-Desktop.dc.html" aria-current="page" style="display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 16px; border-radius: 22px; background: #111311; color: #eeebe5; text-decoration: none; font-weight: 700; font-size: 15px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11l8-7 8 7v9H4z"></path><path d="M10 20v-5h4v5"></path></svg>Início</a><a href="Achados-Desktop.dc.html" style="display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 16px; border-radius: 22px; color: #111311; text-decoration: none; font-weight: 700; font-size: 15px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12l-8 8-8-8V4h8z"></path><circle cx="8.5" cy="8.5" r="1.5"></circle></svg>Achados</a><a href="Roda-Desktop.dc.html" style="display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 16px; border-radius: 22px; color: #111311; text-decoration: none; font-weight: 700; font-size: 15px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"></path><path d="M9 8h6M9 12h6"></path></svg>Ferramentas</a>
+      </nav>
+      <label for="busca-d" style="margin-left: auto; width: 380px; height: 48px; box-sizing: border-box; display: flex; align-items: center; gap: 10px; padding: 0 18px; border-radius: 24px; background: #fdfcf8; border: 1.5px solid rgba(17,19,17,.14);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#55594f" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg><input id="busca-d" type="search" placeholder="Buscar achado ou vídeo" style="flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font-family: 'Schibsted Grotesk', sans-serif; font-size: 16px; color: #111311;"></label>
+    </div>
+  </header>
+  <section style="width: 1200px; margin: 0 auto; box-sizing: border-box; display: grid; grid-template-columns: minmax(0, 1fr) 420px; gap: 40px; align-items: center; padding-top: 48px;">
+    <div style="display: flex; flex-direction: column; gap: 26px;">
+      <h1 style="margin: 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; text-transform: uppercase; font-size: 112px; line-height: .86;">O Elphy carimba<br>os achados<br>do TikTok<span style="color: #2f7d0a;">.</span></h1>
+      <div style="display: flex; gap: 16px; align-items: center;"><span aria-hidden="true" style="display: inline-block; padding: 5px 9px; box-sizing: border-box; background: #9dff3b; color: #111311; border: 2px solid #111311; transform: rotate(-7deg); font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; text-transform: uppercase; font-size: 28px; line-height: 1; white-space: nowrap; transform: rotate(-4deg);">✓ Vale</span><span aria-hidden="true" style="display: inline-block; padding: 5px 9px; box-sizing: border-box; background: #ffb020; color: #111311; border: 2px solid #111311; transform: rotate(-7deg); font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; text-transform: uppercase; font-size: 28px; line-height: 1; white-space: nowrap; transform: rotate(3deg);">~ Depende</span><span aria-hidden="true" style="display: inline-block; padding: 5px 9px; box-sizing: border-box; background: #fdfcf8; color: #b3261e; border: 2.5px solid #b3261e; transform: rotate(-7deg); font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; text-transform: uppercase; font-size: 28px; line-height: 1; white-space: nowrap; transform: rotate(-2deg);">× Deixa pra lá</span></div>
+      <p style="margin: 0; max-width: 560px; font-size: 19px; line-height: 29px; color: #3f433d;">Cada achado leva um carimbo e o porquê, com preço, frete e data. Grátis, sem cadastro.</p>
+    </div>
+    <img src="/_blob/a704102d9c7f5b6de396f039bbbff07f" alt="Elphy, o elefante verde de moletom, segura um carimbo no alto" style="width: 420px; height: 525px; object-fit: cover; object-position: top; -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 70%, transparent 100%); mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 70%, transparent 100%);">
+  </section>
+
+  <section style="width: 1200px; margin: 0 auto; box-sizing: border-box; padding-top: 40px;">
+    <div style="background: #111311; color: #eeebe5; border-radius: 24px; padding: 24px 28px; display: grid; grid-template-columns: 120px minmax(0, 1fr) 280px; gap: 28px; align-items: center;">
+      <img src="/_blob/913d4d42b57e02be9817bcb57723c84d" alt="Elphy com um controle de videogame" style="width: 120px; height: 120px; border-radius: 18px; object-fit: cover; background: #eeebe5;">
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <span style="display: inline-flex; align-items: center; gap: 8px; font-family: 'Martian Mono', monospace; font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: #9dff3b;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4l13 8-13 8z"></path></svg>Veio do vídeo? · TikTok · 24 set</span>
+        <span style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; text-transform: uppercase; font-size: 48px; line-height: .9;">Meu PC roda o FC 27?</span>
+        <span style="font-size: 16px; line-height: 24px; color: #c9cdc6;">Toca na sua placa e a nota sai na hora.</span>
+      </div>
+      <a href="Roda-Desktop.dc.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; box-sizing: border-box; border: 2px solid #111311; background: #9dff3b; color: #111311; font-family: 'Schibsted Grotesk', sans-serif; font-weight: 800; text-decoration: none; box-shadow: 0 4px 0 #111311; height: 58px; border-radius: 16px; font-size: 17px; border-color: #9dff3b; box-shadow: none;">Fazer a conta<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+    </div>
+  </section>
+
+  <section style="width: 1200px; margin: 0 auto; box-sizing: border-box; padding-top: 72px;">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px;">
+      <h2 style="margin: 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; text-transform: uppercase; font-size: 72px; line-height: .88;">Achados da semana</h2>
+      <a href="Achados-Desktop.dc.html" style="font-weight: 700; font-size: 16px; white-space: nowrap; text-underline-offset: 5px;">Ver todos os achados</a>
+    </div>
+    <div role="group" aria-label="Categorias" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px;">
+      <button type="button" aria-pressed="true" style="height: 40px; padding: 0 15px; flex-shrink: 0; border-radius: 20px; border: 2px solid #111311; background: #111311; color: #eeebe5; font-weight: 700; font-size: 14px; ">Tudo</button><button type="button" aria-pressed="false" style="height: 40px; padding: 0 15px; flex-shrink: 0; border-radius: 20px; border: 1.5px solid rgba(17,19,17,.28); background: #fdfcf8; color: #111311; font-weight: 700; font-size: 14px; ">Celular e acessórios</button><button type="button" aria-pressed="false" style="height: 40px; padding: 0 15px; flex-shrink: 0; border-radius: 20px; border: 1.5px solid rgba(17,19,17,.28); background: #fdfcf8; color: #111311; font-weight: 700; font-size: 14px; ">Áudio</button><button type="button" aria-pressed="false" style="height: 40px; padding: 0 15px; flex-shrink: 0; border-radius: 20px; border: 1.5px solid rgba(17,19,17,.28); background: #fdfcf8; color: #111311; font-weight: 700; font-size: 14px; ">PC e setup</button><button type="button" aria-pressed="false" style="height: 40px; padding: 0 15px; flex-shrink: 0; border-radius: 20px; border: 1.5px solid rgba(17,19,17,.28); background: #fdfcf8; color: #111311; font-weight: 700; font-size: 14px; ">Casa e quarto</button><button type="button" aria-pressed="false" style="height: 40px; padding: 0 15px; flex-shrink: 0; border-radius: 20px; border: 1.5px solid rgba(17,19,17,.28); background: #fdfcf8; color: #111311; font-weight: 700; font-size: 14px; ">Estudo e trabalho</button>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 34px 28px; margin-top: 44px; align-items: start;">
+      <article style="position: relative; width: 100%; box-sizing: border-box; background: #fdfcf8; color: #111311; font-family: 'Martian Mono', monospace; font-size: 10.5px; line-height: 16px; box-shadow: 0 1px 0 rgba(17,19,17,.08), 0 18px 40px rgba(17,19,17,.12); transform: rotate(-0.8deg);">
+        <div style="padding: 16px 18px;">
+          <div style="display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; padding-right: 110px; font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: #55594f;"><span>Áudio</span><span style="display: inline-flex; align-items: center; gap: 5px; color: #2f7d0a; font-weight: 700;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4l13 8-13 8z"></path></svg>Saiu no vídeo</span></div>
+          <div style="display: flex; gap: 14px; margin-top: 10px; align-items: flex-start;">
+            <div role="img" aria-label="Foto do produto" style="width: 70px; height: 70px; flex-shrink: 0; background: #e7e4da; display: flex; align-items: center; justify-content: center; font-size: 8px; color: #55594f;">[FOTO]</div>
+            <div style="flex: 1; min-width: 0;">
+              <a href="Produto-Desktop.dc.html" style="display: block; font-family: 'Schibsted Grotesk', sans-serif; font-weight: 800; font-size: 17px; line-height: 21px; text-decoration: none; color: #111311;">Fone Bluetooth [MODELO]</a>
+              <div style="margin-top: 4px; color: #3f433d;">[Por que vale, em até 12 palavras.]</div>
+            </div>
+          </div>
+          <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 10px; margin-top: 12px;">
+            <div style="flex: 1; min-width: 0;"><div style="font-size: 17px; font-weight: 700;">R$ [PREÇO]</div><div style="font-size: 9.5px; color: #55594f;">+ frete R$ [X] · Shopee · 24 set</div></div>
+            <a href="https://shopee.com.br/" rel="sponsored" style="display: inline-flex; flex-shrink: 0; align-items: center; height: 40px; padding: 0 14px; border-radius: 20px; white-space: nowrap; background: #111311; color: #eeebe5; text-decoration: none; font-family: 'Schibsted Grotesk', sans-serif; font-weight: 700; font-size: 13px;">Ver na Shopee</a>
+          </div>
+        </div>
+        <div style="position: absolute; right: 12px; top: -13px;"><span aria-hidden="true" style="display: inline-block; padding: 5px 9px; box-sizing: border-box; background: #9dff3b; color: #111311; border: 2px solid #111311; transform: rotate(-7deg); font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; text-transform: uppercase; font-size: 18px; line-height: 1; white-space: nowrap; ">✓ Vale</span></div>
+      </article>
+      <article style="position: relative; width: 100%; box-sizing: border-box; background: #fdfcf8; color: #111311; font-family: 'Martian Mono', monospace; font-size: 10.5px; line-height: 16px; box-shadow: 0 1px 0 rgba(17,19,17,.08), 0 18px 40px rgba(17,19,17,.12); transform: rotate(0.7deg);">
+        <div style="padding: 16px 18px;">
+          <div style="display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; padding-right: 110px; font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: #55594f;"><span>Celular e acessórios</span></div>
+          <div style="display: flex; gap: 14px; margin-top: 10px; align-items: flex-start;">
+            <div role="img" aria-label="Foto do produto" style="width: 70px; height: 70px; flex-shrink: 0; background: #e7e4da; display: flex; align-items: center; justify-content: center; font-size: 8px; color: #55594f;">[FOTO]</div>
+            <div style="flex: 1; min-width: 0;">
+              <a href="Produto-Desktop.dc.html" style="display: block; font-family: 'Schibsted Grotesk', sans-serif; font-weight: 800; font-size: 17px; line-height: 21px; text-decoration: none; color: #111311;">Power bank 20.000 mAh [MODELO]</a>
+              <div style="margin-top: 4px; color: #3f433d;">Entrega [X]% do que promete. Dá [N] cargas.</div>
+            </div>
+          </div>
+          <div style="margin-top: 10px; padding: 6px 8px; border: 1.5px dashed #111311; display: flex; justify-content: space-between; align-items: center; gap: 8px;"><span>Cupom <b>[CÓDIGO]</b> · até [DATA]</span><button type="button" style="height: 32px; padding: 0 10px; border: 1.5px solid #111311; background: transparent; color: #111311; font-family: 'Martian Mono', monospace; font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase;">Copiar</button></div>
+          <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 10px; margin-top: 12px;">
+            <div style="flex: 1; min-width: 0;"><div style="font-size: 17px; font-weight: 700;">R$ [PREÇO]</div><div style="font-size: 9.5px; color: #55594f;">+ frete R$ [X] · Shopee · 24 set</div></div>
+            <a href="https://shopee.com.br/" rel="sponsored" style="display: inline-flex; flex-shrink: 0; align-items: center; height: 40px; padding: 0 14px; border-radius: 20px; white-space: nowrap; background: #111311; color: #eeebe5; text-decoration: none; font-family: 'Schibsted Grotesk', sans-serif; font-weight: 700; font-size: 13px;">Ver na Shopee</a>
+          </div>
+        </div>
+        <div style="position: absolute; right: 12px; top: -13px;"><span aria-hidden="true" style="display: inline-block; padding: 5px 9px; box-sizing: border-box; background: #ffb020; color: #111311; border: 2px solid #111311; transform: rotate(-7deg); font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; text-transform: uppercase; font-size: 18px; line-height: 1; white-space: nowrap; ">~ Depende</span></div>
+      </article>
+      <article style="position: relative; width: 100%; box-sizing: border-box; background: #fdfcf8; color: #111311; font-family: 'Martian Mono', monospace; font-size: 10.5px; line-height: 16px; box-shadow: 0 1px 0 rgba(17,19,17,.08), 0 18px 40px rgba(17,19,17,.12); transform: rotate(-0.5deg);">
+        <div style="padding: 16px 18px;">
+          <div style="display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; padding-right: 110px; font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: #55594f;"><span>PC e setup</span></div>
+          <div style="display: flex; gap: 14px; margin-top: 10px; align-items: flex-start;">
+            <div role="img" aria-label="Foto do produto" style="width: 70px; height: 70px; flex-shrink: 0; background: #e7e4da; display: flex; align-items: center; justify-content: center; font-size: 8px; color: #55594f;">[FOTO]</div>
+            <div style="flex: 1; min-width: 0;">
+              <a href="Produto-Desktop.dc.html" style="display: block; font-family: 'Schibsted Grotesk', sans-serif; font-weight: 800; font-size: 17px; line-height: 21px; text-decoration: none; color: #111311;">Fonte 500 W sem selo [MODELO]</a>
+              <div style="margin-top: 4px; color: #3f433d;">Sem teste público. Watt da caixa não conta.</div>
+            </div>
+          </div>
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-top: 12px;"><span style="color: #55594f;">Em vez disso:</span><a href="Produto-Desktop.dc.html" style="color: #111311; font-weight: 700; text-underline-offset: 3px;">Ver a fonte que a gente indica</a></div>
+        </div>
+        <div style="position: absolute; right: 12px; top: -13px;"><span aria-hidden="true" style="display: inline-block; padding: 5px 9px; box-sizing: border-box; background: #fdfcf8; color: #b3261e; border: 2.5px solid #b3261e; transform: rotate(-7deg); font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; text-transform: uppercase; font-size: 18px; line-height: 1; white-space: nowrap; ">× Deixa pra lá</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section style="width: 1200px; margin: 0 auto; box-sizing: border-box; padding-top: 88px; display: grid; grid-template-columns: 340px minmax(0, 1fr); gap: 56px; align-items: center;">
+    <img src="/_blob/8bb90289d3ef99c4be6e6da2666cea37" alt="Elphy segura uma nota comprida" style="width: 340px; height: 425px; object-fit: cover; object-position: top; -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 70%, transparent 100%); mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 70%, transparent 100%);">
+    <div>
+      <p style="margin: 0; font-family: 'Martian Mono', monospace; font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: #2f7d0a;">Ferramentas</p>
+      <h2 style="margin: 12px 0 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; text-transform: uppercase; font-size: 72px; line-height: .88;">A conta que a loja não faz<span style="color: #2f7d0a;">.</span></h2>
+      <div style="position: relative; margin-top: 28px; background: #fdfcf8; color: #111311; font-family: 'Martian Mono', monospace; box-shadow: 0 1px 0 rgba(17,19,17,.08), 0 18px 40px rgba(17,19,17,.12); padding: 8px 26px 18px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px;">
+        <div aria-hidden="true" style="position: absolute; left: 0; bottom: -10px; width: 804px; height: 10px; background: linear-gradient(45deg, #fdfcf8 50%, rgba(253,252,248,0) 50%) 0 0 / 12px 10px repeat-x, linear-gradient(-45deg, #fdfcf8 50%, rgba(253,252,248,0) 50%) 0 0 / 12px 10px repeat-x; transform: scaleY(-1);"></div>
+        <a href="Roda-Desktop.dc.html" style="display: flex; align-items: center; gap: 12px; padding: 18px 0; border-bottom: 1.5px dashed rgba(17,19,17,.3); text-decoration: none; color: #111311;"><span style="flex: 1; display: flex; flex-direction: column; gap: 3px;"><span style="font-family: 'Schibsted Grotesk', sans-serif; font-weight: 800; font-size: 18px;">Meu PC roda o jogo?</span><span style="font-size: 10.5px; color: #55594f;">Imprime RODA, QUASE ou NÃO RODA.</span></span><span style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; text-transform: uppercase; font-size: 36px; line-height: 1; text-transform: none;">?</span></a><a href="Roda-Desktop.dc.html" style="display: flex; align-items: center; gap: 12px; padding: 18px 0; border-bottom: 1.5px dashed rgba(17,19,17,.3); text-decoration: none; color: #111311;"><span style="flex: 1; display: flex; flex-direction: column; gap: 3px;"><span style="font-family: 'Schibsted Grotesk', sans-serif; font-weight: 800; font-size: 18px;">Qual fonte eu preciso?</span><span style="font-size: 10.5px; color: #55594f;">Soma cada watt, com folga.</span></span><span style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; text-transform: uppercase; font-size: 36px; line-height: 1; text-transform: none;">W</span></a><a href="Roda-Desktop.dc.html" style="display: flex; align-items: center; gap: 12px; padding: 18px 0; border-bottom: 1.5px dashed rgba(17,19,17,.3); text-decoration: none; color: #111311;"><span style="flex: 1; display: flex; flex-direction: column; gap: 3px;"><span style="font-family: 'Schibsted Grotesk', sans-serif; font-weight: 800; font-size: 18px;">Power bank de verdade</span><span style="font-size: 10.5px; color: #55594f;">Quantas cargas chegam no celular.</span></span><span style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; text-transform: uppercase; font-size: 36px; line-height: 1; text-transform: none;">mAh</span></a><a href="Roda-Desktop.dc.html" style="display: flex; align-items: center; gap: 12px; padding: 18px 0; border-bottom: 1.5px dashed rgba(17,19,17,.3); text-decoration: none; color: #111311;"><span style="flex: 1; display: flex; flex-direction: column; gap: 3px;"><span style="font-family: 'Schibsted Grotesk', sans-serif; font-weight: 800; font-size: 18px;">Conta de luz do setup</span><span style="font-size: 10.5px; color: #55594f;">Quanto o PC custa por mês.</span></span><span style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; text-transform: uppercase; font-size: 36px; line-height: 1; text-transform: none;">R$</span></a>
+      </div>
+    </div>
+  </section>
+  <div style="height: 80px; flex-shrink: 0;"></div>
+  <footer style="margin-top: auto; border-top: 1.5px solid rgba(17,19,17,.14);">
+    <div style="width: 1200px; margin: 0 auto; box-sizing: border-box; padding: 32px 0 40px; display: flex; align-items: center; justify-content: space-between; gap: 32px;">
+      <p style="margin: 0; max-width: 560px; font-size: 14px; line-height: 22px; color: #55594f;">Os links são de afiliado: se você comprar, o Elphy pode ganhar comissão. O carimbo não muda por isso.</p>
+      <div style="display: flex; gap: 24px; font-family: 'Martian Mono', monospace; font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; font-size: 10.5px; color: #55594f;"><span style="white-space: nowrap;">Dica sem caô<span style="color: #2f7d0a;">.</span></span><a href="Home-Desktop.dc.html" style="color: #55594f;">Como a gente carimba</a><a href="Home-Desktop.dc.html" style="color: #55594f;">Correções</a></div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2080}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+Sim. A revisão está em `docs/design-3.0/REVISAO-GROK.md`, com 15 itens.
+
+O `git diff main --stat` está vazio: a home nova, os achados e o FC 27 no visual novo não foram implementados.
+ do mais grave ao menos grave).
