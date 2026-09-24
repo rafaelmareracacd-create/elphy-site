@@ -249,17 +249,29 @@ body:has(.v3) { background: #eeebe5; }
 .v3-fc-referencia { margin-top: 52px; display: grid; gap: 36px; }
 .v3-fc-referencia h2 { font-size: 32px; }
 .v3-fc-referencia section > p { margin-top: 12px; font-size: 14px; color: var(--v3-apagado); }
-.v3-tabela { overflow-x: auto; margin-top: 18px; background: var(--v3-papel); border: 1px solid var(--v3-linha); border-radius: 14px; }
-.v3-tabela table { width: 100%; border-collapse: collapse; font-size: 13px; }
-.v3-tabela caption { padding: 12px; text-align: left; font-size: 11px; color: var(--v3-apagado); }
-.v3-tabela :is(th,td) { padding: 12px; border-top: 1px solid var(--v3-linha); text-align: right; }
-.v3-tabela th:first-child { text-align: left; }
-.v3-tabela td { font-family: var(--font-v3-mono), monospace; white-space: nowrap; font-size: 11px; }
-.v3-degraus { margin-top: 18px; display: grid; gap: 10px; }
-.v3-degraus > div { padding: 14px; border: 1px solid var(--v3-linha); border-radius: 14px; background: var(--v3-papel); }
-.v3-degraus > div > div { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
-.v3-degraus strong { font: 500 10px/1.6 var(--font-v3-mono), monospace; color: var(--v3-verde); }
-.v3-degraus p { font-size: 13px; color: var(--v3-apagado); margin-top: 4px; }
+.v3-fc-edicoes { display: grid; gap: 10px; }
+.v3-fc-piada { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.v3-fc-piada > img { width: 200px; height: 250px; }
+.v3-fc-piada-frase { font: 900 42px/.9 var(--font-v3-display), Impact, sans-serif; font-variation-settings: "opsz" 72, "wght" 900; text-transform: uppercase; margin-top: -14px; max-width: 300px; }
+.v3-fc-piada > p:last-child { margin-top: 10px; color: #3f433d; max-width: 300px; }
+.v3-nota-edicoes { margin-top: 26px; transform: rotate(-.6deg); }
+.v3-nota-edicoes > .v3-etiqueta { font-size: 9px; }
+.v3-nota-edicoes h2 { font-size: 30px; margin-block: 8px 14px; }
+.v3-nota-edicoes .v3-linha-pontos { margin-top: 8px; }
+.v3-nota-edicoes dd { white-space: nowrap; }
+.v3-nota-edicoes-extra { margin-top: 12px; color: var(--v3-apagado); }
+.v3-carimbo-modos { margin-top: 18px; }
+.v3-carimbo-modos .v3-carimbo { transform: rotate(-3deg); font-size: 17px; }
+.v3-nota-edicoes > .v3-letra-miuda { margin-top: 18px; font-size: 10px; }
+.v3-fc-detalhes summary { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; cursor: pointer; font-size: 15px; font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
+.v3-fc-detalhes summary::-webkit-details-marker { display: none; }
+.v3-fc-detalhes summary::before { content: "▸"; font-size: 12px; text-decoration: none; }
+.v3-fc-detalhes[open] summary::before { content: "▾"; }
+.v3-fc-detalhes-corpo { margin-top: 10px; max-width: 480px; }
+.v3-fc-detalhes-corpo .v3-linha-pontos { margin-top: 10px; }
+.v3-fc-detalhes-corpo dt small { display: block; color: var(--v3-apagado); font-size: 9px; }
+.v3-fc-detalhes-corpo > p { margin-top: 14px; font-size: 11px; color: var(--v3-apagado); }
+.v3-fc-requisitos .v3-alternativa a { display: inline-flex; align-items: center; min-height: 44px; }
 @keyframes v3-imprime { from { opacity: .2; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
 .v3-recibo-conteudo { animation: v3-imprime .35s ease-out; }
 @media (min-width: 1024px) {
@@ -359,12 +371,15 @@ body:has(.v3) { background: #eeebe5; }
   .v3-fc-grid > .v3-como-mede { grid-column: 1; grid-row: 2; }
   .v3-fc-grid > .v3-como-mede h2 { font-size: 10px; }
   .v3-veredito h2 { font-size: 84px; }
-  .v3-fc-referencia { max-width: 880px; margin: 72px auto 0; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .v3-fc-referencia { margin-top: 88px; gap: 56px; }
   .v3-fc-referencia h2 { font-size: 36px; }
-  .v3-fc-referencia > section:first-child, .v3-fc-referencia > section:nth-child(2), .v3-fontes { grid-column: 1/-1; }
-  .v3-degraus { grid-template-columns: 1fr 1fr; }
-  .v3-tabela table { font-size: 15px; }
-  .v3-tabela td { font-size: 14px; }
+  .v3-fc-edicoes { grid-template-columns: minmax(0, 1fr) minmax(0, 480px); gap: 72px; align-items: center; }
+  .v3-fc-piada > img { width: 300px; height: 375px; }
+  .v3-fc-piada-frase { font-size: 64px; margin-top: -22px; max-width: 440px; }
+  .v3-fc-piada > p:last-child { font-size: 17px; max-width: 360px; }
+  .v3-nota-edicoes { margin-top: 0; padding: 28px; }
+  .v3-nota-edicoes h2 { font-size: 40px; }
+  .v3-fontes { max-width: 680px; }
 }
 @media (max-width: 359px) {
   .v3-container { width: calc(100% - 32px); }
