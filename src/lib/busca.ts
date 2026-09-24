@@ -14,6 +14,7 @@ export const FERRAMENTAS_BUSCA = [
   { nome: "Nitidez do monitor", sim: "PPI", href: "/ferramentas/monitor/", chaves: "monitor tela ppi pixel resolucao polegadas full hd 4k 1440p" },
   { nome: "Cabe no gabinete", sim: "mm", href: "/ferramentas/gabinete/", chaves: "gabinete case mm tamanho comprimento cabe placa" },
   { nome: "Memória certa", sim: "DDR", href: "/ferramentas/memoria/", chaves: "memoria ram ddr4 ddr5 pente soquete placa mae" },
+  { nome: "Meu PC roda o FC 27?", sim: "FC", href: "/fc27/", chaves: "fc 27 fc27 fifa ea sports futebol roda requisitos minimos placa video jogo" },
   { nome: "Montador de PC", sim: "4/4", href: "/montador/", chaves: "montador montar pc pecas soquete memoria placa mae gabinete fonte compatibilidade" },
 ];
 
