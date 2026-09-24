@@ -76,15 +76,15 @@ body:has(.v3) { background: #eeebe5; }
 .v3-legenda-carimbos .v3-carimbo:nth-child(2) { transform: rotate(3deg); }
 .v3-legenda-carimbos .v3-carimbo:last-child { transform: rotate(-2deg); }
 .v3-hero p { margin-top: 16px; color: #3f433d; max-width: 560px; }
-.v3-chamada-fc { display: grid; grid-template-columns: 84px minmax(0, 1fr); gap: 12px 14px; margin-top: 30px; border-radius: 18px; background: var(--v3-tinta); color: var(--v3-fundo); padding: 16px; }
-.v3-chamada-fc > img { width: 84px; height: 84px; object-fit: cover; border-radius: 14px; align-self: center; grid-row: 1; }
+.v3-chamada-fc { position: relative; display: grid; grid-template-columns: 84px minmax(0, 1fr); gap: 14px; margin-top: 30px; background: var(--v3-papel); color: var(--v3-tinta); padding: 0 16px 22px; box-shadow: var(--v3-sombra); transform: rotate(-.4deg); }
+.v3-chamada-fc::after { content: ""; position: absolute; bottom: -10px; left: 0; width: 100%; height: 10px; background: linear-gradient(45deg, var(--v3-papel) 50%, transparent 50%) 0 0/12px 10px repeat-x, linear-gradient(-45deg, var(--v3-papel) 50%, transparent 50%) 0 0/12px 10px repeat-x; transform: scaleY(-1); }
+.v3-chamada-tarja { grid-column: 1/-1; margin: 0 -16px 4px; height: 32px; padding: 0 16px; display: flex; align-items: center; justify-content: space-between; background: var(--v3-tinta); color: var(--v3-lima); font-family: var(--font-v3-mono), monospace; font-size: 9.5px; letter-spacing: .14em; text-transform: uppercase; }
+.v3-chamada-tarja > span:last-child { color: #c9cdc6; }
+.v3-chamada-fc > img { width: 84px; height: 84px; object-fit: cover; border-radius: 12px; background: var(--v3-fundo); align-self: center; }
 .v3-chamada-fc h2 { font-size: 30px; }
-.v3-chamada-copy { display: flex; flex-direction: column; gap: 6px; }
-.v3-chamada-copy .v3-etiqueta { color: var(--v3-lima); font-size: 9px; }
-.v3-chamada-copy > p:last-child { color: #c9cdc6; font-size: 14px; line-height: 1.4; }
-.v3-chamada-fc .v3-botao, .v3 .v3-chamada-fc a.v3-botao { grid-column: 1/-1; box-shadow: none; border-color: var(--v3-lima); min-height: 50px; color: var(--v3-tinta); }
-.v3 .v3-chamada-fc a.v3-botao:hover { background: var(--v3-fundo); color: var(--v3-tinta); }
-.v3-chamada-fc .v3-botao:focus-visible { outline-color: var(--v3-lima); }
+.v3-chamada-copy { display: flex; flex-direction: column; gap: 6px; align-self: center; }
+.v3-chamada-copy > p:last-child { color: var(--v3-apagado); font-size: 14px; line-height: 1.4; }
+.v3-chamada-fc .v3-botao { grid-column: 1/-1; min-height: 52px; }
 .v3-listagem-home { margin-top: 40px; }
 .v3-titulo-linha { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
 .v3-titulo-linha a { white-space: nowrap; font-size: 14px; font-weight: 700; text-decoration: underline; text-underline-offset: 4px; min-height: 44px; display: flex; align-items: center; }
@@ -280,13 +280,13 @@ body:has(.v3) { background: #eeebe5; }
   .v3-legenda-carimbos { gap: 16px; margin-top: 26px; }
   .v3-legenda-carimbos .v3-carimbo { font-size: 28px; }
   .v3-hero p { margin-top: 26px; font-size: 19px; line-height: 29px; }
-  .v3-chamada-fc { grid-template-columns: 120px minmax(0,1fr) 280px; align-items: center; gap: 28px; padding: 24px 28px; margin-top: 40px; border-radius: 24px; }
-  .v3-chamada-fc > img { width: 120px; height: 120px; border-radius: 18px; }
+  .v3-chamada-fc { grid-template-columns: 120px minmax(0,1fr) 280px; align-items: center; gap: 12px 28px; padding: 0 28px 28px; margin-top: 40px; }
+  .v3-chamada-tarja { margin: 0 -28px 12px; height: 36px; padding: 0 28px; font-size: 10.5px; }
+  .v3-chamada-fc > img { width: 120px; height: 120px; border-radius: 16px; }
   .v3-chamada-fc h2 { font-size: 48px; }
   .v3-chamada-copy { gap: 8px; }
-  .v3-chamada-copy .v3-etiqueta { font-size: 10px; }
   .v3-chamada-copy > p:last-child { font-size: 16px; }
-  .v3-chamada-fc .v3-botao, .v3 .v3-chamada-fc a.v3-botao { grid-column: auto; min-height: 58px; }
+  .v3-chamada-fc .v3-botao { grid-column: auto; min-height: 58px; }
   .v3-listagem-home { margin-top: 72px; }
   .v3-titulo-linha { align-items: flex-end; }
   .v3-titulo-linha a { font-size: 16px; }
