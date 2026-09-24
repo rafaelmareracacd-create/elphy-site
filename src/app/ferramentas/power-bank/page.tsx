@@ -1,18 +1,16 @@
-import PowerBank from "@/components/dz/PowerBank";
+import Estrutura from "@/components/v3/Estrutura";
+import PowerBank from "@/components/v3/PowerBank";
 import { pageMetadata } from "@/lib/site";
 
 export const metadata = pageMetadata(
-  "Power bank de verdade",
-  "Quantas cargas o power bank dá de verdade, e para onde vai o resto.",
+  "Quantas cargas o power bank dá de verdade?",
+  "Toca na capacidade da caixa e na bateria do seu celular. A nota mostra quanto se perde no caminho e quantas cargas chegam.",
   "/ferramentas/power-bank/",
   "/og-nota.png",
 );
 
-/* PowerBank-Mobile, de docs/design-1.0 */
 export default function FerramentasPowerBankPage() {
-  return (
-    <div className="dz" id="conteudo">
-      <div className="dz-m"><div className="dz-quadro-m"><PowerBank /></div></div>
-    </div>
-  );
+  return <Estrutura><div className="v3-container"><PowerBank /></div></Estrutura>;
 }
+
+export const viewport = { themeColor: "#eeebe5" };
