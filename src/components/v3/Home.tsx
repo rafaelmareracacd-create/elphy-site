@@ -22,7 +22,7 @@ export default function Home() {
       <Image className="v3-mascote" src={assetPath("/brand/elphy-nota-claro.webp")} alt="Elphy segura uma nota comprida" width={340} height={425} />
       <div><p className="v3-etiqueta v3-verde">Ferramentas</p><h2>A conta que a loja não faz<span className="v3-verde">.</span></h2><Nota className="v3-menu-ferramentas">
         {[
-          ["/fc27/", "Meu PC roda o jogo?", "A nota mostra a imagem provável.", "?"],
+          ["/fc27/", "Meu PC roda o jogo?", "Imprime RODA, QUASE ou NÃO RODA.", "?"],
           ["/ferramentas/fonte/", "Qual fonte eu preciso?", "Soma cada watt, com folga.", "W"],
           ["/ferramentas/power-bank/", "Power bank de verdade", "Quantas cargas chegam no celular.", "mAh"],
           ["/ferramentas/conta-de-luz/", "Conta de luz do setup", "Quanto o PC custa por mês.", "R$"],

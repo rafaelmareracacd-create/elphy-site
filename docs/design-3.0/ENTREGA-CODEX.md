@@ -62,3 +62,22 @@ rascunho 404. Zero erros de página.
 - Rafael preencher achados reais (`rascunho: false` com nome, preço, frete, URL e data conferida) — até lá a lista pública mostra o estado vazio.
 - Foto real dos produtos (hoje placeholder que não vai a produção) e código de cupom real.
 - Se quiser rodar o harness em outra máquina: ele usa esbuild/puppeteer-core de `../pipeline/hf-test/node_modules` (configurável via `V3_REVIEW_MODULES`) e o Chrome instalado (`V3_REVIEW_CHROME`).
+
+## Correções da revisão 2 (REVISAO-GROK-2.md, item por item)
+1. Apagadas as regras `:nth-child(3)` que sumiam com o 3º achado no desktop. A home renderiza os 4 primeiros; o 4º leva a classe `v3-so-celular` (vem da ordem dos dados, não da posição no grid) e some de 1024 px pra cima — desktop mostra três, celular mostra quatro. ✔
+2. Na home, as categorias viraram `<Link href="/achados/?categoria=…">` sem `aria-pressed`. Em `/achados/`, o mount lê `categoria`, `colecao`, `carimbo` e `q` de `window.location.search` (e reage a `popstate`); cada mudança de filtro grava de volta com `history.replaceState`. ✔
+3. Decisão do dono: o veredito segue com três palavras — RODA / QUASE / NÃO RODA (o "Abaixo" antigo virou "Não roda"). A linha de baixo do selo agora mostra `VEREDITO[nivel].imagem` (ex.: "≈ 720p") e o texto de apoio do veredito é `VEREDITO[nivel].texto`; a linha "Borrada · …" saiu do recibo. Selo segue `aria-hidden` porque a palavra está no `h2`; no selo NÃO RODA a fonte desce pra 30px (como o `seloTam` da prancheta). ✔
+4. `Nota` não tem mais `aria-live`/`aria-atomic`; ganhou a prop opcional `vivo`, usada só no recibo do FC 27 (`aria-live="polite"` `aria-atomic="true"`). Menu de ferramentas, vazio da lista e ficha do produto não anunciam mais nada. ✔
+5. `LinkLoja` retorna `null` com rascunho ou sem URL externa — o `<span>` "Link a conferir" morreu (regra `.v3-indisponivel` removida do CSS). O preço segue `R$ [PREÇO]` via `dinheiro(null)`. ✔
+6. Tira de cupom só monta com `temCupomReal()` (novo helper em `src/lib/achados.ts`): publicado e com código não vazio nem placeholder `[…]`. Vale para `TiraAchado` e `Produto`; o `disabled` do botão Copiar saiu junto com a prop `rascunho`. ✔
+7. Barra inferior no print: inativo `#c9cdc6`, 12px, peso 600, `min-height: 64px`, `gap: 3px`; ativo e hover `#9dff3b` (nada de verde escuro sobre preto). O `padding-bottom` do `.v3` subiu para 84px pra barra mais alta não cobrir conteúdo. ✔
+8. Com o catálogo vazio, a home não renderiza chips, coleções nem o link "Ver os achados da semana" — só o título e o estado vazio com o botão do FC 27. Em `/achados/` vazio, chips/coleções/filtros também não aparecem. ✔
+9. Decisão do dono: o segundo botão ("Ver as 3 placas nos achados") só renderiza quando o veredito não é RODA (`tipo !== "vale"`). No ramo que roda, fica só o texto do recibo ("Sua placa alcança o recomendado ou mais"). ✔
+10. Novo campo opcional `ferramenta?: { rotulo, href }` no tipo `Achado`; o power bank de exemplo o preenche e `Produto` renderiza o link quando o campo existir. O `if` do slug morreu. ✔
+11. Números copiados da prancheta: herói do celular `right: -40px`; mascote das ferramentas 130×163 px, `right: -10px; top: 20px` (desktop segue `position: static`). ✔
+12. Texto da primeira ferramenta trocado para "Imprime RODA, QUASE ou NÃO RODA." ✔
+13. Busca do topo: `border-radius: 22px`, borda `1.5px solid rgb(17 19 17 / 14%)`, 44px no celular e 48px no desktop (já estava). ✔
+14. Criado `src/app/achados/not-found.tsx`: slug inexistente ou rascunho cai no estado vazio claro dentro do `Estrutura` de `/achados/`. Ressalva: no GitHub Pages, URL que nem foi exportada é servida pelo `404.html` global (limitação de site estático); o not-found novo cobre o `notFound()` do App Router (ex.: o sentinela `_sem-achados`). ✔
+15. Sitemap ganhou `"/achados/"` e os slugs publicados via `achadosVisiveis(true)` — rascunho nunca entra. ✔
+
+Nenhum item foi contestado. Lint (`--max-warnings=0`), build (`output: export`) e os 12 testes passando após as correções.

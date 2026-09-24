@@ -17,7 +17,7 @@
   font-size: 16px;
   line-height: 1.5;
   min-height: 100dvh;
-  padding-bottom: calc(74px + env(safe-area-inset-bottom));
+  padding-bottom: calc(84px + env(safe-area-inset-bottom));
   overflow-x: clip;
 }
 body:has(.v3) { background: #eeebe5; }
@@ -47,12 +47,13 @@ body:has(.v3) { background: #eeebe5; }
 .v3-logo { font-size: 25px; font-weight: 800; letter-spacing: -.045em; text-decoration: none; flex-shrink: 0; }
 .v3-logo span { color: var(--v3-verde); }
 .v3-nav { display: none; }
-.v3-busca { display: flex; align-items: center; flex: 1; min-width: 0; height: 44px; border-radius: 24px; border: 1px solid var(--v3-linha); background: var(--v3-papel); padding-right: 14px; }
+.v3-busca { display: flex; align-items: center; flex: 1; min-width: 0; height: 44px; border-radius: 22px; border: 1.5px solid rgb(17 19 17 / 14%); background: var(--v3-papel); padding-right: 14px; }
 .v3-busca button { display: grid; place-items: center; width: 40px; min-height: 40px; background: transparent; border: 0; color: var(--v3-apagado); flex-shrink: 0; border-radius: 50%; }
 .v3-busca svg { width: 18px; height: 18px; }
 .v3-busca input { min-width: 0; width: 100%; background: transparent; border: 0; height: 36px; font-size: 16px; }
 .v3-barra { display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 30; background: var(--v3-tinta); color: var(--v3-fundo); padding: 8px 10px calc(8px + env(safe-area-inset-bottom)); }
-.v3-barra a { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; flex: 1; min-height: 54px; font-size: 11px; text-decoration: none; }
+.v3-barra a { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; flex: 1; min-height: 64px; color: #c9cdc6; font-size: 12px; font-weight: 600; text-decoration: none; }
+.v3-barra a:hover { color: var(--v3-lima); }
 .v3-barra a[aria-current] { color: var(--v3-lima); font-weight: 800; }
 .v3-barra a:focus-visible { outline-color: var(--v3-lima); outline-offset: 0; }
 .v3-rodape { border-top: 1px solid var(--v3-linha); margin-top: 64px; padding-block: 28px; color: var(--v3-apagado); }
@@ -69,7 +70,7 @@ body:has(.v3) { background: #eeebe5; }
 .v3-mascote { object-fit: cover; object-position: top; mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 70%, transparent 100%); }
 .v3-hero { position: relative; padding-top: 18px; }
 .v3-hero h1 { font-size: 50px; line-height: .88; width: 250px; position: relative; z-index: 1; }
-.v3-heroi { position: absolute; width: 160px; height: 200px; right: -60px; top: 8px; }
+.v3-heroi { position: absolute; width: 160px; height: 200px; right: -40px; top: 8px; }
 .v3-legenda-carimbos { display: flex; flex-wrap: wrap; gap: 14px 10px; margin-top: 22px; }
 .v3-legenda-carimbos .v3-carimbo:first-child { transform: rotate(-4deg); }
 .v3-legenda-carimbos .v3-carimbo:nth-child(2) { transform: rotate(3deg); }
@@ -88,7 +89,7 @@ body:has(.v3) { background: #eeebe5; }
 .v3-titulo-linha a { white-space: nowrap; font-size: 14px; font-weight: 700; text-decoration: underline; text-underline-offset: 4px; min-height: 44px; display: flex; align-items: center; }
 .v3-rolagem { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: thin; padding: 6px 4px 10px; margin-inline: -4px; }
 .v3-chips { margin-top: 16px; }
-.v3-chips button { flex-shrink: 0; border: 1.5px solid rgb(17 19 17 / 28%); background: var(--v3-papel); font-weight: 700; font-size: 14px; border-radius: 24px; padding: 8px 15px; min-height: 44px; }
+.v3-chips :is(button, a) { display: inline-flex; align-items: center; flex-shrink: 0; border: 1.5px solid rgb(17 19 17 / 28%); background: var(--v3-papel); font-weight: 700; font-size: 14px; border-radius: 24px; padding: 8px 15px; min-height: 44px; text-decoration: none; }
 .v3-chips button[aria-pressed="true"] { background: var(--v3-tinta); color: var(--v3-fundo); border-color: var(--v3-tinta); }
 .v3-achados-grid { display: grid; gap: 34px 28px; margin-top: 28px; align-items: start; }
 .v3-tira { position: relative; background: var(--v3-papel); box-shadow: var(--v3-sombra); padding: 16px 18px; font: 400 10.5px/1.55 var(--font-v3-mono), monospace; transform: rotate(-.8deg); min-width: 0; }
@@ -110,7 +111,6 @@ body:has(.v3) { background: #eeebe5; }
 .v3-preco small { display: block; font-size: 9.5px; color: var(--v3-apagado); line-height: 1.5; }
 .v3-link-loja { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 8px 14px; border-radius: 24px; background: var(--v3-tinta); color: var(--v3-papel); font-family: var(--font-v3-corpo), sans-serif; font-size: 13px; font-weight: 700; text-decoration: none; flex-shrink: 0; }
 .v3 a.v3-link-loja:hover { color: var(--v3-lima); }
-.v3 .v3-indisponivel { background: #e7e4da; color: var(--v3-apagado); box-shadow: none; }
 .v3 .v3-rascunho { border-top: 1px dashed var(--v3-linha); padding-top: 8px; margin-top: 12px; color: var(--v3-apagado); font: 400 9px/1.5 var(--font-v3-mono), monospace; }
 .v3-cupom { border: 1.5px dashed var(--v3-tinta); padding: 6px 8px; display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin-top: 10px; font: 400 10px/1.5 var(--font-v3-mono), monospace; }
 .v3-cupom > span:first-child { flex: 1; }
@@ -130,7 +130,7 @@ body:has(.v3) { background: #eeebe5; }
 .v3-vazio p:not(.v3-etiqueta) { margin-top: 12px; color: var(--v3-apagado); }
 .v3-vazio .v3-botao { margin-top: 20px; }
 .v3-ferramentas-home { position: relative; margin-top: 50px; }
-.v3-ferramentas-home > img { position: absolute; top: -15px; right: -30px; width: 115px; height: 145px; }
+.v3-ferramentas-home > img { position: absolute; top: 20px; right: -10px; width: 130px; height: 163px; }
 .v3-ferramentas-home h2 { margin-top: 10px; padding-right: 75px; }
 .v3-menu-ferramentas { margin-top: 22px; padding: 0 18px 18px; }
 .v3-menu-ferramentas a { display: flex; align-items: center; gap: 12px; padding-block: 16px; border-bottom: 1.5px dashed rgb(17 19 17 / 30%); text-decoration: none; }
@@ -234,10 +234,11 @@ body:has(.v3) { background: #eeebe5; }
 .v3-veredito h2 { font-size: 78px; line-height: .9; margin-block: 4px 10px; }
 .v3-veredito p:last-child { margin-top: 8px; color: #3f433d; }
 .v3-selo-redondo { position: absolute; bottom: -20px; right: -22px; border: 2px solid var(--v3-tinta); border-radius: 50%; width: 108px; height: 108px; display: flex; flex-direction: column; align-items: center; justify-content: center; transform: rotate(12deg); box-shadow: 0 12px 24px rgb(17 19 17 / 16%); background: var(--v3-lima); color: var(--v3-tinta); }
-.v3-selo-redondo small { font: 400 9px/1.5 var(--font-v3-mono), monospace; text-transform: uppercase; letter-spacing: .12em; }
-.v3-selo-redondo strong { font: 900 38px/.95 var(--font-v3-display), sans-serif; text-transform: uppercase; }
+.v3-selo-redondo small { font: 400 8px/1.4 var(--font-v3-mono), monospace; text-transform: uppercase; letter-spacing: .12em; text-align: center; padding-inline: 12px; }
+.v3-selo-redondo strong { font: 900 38px/.9 var(--font-v3-display), sans-serif; text-transform: uppercase; text-align: center; }
 .v3-selo-depende { background: var(--v3-ambar); }
 .v3-selo-deixa { background: var(--v3-papel); color: var(--v3-vermelho); border-color: var(--v3-vermelho); }
+.v3-selo-deixa strong { font-size: 30px; }
 .v3-impressora > .v3-botao { width: 100%; margin-top: 48px; }
 .v3-impressora > .v3-botao + .v3-botao { margin-top: 14px; }
 .v3-como-mede { border: 1px solid var(--v3-linha); border-radius: 16px; background: var(--v3-papel); padding: 20px; }
@@ -290,8 +291,7 @@ body:has(.v3) { background: #eeebe5; }
   .v3-titulo-linha a { font-size: 16px; }
   .v3-chips { margin-top: 22px; flex-wrap: wrap; }
   .v3-achados-grid { grid-template-columns: repeat(3,minmax(0,1fr)); margin-top: 40px; gap: 40px 28px; }
-  .v3-listagem-home .v3-achados-grid > :nth-child(3) { display: none; }
-  .v3-listagem-home .v3-achados-grid > :nth-child(3):last-child { display: block; }
+  .v3-so-celular { display: none; }
   .v3-todos { display: none; }
   .v3-vazio { flex-direction: row; text-align: left; gap: 36px; padding: 32px 40px; }
   .v3-vazio > img { width: 180px; height: 180px; }

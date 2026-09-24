@@ -21,6 +21,8 @@ export type Achado = {
   praQuemNaoE: string;
   olhamos: { rotulo: string; valor: string }[];
   alternativa?: { rotulo: string; href: string };
+  /** Link para uma ferramenta do Elphy relacionada ao achado (ex.: conta do power bank). */
+  ferramenta?: { rotulo: string; href: string };
   rascunho: boolean;
   imagem?: { src: string; alt: string };
 };
@@ -39,7 +41,7 @@ const base = {
 // null significa não conferido: nunca é convertido em preço zero ou frete grátis.
 export const ACHADOS: Achado[] = [
   { ...base, slug: "fone-bluetooth", nome: "Fone Bluetooth [MODELO]", categoria: "Áudio", colecoes: ["Até R$ 50", "Presentes", "Pra faculdade"], carimbo: "vale", motivo: "[Por que vale, em até 12 palavras.]", lojaPrincipal: loja("Shopee") },
-  { ...base, slug: "power-bank-20000", nome: "Power bank 20.000 mAh [MODELO]", categoria: "Celular e acessórios", colecoes: ["Presentes", "Pra faculdade"], carimbo: "depende", motivo: "Entrega [X]% do que promete. Dá [N] cargas num celular comum.", lojaPrincipal: loja("Shopee"), outrasLojas: [loja("Mercado Livre"), loja("Amazon")], cupom: { codigo: "[CÓDIGO]", validade: null }, praQuemE: "[Quem passa o dia fora e precisa de 1 a 2 cargas.]", praQuemNaoE: "[Quem quer carregar notebook.]", olhamos: [{ rotulo: "Capacidade real", valor: "[X] mAh" }, { rotulo: "Cargas num celular de 5.000 mAh", valor: "[N]" }, { rotulo: "Carga rápida", valor: "[X] W" }] },
+  { ...base, slug: "power-bank-20000", nome: "Power bank 20.000 mAh [MODELO]", categoria: "Celular e acessórios", colecoes: ["Presentes", "Pra faculdade"], carimbo: "depende", motivo: "Entrega [X]% do que promete. Dá [N] cargas num celular comum.", lojaPrincipal: loja("Shopee"), outrasLojas: [loja("Mercado Livre"), loja("Amazon")], cupom: { codigo: "[CÓDIGO]", validade: null }, praQuemE: "[Quem passa o dia fora e precisa de 1 a 2 cargas.]", praQuemNaoE: "[Quem quer carregar notebook.]", olhamos: [{ rotulo: "Capacidade real", valor: "[X] mAh" }, { rotulo: "Cargas num celular de 5.000 mAh", valor: "[N]" }, { rotulo: "Carga rápida", valor: "[X] W" }], ferramenta: { rotulo: "Fazer a conta com o seu celular", href: "/ferramentas/power-bank/" } },
   { ...base, slug: "luminaria-de-mesa", nome: "Luminária de mesa [MODELO]", categoria: "Casa e quarto", colecoes: ["Até R$ 50", "Presentes", "Pra faculdade", "Primeiro apê"], carimbo: "vale", motivo: "[Por que vale, em até 12 palavras.]", lojaPrincipal: loja("Mercado Livre") },
   { ...base, slug: "fonte-500w-sem-selo", nome: "Fonte 500 W sem selo [MODELO]", categoria: "PC e setup", colecoes: ["Primeiro apê"], carimbo: "deixa", motivo: "Sem teste público. Watt da caixa não conta.", lojaPrincipal: loja("[Loja]"), alternativa: { rotulo: "Calcular a fonte que o seu PC precisa", href: "/ferramentas/fonte/" } },
   { ...base, slug: "suporte-de-notebook", nome: "Suporte de notebook [MODELO]", categoria: "Estudo e trabalho", colecoes: ["Até R$ 50", "Pra faculdade", "Primeiro apê"], carimbo: "vale", motivo: "[Por que vale, em até 12 palavras.]", lojaPrincipal: loja("Amazon") },

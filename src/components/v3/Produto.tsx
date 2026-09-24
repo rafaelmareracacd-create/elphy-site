@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Achado } from "@/content/achados";
 import { assetPath } from "@/lib/site";
-import { dataConferencia, urlExterna } from "@/lib/achados";
+import { dataConferencia, temCupomReal, urlExterna } from "@/lib/achados";
 import Nota from "./Nota";
 import Carimbo from "./Carimbo";
 import { LinkLoja, Preco } from "./Oferta";
@@ -17,7 +17,7 @@ export default function Produto({ achado, parecidos }: { achado: Achado; parecid
       <Nota className="v3-produto-nota">
         <p className="v3-etiqueta">{achado.rascunho ? "Achado · rascunho" : "Achado carimbado"}<span>{dataConferencia(achado.lojaPrincipal.conferidoEm)}</span></p>
         <Carimbo tipo={achado.carimbo} grande /><p className="v3-produto-motivo">{achado.motivo}</p><h1>{achado.nome}</h1>
-        {achado.carimbo !== "deixa" ? <><Preco loja={achado.lojaPrincipal} />{achado.cupom && <Cupom cupom={achado.cupom} rascunho={achado.rascunho} />}<LinkLoja loja={achado.lojaPrincipal} rascunho={achado.rascunho} destaque /><p className="v3-letra-miuda">Link de afiliado. Preço e frete mudam; confere na loja.</p></> : achado.alternativa && <Link className="v3-botao" href={achado.alternativa.href}>{achado.alternativa.rotulo} →</Link>}
+        {achado.carimbo !== "deixa" ? <><Preco loja={achado.lojaPrincipal} />{temCupomReal(achado) && <Cupom cupom={achado.cupom!} />}<LinkLoja loja={achado.lojaPrincipal} rascunho={achado.rascunho} destaque /><p className="v3-letra-miuda">Link de afiliado. Preço e frete mudam; confere na loja.</p></> : achado.alternativa && <Link className="v3-botao" href={achado.alternativa.href}>{achado.alternativa.rotulo} →</Link>}
         {achado.rascunho && <p className="v3-rascunho">Exemplo da prancheta. Dados, foto e links ainda não conferidos.</p>}
         <section className="v3-outras-desktop">{lojas}</section>
       </Nota>
@@ -29,7 +29,7 @@ export default function Produto({ achado, parecidos }: { achado: Achado; parecid
     </div>
     <section className="v3-produto-detalhes" aria-label="Nossa avaliação">
       <div className="v3-papel"><h2>Pra quem é</h2><p>{achado.praQuemE}</p></div><div className="v3-papel"><h2 className="v3-vermelho">Pra quem não é</h2><p>{achado.praQuemNaoE}</p></div>
-      <div className="v3-papel v3-olhamos"><h2>O que a gente olhou</h2><dl>{achado.olhamos.map((item) => <div className="v3-linha-pontos" key={item.rotulo}><dt>{item.rotulo}</dt><dd>{item.valor}</dd></div>)}</dl>{achado.slug === "power-bank-20000" && <Link href="/ferramentas/power-bank/">Fazer a conta com o seu celular →</Link>}</div>
+      <div className="v3-papel v3-olhamos"><h2>O que a gente olhou</h2><dl>{achado.olhamos.map((item) => <div className="v3-linha-pontos" key={item.rotulo}><dt>{item.rotulo}</dt><dd>{item.valor}</dd></div>)}</dl>{achado.ferramenta && <Link href={achado.ferramenta.href}>{achado.ferramenta.rotulo} →</Link>}</div>
     </section>
     <section className="v3-outras-mobile">{lojas}</section>
     {parecidos.length > 0 && <section className="v3-parecidos"><h2>Parecidos</h2><div className="v3-achados-grid">{parecidos.map((item) => <TiraAchado key={item.slug} achado={item} />)}</div></section>}

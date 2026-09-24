@@ -21,6 +21,11 @@ export function dataConferencia(valor: string | null) {
   const data = new Date(valor);
   return Number.isNaN(data.getTime()) ? "data a conferir" : new Intl.DateTimeFormat("pt-BR", { day: "2-digit", month: "short", timeZone: "America/Sao_Paulo" }).format(data);
 }
+/** Cupom só aparece publicado e com código real — nunca vazio nem placeholder tipo "[CÓDIGO]". */
+export function temCupomReal(achado: Pick<Achado, "cupom" | "rascunho">): boolean {
+  const codigo = achado.cupom?.codigo.trim() ?? "";
+  return !achado.rascunho && codigo !== "" && !(codigo.startsWith("[") && codigo.endsWith("]"));
+}
 export function urlExterna(url?: string | null): url is string {
   if (!url) return false;
   try { return ["https:", "http:"].includes(new URL(url).protocol); } catch { return false; }
