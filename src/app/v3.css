@@ -272,6 +272,23 @@ body:has(.v3) { background: #eeebe5; }
 .v3-fc-detalhes-corpo dt small { display: block; color: var(--v3-apagado); font-size: 9px; }
 .v3-fc-detalhes-corpo > p { margin-top: 14px; font-size: 11px; color: var(--v3-apagado); }
 .v3-fc-requisitos .v3-alternativa a { display: inline-flex; align-items: center; min-height: 44px; }
+.v3-abertura-ferramentas { position: relative; padding-top: 18px; }
+.v3-abertura-ferramentas > div { position: relative; z-index: 1; }
+.v3-abertura-ferramentas h1 { margin-top: 8px; max-width: 250px; font-size: 52px; line-height: .88; }
+.v3-abertura-ferramentas p:last-child { max-width: 250px; margin-top: 16px; color: #3f433d; }
+.v3-abertura-ferramentas > img { position: absolute; width: 125px; height: 156px; right: -20px; top: 0; }
+.v3-ferramentas-lista { margin-top: 16px; }
+.v3-ferramentas-grid { display: grid; gap: 22px; margin-top: 18px; align-items: stretch; }
+.v3-ferramenta-link { display: block; min-width: 0; text-decoration: none; }
+.v3-ferramenta { height: 100%; display: flex; flex-direction: column; padding: 18px; transform: rotate(-.8deg); }
+.v3-ferramentas-grid > :nth-child(2n) .v3-ferramenta { transform: rotate(.7deg); }
+.v3-ferramentas-grid > :nth-child(3n) .v3-ferramenta { transform: rotate(-.4deg); }
+.v3-ferramenta h3 { margin-top: 8px; font-size: 19px; }
+.v3-ferramenta .v3-caixa-diz { margin-top: 12px; color: var(--v3-apagado); }
+.v3 .v3-ferramenta-numero { margin-top: auto; padding-top: 10px; border-top: 1px dashed rgb(17 19 17 / 35%); font: 900 40px/.9 var(--font-v3-display), Impact, sans-serif; font-variation-settings: "opsz" 72, "wght" 900; text-transform: uppercase; }
+.v3-ferramenta .v3-caixa-diz + p { margin-bottom: 14px; }
+.v3-ferramenta-link:hover h3 { color: var(--v3-verde); }
+.v3-ferramenta-breve { opacity: .55; }
 @keyframes v3-imprime { from { opacity: .2; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
 .v3-recibo-conteudo { animation: v3-imprime .35s ease-out; }
 @media (min-width: 1024px) {
@@ -380,6 +397,15 @@ body:has(.v3) { background: #eeebe5; }
   .v3-nota-edicoes { margin-top: 0; padding: 28px; }
   .v3-nota-edicoes h2 { font-size: 40px; }
   .v3-fontes { max-width: 680px; }
+  .v3-abertura-ferramentas { display: flex; align-items: center; justify-content: space-between; gap: 48px; padding-top: 32px; }
+  .v3-abertura-ferramentas h1 { max-width: 680px; font-size: clamp(72px, 6.7vw, 96px); line-height: .86; }
+  .v3-abertura-ferramentas p:last-child { max-width: 520px; margin-top: 18px; font-size: 19px; line-height: 29px; }
+  .v3-abertura-ferramentas > img { position: static; width: 250px; height: 312px; }
+  .v3-ferramentas-lista { margin-top: 20px; }
+  .v3-ferramentas-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px 28px; margin-top: 26px; }
+  .v3-ferramenta { padding: 22px; }
+  .v3-ferramenta h3 { font-size: 21px; }
+  .v3 .v3-ferramenta-numero { font-size: 50px; }
 }
 @media (max-width: 359px) {
   .v3-container { width: calc(100% - 32px); }

@@ -1,6 +1,7 @@
-import MenuConteudo from "@/components/dz/MenuConteudo";
-import FerramentasDesktop from "@/components/dz/FerramentasDesktop";
-import { pageMetadata } from "@/lib/site";
+import Image from "next/image";
+import Estrutura from "@/components/v3/Estrutura";
+import ListaFerramentas from "@/components/v3/ListaFerramentas";
+import { assetPath, pageMetadata } from "@/lib/site";
 
 export const metadata = pageMetadata(
   "Todas as ferramentas",
@@ -9,12 +10,18 @@ export const metadata = pageMetadata(
   "/og-nota.png",
 );
 
-/* Menu-Mobile (celular) e Ferramentas-Desktop, de docs/design-1.0 */
 export default function FerramentasPage() {
-  return (
-    <div className="dz" id="conteudo">
-      <div className="dz-m tem-d"><div className="dz-quadro-m"><MenuConteudo /></div></div>
-      <div className="dz-d"><div className="dz-quadro-d"><FerramentasDesktop /></div></div>
-    </div>
-  );
+  return <Estrutura><div className="v3-container">
+    <section className="v3-abertura-ferramentas">
+      <div>
+        <p className="v3-etiqueta v3-verde">Ferramentas</p>
+        <h1>A conta que a loja não faz<span className="v3-verde">.</span></h1>
+        <p>Cada ferramenta termina numa nota: as linhas, a soma e o resultado carimbado. A fórmula de todas está na metodologia.</p>
+      </div>
+      <Image className="v3-mascote" src={assetPath("/brand/elphy-nota-claro.webp")} alt="Elphy segura uma nota comprida" width={280} height={350} priority />
+    </section>
+    <ListaFerramentas />
+  </div></Estrutura>;
 }
+
+export const viewport = { themeColor: "#eeebe5" };
