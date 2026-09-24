@@ -13,7 +13,7 @@ export default function Home() {
       <Image className="v3-mascote v3-heroi" src={assetPath("/brand/elphy-heroi.webp")} alt="Elphy, o elefante verde de moletom, segura um carimbo no alto" width={420} height={525} priority />
     </section>
     <section className="v3-chamada-fc" aria-label="Ferramenta em destaque">
-      <div className="v3-chamada-tarja"><span>▶ Veio do vídeo?</span><span>TikTok · FC 27</span></div>
+      <div className="v3-chamada-tarja"><span><b aria-hidden="true">▶</b> Veio do vídeo?</span><span>TikTok · FC 27</span></div>
       <Image src={assetPath("/brand/elphy-controle.webp")} alt="Elphy com um controle de videogame" width={120} height={120} />
       <div className="v3-chamada-copy"><h2>Meu PC roda o FC 27?</h2><p>Toca na sua placa e a nota sai na hora.</p></div>
       <Link className="v3-botao" href="/fc27/">Fazer a conta →</Link>
