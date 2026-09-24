@@ -246,6 +246,8 @@ body:has(.v3) { background: #eeebe5; }
 .v3-como-mede { border: 1px solid var(--v3-linha); border-radius: 16px; background: var(--v3-papel); padding: 20px; }
 .v3-como-mede p { margin-top: 10px; color: #3f433d; }
 .v3-como-mede a { display: inline-flex; align-items: center; min-height: 44px; margin-top: 6px; font-weight: 700; text-decoration: underline; font-size: 14px; }
+.v3-como-mede details { margin-top: 10px; }
+.v3-vizinhas { display: flex; flex-direction: column; align-items: flex-start; margin-top: 4px; }
 .v3-fc-referencia { margin-top: 52px; display: grid; gap: 36px; }
 .v3-fc-referencia h2 { font-size: 32px; }
 .v3-fc-referencia section > p { margin-top: 12px; font-size: 14px; color: var(--v3-apagado); }
