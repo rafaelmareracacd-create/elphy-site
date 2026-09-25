@@ -1,18 +1,16 @@
-import Memoria from "@/components/dz/Memoria";
+import Estrutura from "@/components/v3/Estrutura";
+import Memoria from "@/components/v3/Memoria";
 import { pageMetadata } from "@/lib/site";
 
 export const metadata = pageMetadata(
-  "Memória certa",
-  "O tipo de memória e a velocidade oficial máxima do seu processador.",
+  "Qual memória o meu processador aceita?",
+  "Toca na geração do processador. A nota diz o tipo de memória (DDR4 ou DDR5) e o teto oficial de velocidade.",
   "/ferramentas/memoria/",
   "/og-nota.png",
 );
 
-/* Memoria-Mobile, de docs/design-1.0 */
 export default function FerramentasMemoriaPage() {
-  return (
-    <div className="dz" id="conteudo">
-      <div className="dz-m"><div className="dz-quadro-m"><Memoria /></div></div>
-    </div>
-  );
+  return <Estrutura><div className="v3-container"><Memoria /></div></Estrutura>;
 }
+
+export const viewport = { themeColor: "#eeebe5" };
