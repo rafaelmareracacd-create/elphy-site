@@ -24,6 +24,11 @@ jobs:
         env:
           NEXT_PUBLIC_SITE_URL: https://elphy.com.br
           NEXT_PUBLIC_BASE_PATH: ""
+      - name: Casa do Elphy como página inicial (HTML estático de elphy-casa/)
+        run: |
+          cp elphy-casa/index.html out/index.html
+          cp -r elphy-casa/casa out/casa
+          rm -f out/index.txt
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
